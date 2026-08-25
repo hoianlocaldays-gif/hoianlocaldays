@@ -9,6 +9,8 @@
   --terracotta: #d66c4a;
   --sun: #f1bd66;
   --line: rgba(23, 60, 58, 0.18);
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
