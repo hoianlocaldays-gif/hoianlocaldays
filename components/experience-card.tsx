@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import type { Experience } from "@/data/experiences";
 import { track } from "@/lib/tracking";
@@ -17,7 +16,7 @@ export function ProviderButtons({ experience, page, position }: { experience: Ex
 
 export function ExperienceCard({ experience, page = "homepage", position = "card", label }: { experience: Experience; page?: string; position?: string; label?: string }) {
   return <article className="experience-card" onMouseEnter={() => track("experience_view", { experience_id: experience.id, page })}>
-    <div className="card-image"><Image src={experience.image} alt={experience.imageAlt} fill sizes="(max-width: 700px) 100vw, 33vw" /></div>
-    <div className="card-body">{label && <span className="pick-label">{label}</span>}<h3>{experience.name}</h3><p className="card-meta">{experience.duration === "half-day" ? "Half day" : "Full day"} · {experience.pickup}</p><p className="best-for"><strong>Best for:</strong> {experience.bestFor}</p><p className="reason"><strong>Why we picked it</strong>{experience.editorialReason}</p><div className="card-bottom"><span>{experience.priceLabel ? `From ${experience.priceLabel}` : "Price to be confirmed"}</span><Link href={`/things-to-do-in-hoi-an#${experience.id}`} onClick={() => track("experience_view", { experience_id: experience.id, page, position })}>Compare details →</Link></div><ProviderButtons experience={experience} page={page} position={position} /></div>
+    <div className={`card-image category-art category-art-${experience.category}`} aria-hidden="true"><span>{experience.category.replace("-", " ")}</span></div>
+    <div className="card-body">{label && <span className="pick-label">{label}</span>}<h3>{experience.name}</h3><p className="card-meta">Product details pending verification</p><p className="best-for"><strong>Best for:</strong> {experience.bestFor}</p><p className="reason"><strong>What this page will compare</strong>{experience.editorialReason}</p><div className="card-bottom"><span>No price published</span><Link href={`/things-to-do-in-hoi-an#${experience.id}`} onClick={() => track("experience_view", { experience_id: experience.id, page, position })}>View category →</Link></div><ProviderButtons experience={experience} page={page} position={position} /></div>
   </article>;
 }
