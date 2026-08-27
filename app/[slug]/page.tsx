@@ -5,6 +5,7 @@ import { CookingClassPage } from "@/components/cooking-class-page";
 import { ThingsToDoHub } from "@/components/things-to-do-hub";
 import { HoiAnWithKidsPage } from "@/components/hoi-an-with-kids-page";
 import { BasketBoatPage } from "@/components/basket-boat-page";
+import { ThreeDaysItineraryPage } from "@/components/three-days-itinerary-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -37,6 +38,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Compare the main types of Hoi An basket boat experiences, from short coconut-forest rides to cooking-class and family-friendly combinations.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
   }
+  if (slug === "3-days-in-hoi-an") {
+    const title = "3 Days in Hoi An: A Relaxed First-Time Itinerary";
+    const description = "Plan 3 days in Hoi An with a practical itinerary covering the Ancient Town, local food, cooking classes, basket boats, countryside, beaches and optional day trips.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+  }
   if (page) return { title: `${page.title} | Hoi An Local Days`, description: page.description, alternates: { canonical: `/${slug}` }, openGraph: { title: page.title, description: page.description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title: page.title, description: page.description } };
   if (legalPage) return { title: `${legalPage.title} | Hoi An Local Days`, alternates: { canonical: `/${slug}` } };
   return {};
@@ -48,6 +54,7 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   if (slug === "things-to-do-in-hoi-an") return <ThingsToDoHub />;
   if (slug === "hoi-an-with-kids") return <HoiAnWithKidsPage />;
   if (slug === "basket-boat-hoi-an") return <BasketBoatPage />;
+  if (slug === "3-days-in-hoi-an") return <ThreeDaysItineraryPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();
   return <main className="legal-page section"><p className="eyebrow">Hoi An Local Days</p><h1>{legalPage.title}</h1>{legalPage.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</main>;

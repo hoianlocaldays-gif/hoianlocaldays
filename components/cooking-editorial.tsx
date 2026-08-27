@@ -40,5 +40,5 @@ export function CookingComparisonCard({ experience, position }: { experience: Co
 }
 
 export function RelatedGuides() {
-  return <section className="section cooking-next"><p className="eyebrow">Related guides</p><h2>Keep Planning Your Hoi An Trip</h2><div><Link href="/things-to-do-in-hoi-an">Things to Do <span>→</span></Link><Link href="/basket-boat-hoi-an">Choosing a Basket Boat <span>→</span></Link><Link href="/hoi-an-with-kids">Hoi An With Kids <span>→</span></Link></div></section>;
+  return <section className="section cooking-next"><p className="eyebrow">Planning the rest of your stay?</p><h2>Keep Planning Your Hoi An Trip</h2><div><Link href="/3-days-in-hoi-an">3-Day Itinerary <span>→</span></Link><Link href="/basket-boat-hoi-an">Choosing a Basket Boat <span>→</span></Link><Link href="/hoi-an-with-kids">Hoi An With Kids <span>→</span></Link></div></section>;
 }

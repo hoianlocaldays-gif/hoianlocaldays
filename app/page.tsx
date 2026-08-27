@@ -12,10 +12,10 @@ const discovery = [
 ];
 
 const planningCards = [
-  { title: "1 Day in Hoi An", note: "A focused first-day outline with room to wander." },
-  { title: "3 Days in Hoi An", note: "Balance the old town, local experiences and downtime." },
-  { title: "Hoi An With Kids", note: "Shape the day around pace, heat and hands-on activities." },
-  { title: "Rainy Day in Hoi An", note: "Indoor-friendly ideas without overfilling the schedule." },
+  { title: "1 Day in Hoi An", note: "A focused first-day outline with room to wander.", href: undefined },
+  { title: "3 Days in Hoi An", note: "Balance the old town, local experiences and downtime.", href: "/3-days-in-hoi-an" },
+  { title: "Hoi An With Kids", note: "Shape the day around pace, heat and hands-on activities.", href: "/hoi-an-with-kids" },
+  { title: "Rainy Day in Hoi An", note: "Indoor-friendly ideas without overfilling the schedule.", href: undefined },
 ];
 
 export default function Home() {
@@ -43,7 +43,7 @@ export default function Home() {
 
     <section className="home-trust section"><div><p className="eyebrow">Why Hoi An Local Days?</p><h2>A useful local filter.</h2></div><div className="home-trust-grid"><article><span>01</span><h3>Local Knowledge</h3><p>Recommendations built around real local context.</p></article><article><span>02</span><h3>Carefully Curated</h3><p>We focus on experiences worth considering instead of listing everything.</p></article><article><span>03</span><h3>Honest Comparisons</h3><p>We explain who each experience is best for — and when it may not be the right fit.</p></article><article><span>04</span><h3>Trusted Booking Partners</h3><p>Where appropriate, we link to established booking platforms.</p></article></div></section>
 
-    <section className="home-planning section" id="plan-stay"><div className="home-heading"><p className="eyebrow">Plan your stay</p><h2>Plan Your Hoi An Stay</h2><p>Simple planning frameworks for the days travelers ask about most.</p></div><div className="planning-grid">{planningCards.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.note}</p></article>)}</div></section>
+    <section className="home-planning section" id="plan-stay"><div className="home-heading"><p className="eyebrow">Plan your stay</p><h2>Plan Your Hoi An Stay</h2><p>Simple planning frameworks for the days travelers ask about most.</p></div><div className="planning-grid">{planningCards.map((item, index) => { const content = <><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.note}</p></>; return item.href ? <Link href={item.href} key={item.title}>{content}</Link> : <article key={item.title}>{content}</article>; })}</div></section>
 
     <section className="editorial-position section"><p className="eyebrow">Our editorial approach</p><div><h2>Recommendations, Not Endless Lists</h2><p>Hoi An has hundreds of tours, restaurants and places to stay. We narrow them down by traveler type, experience quality, local character and ease of booking so you can decide faster.</p><span className="methodology-label">How we choose our recommendations</span></div></section>
 
