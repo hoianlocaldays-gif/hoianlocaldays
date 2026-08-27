@@ -25,6 +25,7 @@ export const mySonExperiences: CookingExperience[] = [
       notIdealFor: "Travelers wanting full schedule flexibility or visitors specifically seeking a private experience.",
     },
     providers: { viator: { provider: "viator", productId: "375749P1", url: "https://www.viator.com/tours/Hoi-An/My-Son-Morning-Daily-Tour-With-Small-Group-From-Hoi-An/d5229-375749P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-myson-overall-viator", campaign: "hal-myson-overall-viator", enabled: true } },
+    image: { src: "/images/experiences/my-son/myson-overall-group.webp", alt: "Small-group visit to My Son Sanctuary from Hoi An", sourcePlatform: "viator", sourceProductId: "375749P1", sourcePage: "https://www.viator.com/tours/Hoi-An/My-Son-Morning-Daily-Tour-With-Small-Group-From-Hoi-An/d5229-375749P1", sourceType: "verified-provider", downloadedAt: verified },
     lastVerified: verified,
   },
   {
@@ -38,6 +39,7 @@ export const mySonExperiences: CookingExperience[] = [
       notIdealFor: "Travelers who dislike early starts or visitors wanting a slow morning in Hoi An.",
     },
     providers: { getyourguide: { provider: "getyourguide", productId: "514776", url: "https://www.getyourguide.com/hoi-an-l831/hoi-an-my-son-sanctuary-early-morning-visit-with-breakfast-t514776/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-myson-early-gyg", campaign: "hal-myson-early-gyg", enabled: true } },
+    image: { src: "/images/experiences/my-son/myson-early-morning.webp", alt: "Early morning visit to My Son Sanctuary", sourcePlatform: "getyourguide", sourceProductId: "514776", sourcePage: "https://www.getyourguide.com/hoi-an-l831/hoi-an-my-son-sanctuary-early-morning-visit-with-breakfast-t514776/", sourceType: "verified-provider", downloadedAt: verified },
     lastVerified: verified,
   },
   {
@@ -51,6 +53,7 @@ export const mySonExperiences: CookingExperience[] = [
       notIdealFor: "Travelers mainly prioritizing the lowest-cost shared format.",
     },
     providers: { viator: { provider: "viator", productId: "212568P6", url: "https://www.viator.com/tours/Hoi-An/My-Son-sanctuary/d5229-212568P6?pid=P00316970&mcid=42383&medium=link&campaign=hal-myson-private-viator", campaign: "hal-myson-private-viator", enabled: true } },
+    image: { src: "/images/experiences/my-son/myson-private.webp", alt: "Private guided visit to My Son Sanctuary", sourcePlatform: "viator", sourceProductId: "212568P6", sourcePage: "https://www.viator.com/tours/Hoi-An/My-Son-sanctuary/d5229-212568P6", sourceType: "verified-provider", downloadedAt: verified },
     lastVerified: verified,
   },
   {
@@ -64,6 +67,7 @@ export const mySonExperiences: CookingExperience[] = [
       notIdealFor: "Travelers wanting the easiest or quickest My Son visit, or visitors who do not enjoy cycling.",
     },
     providers: { viator: { provider: "viator", productId: "20353P5", url: "https://www.viator.com/tours/Hoi-An/Half-Day-My-Son-Bike-Tour-from-Hoi-An/d5229-20353P5?pid=P00316970&mcid=42383&medium=link&campaign=hal-myson-bike-viator", campaign: "hal-myson-bike-viator", enabled: true } },
+    image: { src: "/images/experiences/my-son/myson-bike.webp", alt: "Cycling through the countryside on a trip from Hoi An to My Son", sourcePlatform: "viator", sourceProductId: "20353P5", sourcePage: "https://www.viator.com/tours/Hoi-An/Half-Day-My-Son-Bike-Tour-from-Hoi-An/d5229-20353P5", sourceType: "verified-provider", downloadedAt: verified },
     lastVerified: verified,
   },
   {
@@ -77,6 +81,7 @@ export const mySonExperiences: CookingExperience[] = [
       notIdealFor: "Travelers wanting a simple half-day My Son visit or visitors prioritizing minimum walking and activity.",
     },
     providers: { getyourguide: { provider: "getyourguide", productId: "519118", url: "https://www.getyourguide.com/hoi-an-l831/my-son-sanctuary-and-mountain-trekking-pilgrimage-t519118/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-myson-adventure-gyg", campaign: "hal-myson-adventure-gyg", enabled: true } },
+    image: { src: "/images/experiences/my-son/myson-adventure.webp", alt: "Trekking and nature experience combined with a visit to My Son Sanctuary", sourcePlatform: "getyourguide", sourceProductId: "519118", sourcePage: "https://www.getyourguide.com/hoi-an-l831/my-son-sanctuary-and-mountain-trekking-pilgrimage-t519118/", sourceType: "verified-provider", downloadedAt: verified },
     lastVerified: verified,
   },
 ];

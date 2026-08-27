@@ -6,6 +6,11 @@ import type { CookingExperience, CookingProvider } from "@/data/cooking-classes"
 const defaultPage = "cooking-classes-hoi-an";
 const providerName = { viator: "Viator", getyourguide: "GetYourGuide" } as const;
 
+export function ExperienceImage({ experience, priority = false }: { experience: Pick<CookingExperience, "image">; priority?: boolean }) {
+  if (!experience.image) return null;
+  return <div className="experience-card-image"><img src={experience.image.src} alt={experience.image.alt} width="1200" height="800" loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} decoding="async" /></div>;
+}
+
 export function WhyWePickedIt({ children }: { children: string }) {
   return <div className="editorial-field"><dt>Why we picked it</dt><dd>{children}</dd></div>;
 }
@@ -28,11 +33,11 @@ export function ProviderButtons({ experience, position, page = defaultPage }: { 
 }
 
 export function QuickPicks({ experiences, page = defaultPage }: { experiences: CookingExperience[]; page?: string }) {
-  return <div className="cooking-quick-grid">{experiences.map((experience, index) => <article className="cooking-card cooking-card-quick" key={experience.id}><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.positioning}</p><dl className="cooking-facts"><BestFor items={experience.editorial.bestFor.slice(0, 2)} /><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl><ProviderButtons experience={experience} position={`quick_pick_${index + 1}`} page={page} /></article>)}</div>;
+  return <div className="cooking-quick-grid">{experiences.map((experience, index) => <article className="cooking-card cooking-card-quick" key={experience.id}><ExperienceImage experience={experience} priority={index === 0} /><div className="experience-card-content"><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.positioning}</p><dl className="cooking-facts"><BestFor items={experience.editorial.bestFor.slice(0, 2)} /><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl><ProviderButtons experience={experience} position={`quick_pick_${index + 1}`} page={page} /></div></article>)}</div>;
 }
 
 export function CookingComparisonCard({ experience, position, page = defaultPage }: { experience: CookingExperience; position: string; page?: string }) {
-  return <article className="editorial-comparison-card"><div className="comparison-title"><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.positioning}</p></div><div className="comparison-editorial"><dl><BestFor items={experience.editorial.bestFor} /></dl><details><summary>Editorial notes</summary><dl><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl></details></div><div className="comparison-action"><ProviderButtons experience={experience} position={position} page={page} /></div></article>;
+  return <article className="editorial-comparison-card"><ExperienceImage experience={experience} /><div className="comparison-title"><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.positioning}</p></div><div className="comparison-editorial"><dl><BestFor items={experience.editorial.bestFor} /></dl><details><summary>Editorial notes</summary><dl><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl></details></div><div className="comparison-action"><ProviderButtons experience={experience} position={position} page={page} /></div></article>;
 }
 
 export function RelatedGuides() {

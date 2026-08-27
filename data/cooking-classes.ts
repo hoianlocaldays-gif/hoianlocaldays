@@ -1,3 +1,5 @@
+import type { ExperienceImage } from "./experience-image";
+
 export type CookingProviderKey = "viator" | "getyourguide";
 
 export type CookingProvider = {
@@ -19,6 +21,7 @@ export type CookingExperience = {
     notIdealFor: string;
   };
   providers: Partial<Record<CookingProviderKey, CookingProvider>>;
+  image: ExperienceImage | null;
   lastVerified: string;
 };
 
@@ -36,6 +39,7 @@ export const cookingExperiences: CookingExperience[] = [
       notIdealFor: "Travelers primarily looking for an in-depth culinary lesson without the sightseeing activities.",
     },
     providers: { viator: { provider: "viator", productId: "141961P1", url: "https://www.viator.com/tours/Hoi-An/Local-market-basket-boat-fishing-and-cooking-experience/d5229-141961P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-141961", campaign: "hal-cooking-141961", enabled: true } },
+    image: { src: "/images/experiences/cooking/classic-market-cooking.webp", alt: "Travelers taking part in a hands-on cooking class in Hoi An", sourcePlatform: "viator", sourceProductId: "141961P1", sourcePage: "https://www.viator.com/tours/Hoi-An/Local-market-basket-boat-fishing-and-cooking-experience/d5229-141961P1", sourceType: "verified-provider", downloadedAt: verified },
     lastVerified: verified,
   },
   {
@@ -52,6 +56,7 @@ export const cookingExperiences: CookingExperience[] = [
       viator: { provider: "viator", productId: "424184P4", url: "https://www.viator.com/tours/Hoi-An/Hoi-AnCooking-Class-Local-Market-Basket-Boat-and-Cooking/d5229-424184P4?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-cocolocal", campaign: "hal-cooking-cocolocal", enabled: true },
       getyourguide: { provider: "getyourguide", productId: "1061073", url: "https://www.getyourguide.com/hoi-an-l831/hoi-an-cooking-class-market-tour-fishing-basket-boating-t1061073/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-cooking-cocolocal-gyg", campaign: "hal-cooking-cocolocal-gyg", enabled: true },
     },
+    image: { src: "/images/experiences/cooking/cocolocal-farm.webp", alt: "Family-friendly cooking experience at Cocolocal Farm in Hoi An", sourcePlatform: "owner-supplied", sourceProductId: "1061073", sourcePage: "https://pin.it/4HIwKxEf3", sourceType: "owner-selected", downloadedAt: verified, qualityStatus: "good" },
     lastVerified: verified,
   },
   {
@@ -65,6 +70,7 @@ export const cookingExperiences: CookingExperience[] = [
       notIdealFor: "Travelers wanting the classic market + basket boat + cooking combination.",
     },
     providers: { getyourguide: { provider: "getyourguide", productId: "568322", url: "https://www.getyourguide.com/hoi-an-l831/cooking-class-in-the-middle-of-organic-farm-t568322/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-cooking-organicfarm-gyg", campaign: "hal-cooking-organicfarm-gyg", enabled: true } },
+    image: { src: "/images/experiences/cooking/organic-farm-cooking.webp", alt: "Cooking class surrounded by organic produce at Tra Que in Hoi An", sourcePlatform: "owner-supplied", sourceProductId: "568322", sourcePage: "https://pin.it/4HIwKxEf3", sourceType: "owner-selected", downloadedAt: verified, qualityStatus: "replace-when-better-source-available" },
     lastVerified: verified,
   },
   {
@@ -78,6 +84,7 @@ export const cookingExperiences: CookingExperience[] = [
       notIdealFor: "Travelers seeking a cooking-first or quieter culinary experience.",
     },
     providers: { getyourguide: { provider: "getyourguide", productId: "540267", url: "https://www.getyourguide.com/hoi-an-l831/hoi-an-basket-boat-with-lantern-making-cooking-class-tour-t540267/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-cooking-lantern-gyg", campaign: "hal-cooking-lantern-gyg", enabled: true } },
+    image: { src: "/images/experiences/cooking/lantern-cooking-combo.webp", alt: "Lantern making and cooking experience in Hoi An", sourcePlatform: "owner-supplied", sourceProductId: "540267", sourcePage: "https://pin.it/4HIwKxEf3", sourceType: "owner-selected", downloadedAt: verified, qualityStatus: "replace-when-better-source-available" },
     lastVerified: verified,
   },
   {
@@ -91,6 +98,7 @@ export const cookingExperiences: CookingExperience[] = [
       notIdealFor: "Travelers who prefer a cooking-only format.",
     },
     providers: { viator: { provider: "viator", productId: "221841P24", url: "https://www.viator.com/tours/Hoi-An/Cooking-Class-Hoi-An-Local-Market-Basket-Boat-Fishing-and-Cooking-Experience/d5229-221841P24?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-221841", campaign: "hal-cooking-221841", enabled: true } },
+    image: { src: "/images/experiences/cooking/personal-market-cooking.webp", alt: "Small-group hands-on cooking experience with a local host in Hoi An", sourcePlatform: "viator", sourceProductId: "221841P24", sourcePage: "https://www.viator.com/tours/Hoi-An/Cooking-Class-Hoi-An-Local-Market-Basket-Boat-Fishing-and-Cooking-Experience/d5229-221841P24", sourceType: "verified-provider", downloadedAt: verified },
     lastVerified: verified,
   },
   {
@@ -104,6 +112,7 @@ export const cookingExperiences: CookingExperience[] = [
       notIdealFor: "Travelers whose main priority is sightseeing rather than cooking.",
     },
     providers: { viator: { provider: "viator", productId: "164857P1", url: "https://www.viator.com/tours/Hoi-An/Hoi-An-Eco-Cooking-Tour/d5229-164857P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-164857", campaign: "hal-cooking-164857", enabled: true } },
+    image: { src: "/images/experiences/cooking/food-lovers-cooking.webp", alt: "Travelers preparing Vietnamese dishes during a Hoi An cooking class", sourcePlatform: "viator", sourceProductId: "164857P1", sourcePage: "https://www.viator.com/tours/Hoi-An/Hoi-An-Eco-Cooking-Tour/d5229-164857P1", sourceType: "verified-provider", downloadedAt: verified },
     lastVerified: verified,
   },
   {
@@ -117,6 +126,7 @@ export const cookingExperiences: CookingExperience[] = [
       notIdealFor: "Travelers wanting an activity-packed all-in-one itinerary.",
     },
     providers: { viator: { provider: "viator", productId: "201338P1", url: "https://www.viator.com/tours/Hoi-An/Eco-cooking-class-and-Fishing-tour-by-bamboo-basket-boat/d5229-201338P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-201338", campaign: "hal-cooking-201338", enabled: true } },
+    image: { src: "/images/experiences/cooking/small-local-cooking.webp", alt: "Small-group local cooking class in Hoi An", sourcePlatform: "viator", sourceProductId: "201338P1", sourcePage: "https://www.viator.com/tours/Hoi-An/Eco-cooking-class-and-Fishing-tour-by-bamboo-basket-boat/d5229-201338P1", sourceType: "verified-provider", downloadedAt: verified },
     lastVerified: verified,
   },
 ];

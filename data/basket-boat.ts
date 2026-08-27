@@ -1,4 +1,5 @@
 import type { CookingProvider, CookingProviderKey } from "@/data/cooking-classes";
+import type { ExperienceImage } from "@/data/experience-image";
 
 export type BasketBoatEditorial = {
   label: "Best Overall" | "Best for a Lively Experience" | "Best for Families" | "Best Short & Simple" | "Best Quieter Experience" | "Best Cooking Combo" | "Best All-in-One";
@@ -15,6 +16,7 @@ export type BasketBoatExperience = {
   name: string;
   editorial: BasketBoatEditorial;
   providers: Partial<Record<CookingProviderKey, CookingProvider>>;
+  image: ExperienceImage | null;
 };
 
 const verified = "2026-08-27";
@@ -33,6 +35,7 @@ export const basketBoatExperiences: BasketBoatExperience[] = [
       lastVerified: verified,
     },
     providers: { viator: { provider: "viator", productId: "349311P2", url: "https://www.viator.com/tours/Hoi-An/Basket-Boat-Ride-in-Hoi-An-basket-boat-spinning-casting-the-net-catching-crab/d5229-349311P2?pid=P00316970&mcid=42383&medium=link&campaign=hal-basketboat-overall-viator", campaign: "hal-basketboat-overall-viator", enabled: true } },
+    image: { src: "/images/experiences/basket-boat/classic-basketboat.webp", alt: "Traditional basket boat experience in the Cam Thanh coconut forest", sourcePlatform: "viator", sourceProductId: "349311P2", sourcePage: "https://www.viator.com/tours/Hoi-An/Basket-Boat-Ride-in-Hoi-An-basket-boat-spinning-casting-the-net-catching-crab/d5229-349311P2", sourceType: "verified-provider", downloadedAt: verified },
   },
   {
     id: "popular-coconut-basketboat",
@@ -47,6 +50,7 @@ export const basketBoatExperiences: BasketBoatExperience[] = [
       lastVerified: verified,
     },
     providers: { getyourguide: { provider: "getyourguide", productId: "624499", url: "https://www.getyourguide.com/hoi-an-l831/hoi-an-basket-boat-ride-in-the-coconut-forest-t624499/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-basketboat-popular-gyg", campaign: "hal-basketboat-popular-gyg", enabled: true } },
+    image: { src: "/images/experiences/basket-boat/popular-coconut-basketboat.webp", alt: "Lively basket boat experience in Hoi An's coconut forest", sourcePlatform: "getyourguide", sourceProductId: "624499", sourcePage: "https://www.getyourguide.com/hoi-an-l831/hoi-an-basket-boat-ride-in-the-coconut-forest-t624499/", sourceType: "verified-provider", downloadedAt: verified },
   },
   {
     id: "family-basketboat",
@@ -61,6 +65,7 @@ export const basketBoatExperiences: BasketBoatExperience[] = [
       lastVerified: verified,
     },
     providers: { viator: { provider: "viator", productId: "201338P2", url: "https://www.viator.com/tours/Hoi-An/Hoi-An-Basket-Boat-Ride-in-water-Coconut-Forest-Included-pick-up/d5229-201338P2?pid=P00316970&mcid=42383&medium=link&campaign=hal-basketboat-family-viator", campaign: "hal-basketboat-family-viator", enabled: true } },
+    image: { src: "/images/experiences/basket-boat/family-basketboat.webp", alt: "Relaxed basket boat ride through the Hoi An coconut forest", sourcePlatform: "viator", sourceProductId: "201338P2", sourcePage: "https://www.viator.com/tours/Hoi-An/Hoi-An-Basket-Boat-Ride-in-water-Coconut-Forest-Included-pick-up/d5229-201338P2", sourceType: "verified-provider", downloadedAt: verified },
   },
   {
     id: "quieter-basketboat",
@@ -75,6 +80,7 @@ export const basketBoatExperiences: BasketBoatExperience[] = [
       lastVerified: verified,
     },
     providers: { getyourguide: { provider: "getyourguide", productId: "886005", url: "https://www.getyourguide.com/hoi-an-l831/hoi-an-basket-boat-ride-in-the-coconut-forest-t886005/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-basketboat-quiet-gyg", campaign: "hal-basketboat-quiet-gyg", enabled: true } },
+    image: { src: "/images/experiences/basket-boat/quieter-basketboat.webp", alt: "Quiet basket boat ride through the Bay Mau coconut forest", sourcePlatform: "getyourguide", sourceProductId: "886005", sourcePage: "https://www.getyourguide.com/hoi-an-l831/hoi-an-basket-boat-ride-in-the-coconut-forest-t886005/", sourceType: "verified-provider", downloadedAt: verified },
   },
   {
     id: "short-basketboat",
@@ -89,6 +95,7 @@ export const basketBoatExperiences: BasketBoatExperience[] = [
       lastVerified: verified,
     },
     providers: { getyourguide: { provider: "getyourguide", productId: "543538", url: "https://www.getyourguide.com/hoi-an-l831/hoi-an-coconut-basket-boat-ride-and-fishing-experience-t543538/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-basketboat-short-gyg", campaign: "hal-basketboat-short-gyg", enabled: true } },
+    image: { src: "/images/experiences/basket-boat/short-basketboat.webp", alt: "Short basket boat and fishing experience in Hoi An", sourcePlatform: "getyourguide", sourceProductId: "543538", sourcePage: "https://www.getyourguide.com/hoi-an-l831/hoi-an-coconut-basket-boat-ride-and-fishing-experience-t543538/", sourceType: "verified-provider", downloadedAt: verified },
   },
 ];
 

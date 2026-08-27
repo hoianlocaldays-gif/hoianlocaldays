@@ -59,3 +59,14 @@
 
 .my-son-picks{background:var(--white)}.my-son-picks .affiliate-note{margin:0 0 1.2rem}.my-son-commerce{background:var(--green);color:#fff}.my-son-commerce .editorial-comparison-list{max-width:1120px}.my-son-commerce .editorial-comparison-card{border-left:3px solid var(--gold)}
 @media(max-width:620px){.my-son-picks .cooking-quick-grid{gap:.7rem}.my-son-picks .cooking-card{padding:1.1rem}.my-son-picks .cooking-card>p{font-size:.82rem;line-height:1.5}.my-son-commerce .editorial-comparison-card{border-left:0;border-top:3px solid var(--gold)}}
+
+/* Experience image system */
+.experience-card-image{position:relative;aspect-ratio:3/2;overflow:hidden;background:#dde1d9}
+.experience-card-image img{display:block;width:100%;height:100%;object-fit:cover}
+.cooking-card-quick:has(.experience-card-image){padding:0;overflow:hidden}
+.experience-card-content{display:flex;flex:1;flex-direction:column;gap:.75rem;padding:clamp(1.25rem,2.5vw,1.8rem)}
+.experience-card-content>p{margin:0;color:rgba(29,45,41,.72);font-size:.9rem;line-height:1.62}
+.editorial-comparison-card:has(>.experience-card-image){grid-template-columns:180px 1.15fr 1fr 220px}
+.editorial-comparison-card>.experience-card-image{border-radius:.15rem}
+@media(max-width:900px){.editorial-comparison-card:has(>.experience-card-image){grid-template-columns:160px 1fr 1fr}.editorial-comparison-card:has(>.experience-card-image) .comparison-action{grid-column:2/-1}}
+@media(max-width:620px){.experience-card-content{padding:1.15rem}.editorial-comparison-card:has(>.experience-card-image){grid-template-columns:1fr}.editorial-comparison-card:has(>.experience-card-image) .comparison-action{grid-column:auto}.editorial-comparison-card>.experience-card-image{margin:-1.1rem -1.1rem 0}.editorial-comparison-card>.experience-card-image img{width:calc(100% + 2.2rem);max-width:none}}

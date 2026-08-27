@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { TrackedLink } from "./tracked-link";
 import { AffiliateDisclosure } from "./affiliate-disclosure";
-import { BestFor, NotIdealFor, ProviderButtons, WhyWePickedIt } from "./cooking-editorial";
+import { BestFor, ExperienceImage, NotIdealFor, ProviderButtons, WhyWePickedIt } from "./cooking-editorial";
 import { basketBoatExperiences, basketBoatMistakes, basketBoatQuickPicks, type BasketBoatExperience } from "@/data/basket-boat";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { EditorSignal } from "./editor-signal";
@@ -9,11 +9,11 @@ import { EditorSignal } from "./editor-signal";
 const page = "basket-boat-hoi-an";
 
 function BasketQuickPicks() {
-  return <div className="basket-commerce-quick">{basketBoatQuickPicks.map((experience, index) => <article className="cooking-card cooking-card-quick" key={experience.id}><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.shortDescription}</p><dl className="cooking-facts"><BestFor items={experience.editorial.bestFor.slice(0, 2)} /><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl><ProviderButtons experience={experience} position={`quick_pick_${index + 1}`} page={page} /></article>)}</div>;
+  return <div className="basket-commerce-quick">{basketBoatQuickPicks.map((experience, index) => <article className="cooking-card cooking-card-quick" key={experience.id}><ExperienceImage experience={experience} priority={index === 0} /><div className="experience-card-content"><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.shortDescription}</p><dl className="cooking-facts"><BestFor items={experience.editorial.bestFor.slice(0, 2)} /><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl><ProviderButtons experience={experience} position={`quick_pick_${index + 1}`} page={page} /></div></article>)}</div>;
 }
 
 function BasketComparisonCard({ experience, position }: { experience: BasketBoatExperience; position: string }) {
-  return <article className="editorial-comparison-card basket-comparison-card"><div className="comparison-title"><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.shortDescription}</p></div><div className="comparison-editorial"><dl><BestFor items={experience.editorial.bestFor} /></dl><details><summary>Editorial notes</summary><dl><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl></details></div><div className="comparison-action"><ProviderButtons experience={experience} position={position} page={page} /></div></article>;
+  return <article className="editorial-comparison-card basket-comparison-card"><ExperienceImage experience={experience} /><div className="comparison-title"><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.shortDescription}</p></div><div className="comparison-editorial"><dl><BestFor items={experience.editorial.bestFor} /></dl><details><summary>Editorial notes</summary><dl><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl></details></div><div className="comparison-action"><ProviderButtons experience={experience} position={position} page={page} /></div></article>;
 }
 
 export function BasketBoatPage() {
