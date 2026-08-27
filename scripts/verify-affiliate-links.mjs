@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 
-const sources = ["../data/cooking-classes.ts", "../data/basket-boat.ts"].map((path) => readFileSync(new URL(path, import.meta.url), "utf8"));
+const sources = ["../data/cooking-classes.ts", "../data/basket-boat.ts", "../data/my-son.ts"].map((path) => readFileSync(new URL(path, import.meta.url), "utf8"));
 const viatorCampaigns = new Map([
   ["141961P1", "hal-cooking-141961"],
   ["424184P4", "hal-cooking-cocolocal"],
@@ -9,6 +9,9 @@ const viatorCampaigns = new Map([
   ["201338P1", "hal-cooking-201338"],
   ["349311P2", "hal-basketboat-overall-viator"],
   ["201338P2", "hal-basketboat-family-viator"],
+  ["375749P1", "hal-myson-overall-viator"],
+  ["212568P6", "hal-myson-private-viator"],
+  ["20353P5", "hal-myson-bike-viator"],
 ]);
 const getYourGuideCampaigns = new Map([
   ["1061073", "hal-cooking-cocolocal-gyg"],
@@ -17,10 +20,12 @@ const getYourGuideCampaigns = new Map([
   ["624499", "hal-basketboat-popular-gyg"],
   ["886005", "hal-basketboat-quiet-gyg"],
   ["543538", "hal-basketboat-short-gyg"],
+  ["514776", "hal-myson-early-gyg"],
+  ["519118", "hal-myson-adventure-gyg"],
 ]);
 const urls = sources.flatMap((source) => [...source.matchAll(/url: "(https:\/\/[^\"]+)"/g)].map((match) => match[1]));
 
-if (urls.length !== 13) throw new Error(`Expected 13 supplied affiliate URLs, found ${urls.length}.`);
+if (urls.length !== 18) throw new Error(`Expected 18 supplied affiliate URLs, found ${urls.length}.`);
 for (const href of urls) {
   const url = new URL(href);
   if (url.hostname === "www.viator.com") {
@@ -40,4 +45,4 @@ for (const href of urls) {
   throw new Error(`Unauthorized affiliate hostname: ${url.hostname}`);
 }
 
-console.log("Verified 7 Viator and 6 GetYourGuide affiliate URLs across Cooking Classes and Basket Boats.");
+console.log("Verified 10 Viator and 8 GetYourGuide affiliate URLs across Cooking Classes, Basket Boats and My Son.");

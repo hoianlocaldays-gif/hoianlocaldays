@@ -1,17 +1,6 @@
-import type { CookingProvider, CookingProviderKey } from "./cooking-classes";
+import type { CookingExperience } from "./cooking-classes";
 
-export type MySonExperience = {
-  id: string;
-  name: string;
-  editorial: {
-    positioning: string;
-    bestFor: string[];
-    notIdealFor: string[];
-  };
-  providers: Partial<Record<CookingProviderKey, CookingProvider>>;
-};
-
-export const mySonExperience: MySonExperience = {
+export const mySonOverview = {
   id: "my-son-sanctuary-visit",
   name: "My Son Sanctuary Visit from Hoi An",
   editorial: {
@@ -21,6 +10,78 @@ export const mySonExperience: MySonExperience = {
   },
   providers: {},
 };
+
+const verified = "2026-08-27";
+
+export const mySonExperiences: CookingExperience[] = [
+  {
+    id: "myson-overall-group",
+    name: "Small-Group My Son Morning Experience",
+    editorial: {
+      label: "Best Overall Group Tour",
+      positioning: "A straightforward small-group My Son experience for first-time visitors who want transport, structure and guided context without arranging a private trip.",
+      whyWePickedIt: "The organized small-group format is a clear starting point for first-time visitors who want context without a private schedule.",
+      bestFor: ["First-time visitors", "Couples", "Solo travelers", "Travelers wanting an organized group experience"],
+      notIdealFor: "Travelers wanting full schedule flexibility or visitors specifically seeking a private experience.",
+    },
+    providers: { viator: { provider: "viator", productId: "375749P1", url: "https://www.viator.com/tours/Hoi-An/My-Son-Morning-Daily-Tour-With-Small-Group-From-Hoi-An/d5229-375749P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-myson-overall-viator", campaign: "hal-myson-overall-viator", enabled: true } },
+    lastVerified: verified,
+  },
+  {
+    id: "myson-early-morning",
+    name: "Early-Morning My Son Experience",
+    editorial: {
+      label: "Best Early Morning",
+      positioning: "An early-start option for travelers who prioritize visiting My Son earlier in the day and are comfortable with an early departure.",
+      whyWePickedIt: "It gives early risers a distinct timing choice while leaving the afternoon available, without promising empty temples or particular weather.",
+      bestFor: ["Early risers", "Photographers", "Travelers sensitive to daytime heat", "Visitors who want the afternoon free"],
+      notIdealFor: "Travelers who dislike early starts or visitors wanting a slow morning in Hoi An.",
+    },
+    providers: { getyourguide: { provider: "getyourguide", productId: "514776", url: "https://www.getyourguide.com/hoi-an-l831/hoi-an-my-son-sanctuary-early-morning-visit-with-breakfast-t514776/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-myson-early-gyg", campaign: "hal-myson-early-gyg", enabled: true } },
+    lastVerified: verified,
+  },
+  {
+    id: "myson-private",
+    name: "Private My Son Sanctuary Experience",
+    editorial: {
+      label: "Best Private Experience",
+      positioning: "A private My Son option for travelers who value flexibility, personal pacing and a more individualized visit.",
+      whyWePickedIt: "The private format directly addresses pace, flexibility and group-specific interests rather than competing as another shared excursion.",
+      bestFor: ["Couples", "Families", "Small private groups", "Travelers who value flexibility"],
+      notIdealFor: "Travelers mainly prioritizing the lowest-cost shared format.",
+    },
+    providers: { viator: { provider: "viator", productId: "212568P6", url: "https://www.viator.com/tours/Hoi-An/My-Son-sanctuary/d5229-212568P6?pid=P00316970&mcid=42383&medium=link&campaign=hal-myson-private-viator", campaign: "hal-myson-private-viator", enabled: true } },
+    lastVerified: verified,
+  },
+  {
+    id: "myson-bike",
+    name: "My Son Bike & Countryside Experience",
+    editorial: {
+      label: "Best Active Experience",
+      positioning: "An active alternative combining the journey toward My Son with cycling and countryside experience rather than treating the sanctuary as a simple vehicle-based excursion.",
+      whyWePickedIt: "Cycling makes the journey and countryside part of the experience, creating a clearly different choice from vehicle-based visits.",
+      bestFor: ["Active travelers", "Cyclists", "Couples", "Travelers wanting countryside + culture"],
+      notIdealFor: "Travelers wanting the easiest or quickest My Son visit, or visitors who do not enjoy cycling.",
+    },
+    providers: { viator: { provider: "viator", productId: "20353P5", url: "https://www.viator.com/tours/Hoi-An/Half-Day-My-Son-Bike-Tour-from-Hoi-An/d5229-20353P5?pid=P00316970&mcid=42383&medium=link&campaign=hal-myson-bike-viator", campaign: "hal-myson-bike-viator", enabled: true } },
+    lastVerified: verified,
+  },
+  {
+    id: "myson-adventure",
+    name: "My Son Trekking & Nature Experience",
+    editorial: {
+      label: "Best Nature & Adventure",
+      positioning: "A more active My Son combination for travelers who want to pair cultural sightseeing with trekking and nature rather than a conventional sanctuary-only visit.",
+      whyWePickedIt: "The nature and trekking focus offers a meaningfully different format for active or repeat visitors.",
+      bestFor: ["Active travelers", "Nature lovers", "Repeat visitors", "Travelers wanting something less conventional"],
+      notIdealFor: "Travelers wanting a simple half-day My Son visit or visitors prioritizing minimum walking and activity.",
+    },
+    providers: { getyourguide: { provider: "getyourguide", productId: "519118", url: "https://www.getyourguide.com/hoi-an-l831/my-son-sanctuary-and-mountain-trekking-pilgrimage-t519118/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-myson-adventure-gyg", campaign: "hal-myson-adventure-gyg", enabled: true } },
+    lastVerified: verified,
+  },
+];
+
+export const mySonQuickPicks = mySonExperiences.slice(0, 3);
 
 export const visitStyles = [
   { title: "Morning Group Tour", bestFor: ["First-time visitors", "Solo travelers", "Budget-conscious travelers", "Travelers wanting an organized trip"], tradeOff: "A fixed schedule, shared transport and a potentially busier experience." },

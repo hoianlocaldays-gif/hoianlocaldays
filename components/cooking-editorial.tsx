@@ -31,12 +31,12 @@ export function ProviderButtons({ experience, position, page = defaultPage }: { 
   return <div className="provider-action provider-action-multiple"><strong>Check Availability</strong><div>{providers.map((provider) => <AffiliateCTA key={provider.provider} experienceId={experience.id} provider={provider.provider} providerProductId={provider.productId} campaign={provider.campaign} page={page} position={position} href={provider.url} label={providerName[provider.provider]} />)}</div></div>;
 }
 
-export function QuickPicks({ experiences }: { experiences: CookingExperience[] }) {
-  return <div className="cooking-quick-grid">{experiences.map((experience, index) => <article className="cooking-card cooking-card-quick" key={experience.id}><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.positioning}</p><dl className="cooking-facts"><BestFor items={experience.editorial.bestFor.slice(0, 2)} /></dl><ProviderButtons experience={experience} position={`quick_pick_${index + 1}`} /></article>)}</div>;
+export function QuickPicks({ experiences, page = defaultPage }: { experiences: CookingExperience[]; page?: string }) {
+  return <div className="cooking-quick-grid">{experiences.map((experience, index) => <article className="cooking-card cooking-card-quick" key={experience.id}><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.positioning}</p><dl className="cooking-facts"><BestFor items={experience.editorial.bestFor.slice(0, 2)} /></dl><ProviderButtons experience={experience} position={`quick_pick_${index + 1}`} page={page} /></article>)}</div>;
 }
 
-export function CookingComparisonCard({ experience, position }: { experience: CookingExperience; position: string }) {
-  return <article className="editorial-comparison-card"><div className="comparison-title"><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.positioning}</p></div><div className="comparison-editorial"><dl><BestFor items={experience.editorial.bestFor} /></dl><details><summary>Editorial notes</summary><dl><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl></details></div><div className="comparison-action"><ProviderButtons experience={experience} position={position} /><LastVerified date={experience.lastVerified} /></div></article>;
+export function CookingComparisonCard({ experience, position, page = defaultPage }: { experience: CookingExperience; position: string; page?: string }) {
+  return <article className="editorial-comparison-card"><div className="comparison-title"><span className="pick-label">{experience.editorial.label}</span><h3>{experience.name}</h3><p>{experience.editorial.positioning}</p></div><div className="comparison-editorial"><dl><BestFor items={experience.editorial.bestFor} /></dl><details><summary>Editorial notes</summary><dl><WhyWePickedIt>{experience.editorial.whyWePickedIt}</WhyWePickedIt><NotIdealFor>{experience.editorial.notIdealFor}</NotIdealFor></dl></details></div><div className="comparison-action"><ProviderButtons experience={experience} position={position} page={page} /><LastVerified date={experience.lastVerified} /></div></article>;
 }
 
 export function RelatedGuides() {

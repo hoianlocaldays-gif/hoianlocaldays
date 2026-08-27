@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { EditorSignal } from "./editor-signal";
+import { AffiliateDisclosure } from "./affiliate-disclosure";
+import { CookingComparisonCard, QuickPicks } from "./cooking-editorial";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
-import { commonMySonMistakes, groupVsPrivate, morningVsAfternoon, mySonExperience, visitStyles } from "@/data/my-son";
+import { commonMySonMistakes, groupVsPrivate, morningVsAfternoon, mySonExperiences, mySonOverview, mySonQuickPicks, visitStyles } from "@/data/my-son";
+
+const page = "my-son-tours-from-hoi-an";
 
 export function MySonPage() {
   const breadcrumb = breadcrumbJsonLd([
@@ -21,13 +25,17 @@ export function MySonPage() {
 
     <section className="my-son-styles section" id="choose-your-visit"><div className="my-son-heading"><p className="eyebrow">Main decision</p><h2>Which My Son Experience Is Right for You?</h2><p>Choose the experience format first. Bookable providers can be compared later without treating each OTA listing as a different underlying experience.</p></div><div className="my-son-style-grid">{visitStyles.map((style, index) => <article key={style.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{style.title}</h3><strong>Best for</strong><ul>{style.bestFor.map((item) => <li key={item}>{item}</li>)}</ul><p><b>Trade-off:</b> {style.tradeOff}</p></article>)}</div></section>
 
+    <section className="my-son-picks section" id="quick-picks"><div className="section-heading"><p className="eyebrow">Quick picks</p><h2>Short on Time? Start Here</h2><p>Three distinct starting points: an organized group visit, an earlier departure or a private format.</p></div><AffiliateDisclosure /><QuickPicks experiences={mySonQuickPicks} page={page} /></section>
+
     <section className="my-son-comparison section"><div className="my-son-heading"><p className="eyebrow">Timing decision</p><h2>Morning or Afternoon?</h2><p>Neither is universally better. Match the departure window to your heat tolerance, energy and plans in Hoi An.</p></div><div className="my-son-compare-grid">{morningVsAfternoon.map((option) => <article key={option.title}><h3>{option.title}</h3><div><strong>Potential advantages</strong><ul>{option.advantages.map((item) => <li key={item}>{item}</li>)}</ul></div><div><strong>Potential disadvantages</strong><ul>{option.disadvantages.map((item) => <li key={item}>{item}</li>)}</ul></div></article>)}</div><p className="my-son-recommendation"><strong>HAL recommendation:</strong> Start earlier if heat and photography matter most. Choose the afternoon when protecting a relaxed Hoi An morning matters more, while keeping weather and a later return in mind.</p></section>
 
     <section className="my-son-split section"><div><p className="eyebrow">Format decision</p><h2>Group Tour or Private Trip?</h2></div><div className="my-son-compare-grid">{groupVsPrivate.map((option) => <article key={option.title}><h3>{option.title}</h3><strong>Choose this if</strong><ul>{option.chooseIf.map((item) => <li key={item}>{item}</li>)}</ul></article>)}</div></section>
 
     <section className="my-son-guide section"><div><p className="eyebrow">Interpretation</p><h2>Do You Need a Guide at My Son?</h2></div><div><p>A guide can add meaningful context because much of the site’s significance comes from understanding Champa history, Hindu religious context, architecture and how the sanctuary developed.</p><p>An independent visit can still suit slower travelers, photographers and visitors who prefer self-guided exploration. A guide adds context; it is not mandatory for every visitor.</p></div></section>
 
-    <section className="my-son-fit section"><div className="my-son-heading inverse"><p className="eyebrow">Traveler fit</p><h2>Who Is My Son Best For?</h2></div><div className="my-son-fit-grid"><article><h3>Strong fit</h3><ul>{mySonExperience.editorial.bestFor.map((item) => <li key={item}>{item}</li>)}</ul></article><article><h3>Think Twice If</h3><ul>{mySonExperience.editorial.notIdealFor.map((item) => <li key={item}>{item}</li>)}</ul></article></div></section>
+    <section className="my-son-commerce section" id="compare-all"><div className="section-heading inverse"><p className="eyebrow">HAL editorial shortlist</p><h2>Compare Our 5 My Son Picks</h2><p>Compare five meaningfully different visit styles first, then use the available provider to check current details.</p></div><div className="editorial-comparison-list">{mySonExperiences.map((experience, index) => <div id={experience.id} key={experience.id}><CookingComparisonCard experience={experience} position={`comparison_${index + 1}`} page={page} /></div>)}</div></section>
+
+    <section className="my-son-fit section"><div className="my-son-heading inverse"><p className="eyebrow">Traveler fit</p><h2>Who Is My Son Best For?</h2></div><div className="my-son-fit-grid"><article><h3>Strong fit</h3><ul>{mySonOverview.editorial.bestFor.map((item) => <li key={item}>{item}</li>)}</ul></article><article><h3>Think Twice If</h3><ul>{mySonOverview.editorial.notIdealFor.map((item) => <li key={item}>{item}</li>)}</ul></article></div></section>
 
     <section className="my-son-family section"><div><p className="eyebrow">Family planning</p><h2>Visiting My Son With Kids</h2></div><div><p>The open-air setting, unusual architecture and cultural story can create an educational visit, particularly for some older children. It still needs realistic planning around heat, walking, travel time, attention span and breaks.</p><p>No age or comfort level is guaranteed; use what you know about your child rather than treating My Son as a universal family activity.</p><Link className="primary-button" href="/hoi-an-with-kids">Planning Hoi An With Kids</Link></div></section>
 
@@ -37,6 +45,6 @@ export function MySonPage() {
 
     <section className="my-son-mistakes section"><div className="my-son-heading inverse"><p className="eyebrow">Before choosing</p><h2>Common Mistakes When Choosing a My Son Trip</h2></div><div className="my-son-mistake-list">{commonMySonMistakes.map((mistake, index) => <article key={mistake.title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{mistake.title}</h3><p>{mistake.body}</p></div></article>)}</div></section>
 
-    <section className="my-son-trust section"><div><p className="eyebrow">Editorial note</p><h2>Experience First, Provider Second</h2></div><div><p>Recommendations are based on traveler fit and current, verified information where it is available. Hoi An Local Days does not claim that every My Son tour has been personally tested.</p><p>This page currently compares visit styles, not operators. When provider options are added later, one underlying My Son experience may support several booking providers.</p><Link href="/editorial-methodology">Read our editorial methodology →</Link></div></section>
+    <section className="my-son-trust section"><div><p className="eyebrow">Editorial note</p><h2>Experience First, Provider Second</h2></div><div><p>Recommendations are based on traveler fit and current, verified information where it is available. Hoi An Local Days does not claim that these My Son experiences have been personally tested.</p><p>The five picks represent different visit styles. Their current Viator or GetYourGuide links are booking options, not the reason an experience is recommended. “Affiliate link checked” confirms the supplied URL and tracking parameters—not live availability or every inclusion.</p><Link href="/editorial-methodology">Read our editorial methodology →</Link></div></section>
   </main>;
 }
