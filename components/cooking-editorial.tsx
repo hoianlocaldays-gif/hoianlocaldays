@@ -19,7 +19,7 @@ export function NotIdealFor({ children }: { children: string }) {
 
 export function LastVerified({ date }: { date: string }) {
   const formatted = new Intl.DateTimeFormat("en", { month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
-  return <small className="last-verified">Booking links verified {formatted}</small>;
+  return <small className="last-verified">Affiliate link checked {formatted}</small>;
 }
 
 export function ProviderButtons({ experience, position, page = defaultPage }: { experience: Pick<CookingExperience, "id" | "providers">; position: string; page?: string }) {

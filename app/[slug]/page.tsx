@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { LandingPage } from "@/components/landing-page";
 import { CookingClassPage } from "@/components/cooking-class-page";
 import { ThingsToDoHub } from "@/components/things-to-do-hub";
 import { HoiAnWithKidsPage } from "@/components/hoi-an-with-kids-page";
 import { BasketBoatPage } from "@/components/basket-boat-page";
 import { ThreeDaysItineraryPage } from "@/components/three-days-itinerary-page";
+import { EditorialMethodologyPage } from "@/components/editorial-methodology-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -14,7 +15,9 @@ const legal: Record<string, { title: string; body: string[] }> = {
   "terms": { title: "Terms", body: ["Hoi An Local Days provides independent travel discovery and decision-support content. It is not currently the merchant of record for affiliate bookings.", "Prices and availability shown as reference information must be confirmed with the relevant provider. Booking, cancellation and refund terms are governed by the provider you choose."] },
 };
 
-export function generateStaticParams() { return [...landingPages.map((page) => ({ slug: page.slug })), ...Object.keys(legal).map((slug) => ({ slug }))]; }
+const unfinishedSlugs = new Set(["food-tours-hoi-an", "my-son-tours-from-hoi-an", "day-trips-from-hoi-an", "hoi-an-airport-transfer", "where-to-stay-hoi-an", "hoi-an-itinerary"]);
+
+export function generateStaticParams() { return [...landingPages.map((page) => ({ slug: page.slug })), ...Object.keys(legal).map((slug) => ({ slug })), { slug: "editorial-methodology" }]; }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params; const page = getLandingPage(slug); const legalPage = legal[slug];
@@ -43,18 +46,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Plan 3 days in Hoi An with a practical itinerary covering the Ancient Town, local food, cooking classes, basket boats, countryside, beaches and optional day trips.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
   }
-  if (page) return { title: `${page.title} | Hoi An Local Days`, description: page.description, alternates: { canonical: `/${slug}` }, openGraph: { title: page.title, description: page.description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title: page.title, description: page.description } };
+  if (slug === "editorial-methodology") {
+    const title = "How Hoi An Local Days Chooses What to Recommend";
+    const description = "Learn how Hoi An Local Days evaluates experiences, traveler fit, local context, provider options, verification and affiliate independence.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+  }
+  if (page) return { title: `${page.title} | Hoi An Local Days`, description: page.description, alternates: { canonical: `/${slug}` }, robots: unfinishedSlugs.has(slug) ? { index: false, follow: false } : undefined, openGraph: { title: page.title, description: page.description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title: page.title, description: page.description } };
   if (legalPage) return { title: `${legalPage.title} | Hoi An Local Days`, alternates: { canonical: `/${slug}` } };
   return {};
 }
 
 export default async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const page = getLandingPage(slug);
+  if (slug === "hoi-an-itinerary") permanentRedirect("/3-days-in-hoi-an");
   if (slug === "cooking-classes-hoi-an") return <CookingClassPage />;
   if (slug === "things-to-do-in-hoi-an") return <ThingsToDoHub />;
   if (slug === "hoi-an-with-kids") return <HoiAnWithKidsPage />;
   if (slug === "basket-boat-hoi-an") return <BasketBoatPage />;
   if (slug === "3-days-in-hoi-an") return <ThreeDaysItineraryPage />;
+  if (slug === "editorial-methodology") return <EditorialMethodologyPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();
   return <main className="legal-page section"><p className="eyebrow">Hoi An Local Days</p><h1>{legalPage.title}</h1>{legalPage.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</main>;

@@ -3,6 +3,7 @@ import { AffiliateDisclosure } from "./affiliate-disclosure";
 import { CookingComparisonCard, QuickPicks, RelatedGuides } from "./cooking-editorial";
 import { cookingExperiences, cookingQuickPicks } from "@/data/cooking-classes";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { EditorSignal } from "./editor-signal";
 
 export function CookingClassPage() {
   const breadcrumb = breadcrumbJsonLd([{ name: "Home", url: "https://hoianlocaldays.com" }, { name: "Cooking Classes in Hoi An", url: "https://hoianlocaldays.com/cooking-classes-hoi-an" }]);
@@ -16,6 +17,7 @@ export function CookingClassPage() {
       <h1>Best Cooking Classes in Hoi An</h1>
       <p className="cooking-lead">Seven carefully selected cooking experiences for different types of travelers — from family-friendly classes to farm-to-table cooking and all-in-one Hoi An experiences.</p>
       <AffiliateDisclosure />
+      <EditorSignal />
       <nav className="quick-nav" aria-label="On this page"><a href="#quick-picks">Quick picks</a><a href="#compare-all">Compare all 7</a><a href="#how-we-choose">How we choose</a></nav>
     </section>
     <section className="section cooking-section" id="quick-picks">

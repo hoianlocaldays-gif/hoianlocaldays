@@ -3,6 +3,7 @@ import { AffiliateDisclosure } from "./affiliate-disclosure";
 import { BestFor, LastVerified, NotIdealFor, ProviderButtons, WhyWePickedIt } from "./cooking-editorial";
 import { basketBoatExperiences, basketBoatMistakes, basketBoatQuickPicks, type BasketBoatExperience } from "@/data/basket-boat";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { EditorSignal } from "./editor-signal";
 
 const page = "basket-boat-hoi-an";
 
@@ -20,7 +21,7 @@ export function BasketBoatPage() {
   return <main className="basket-hub editorial-commerce-page">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumb, itemList]) }} />
     <div className="breadcrumb"><Link href="/">Home</Link><span>›</span><Link href="/things-to-do-in-hoi-an">Things to Do</Link><span>›</span><span>Basket Boats</span></div>
-    <section className="basket-hero section"><p className="eyebrow">Hoi An Local Days editorial comparison</p><h1>Best Basket Boat Experiences in Hoi An</h1><p>A practical guide to choosing a coconut basket boat experience — from short rides to market, cooking and countryside combinations.</p><aside>Not all basket boat experiences are the same. The right choice depends on whether you want a quick ride, a quieter experience or a half-day combination tour.</aside><AffiliateDisclosure /><nav className="quick-nav" aria-label="On this page"><a href="#quick-picks">Quick picks</a><a href="#compare-all">Compare all 5</a><a href="#choose-a-style">Choose a style</a></nav></section>
+    <section className="basket-hero section"><p className="eyebrow">Hoi An Local Days editorial comparison</p><h1>Best Basket Boat Experiences in Hoi An</h1><p>A practical guide to choosing a coconut basket boat experience — from short rides to market, cooking and countryside combinations.</p><aside>Not all basket boat experiences are the same. The right choice depends on whether you want a quick ride, a quieter experience or a half-day combination tour.</aside><AffiliateDisclosure /><EditorSignal /><nav className="quick-nav" aria-label="On this page"><a href="#quick-picks">Quick picks</a><a href="#compare-all">Compare all 5</a><a href="#choose-a-style">Choose a style</a></nav></section>
 
     <section className="section basket-commerce-picks" id="quick-picks"><div className="section-heading"><p className="eyebrow">Quick picks</p><h2>Short on Time? Start Here</h2><p>Three clear starting points for a classic first ride, a family-friendly standalone activity or a lower-key experience.</p></div><BasketQuickPicks /></section>
 

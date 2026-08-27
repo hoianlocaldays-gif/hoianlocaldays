@@ -1,7 +1,7 @@
 import type { CookingProvider, CookingProviderKey } from "@/data/cooking-classes";
 
 export type BasketBoatEditorial = {
-  label: "Best Overall" | "Most Popular" | "Best for Families" | "Best Short & Simple" | "Best Quieter Experience" | "Best Cooking Combo" | "Best All-in-One";
+  label: "Best Overall" | "Best for a Lively Experience" | "Best for Families" | "Best Short & Simple" | "Best Quieter Experience" | "Best Cooking Combo" | "Best All-in-One";
   shortDescription: string;
   whyWePickedIt: string;
   bestFor: string[];
@@ -36,12 +36,12 @@ export const basketBoatExperiences: BasketBoatExperience[] = [
   },
   {
     id: "popular-coconut-basketboat",
-    name: "Popular Coconut-Forest Basket Boat Experience",
+    name: "Lively Coconut-Forest Basket Boat Experience",
     editorial: {
-      label: "Most Popular",
-      shortDescription: "A highly popular coconut-forest basket boat option suited to travelers who enjoy an energetic and tourist-friendly atmosphere.",
-      whyWePickedIt: "It suits travelers who prefer a widely booked, energetic introduction to the coconut forest.",
-      bestFor: ["First-time visitors", "Families who enjoy lively activities", "Travelers who value a widely booked option"],
+      label: "Best for a Lively Experience",
+      shortDescription: "An energetic coconut-forest basket boat option suited to travelers who enjoy a lively and tourist-friendly atmosphere.",
+      whyWePickedIt: "Its energetic format gives travelers a clear alternative to lower-key basket boat experiences.",
+      bestFor: ["First-time visitors", "Families who enjoy lively activities", "Travelers comfortable with a tourist-friendly atmosphere"],
       notIdealFor: "Travelers specifically trying to avoid busy or tourist-oriented experiences.",
       experienceStyle: "lively",
       lastVerified: verified,
