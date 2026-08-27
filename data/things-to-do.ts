@@ -11,7 +11,7 @@ export const thingsToDoQuickPicks: HubItem[] = [
 export const interestCategories: HubItem[] = [
   { id: "food-cooking", title: "Food & Cooking", shortDescription: "Taste, make and understand more of the food around you.", examples: ["Cooking classes", "Food tours", "Local dishes", "Markets"], href: "/cooking-classes-hoi-an", status: "live" },
   { id: "culture-old-town", title: "Culture & Old Town", shortDescription: "Explore Hoi An through places, craft and living heritage.", examples: ["Ancient Town", "Lanterns", "Temples", "Traditional crafts"], status: "informational" },
-  { id: "family", title: "Family Activities", shortDescription: "Choose activities with variety and a manageable pace.", examples: ["Cooking", "Basket boats", "Beaches", "Workshops"], status: "informational" },
+  { id: "family", title: "Family Activities", shortDescription: "Choose activities with variety and a manageable pace.", examples: ["Cooking", "Basket boats", "Beaches", "Workshops"], href: "/hoi-an-with-kids", status: "live" },
   { id: "nature", title: "Nature & Outdoors", shortDescription: "Move beyond the old town into Hoi An’s greener spaces.", examples: ["Coconut forest", "Cycling", "Beaches", "Countryside"], status: "informational" },
   { id: "wellness", title: "Relax & Wellness", shortDescription: "Leave room for slower, restorative parts of the trip.", examples: ["Spa", "Massage", "Beach time", "Slow cafés"], status: "informational" },
   { id: "day-trips", title: "Day Trips", shortDescription: "Use an extra day to see more of Central Vietnam.", examples: ["My Son", "Da Nang", "Ba Na Hills", "Hue"], status: "informational" },

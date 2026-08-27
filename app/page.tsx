@@ -37,7 +37,7 @@ export default function Home() {
       <div className="home-picks-grid">
         <article className="home-pick home-pick-featured"><div className="home-pick-art art-cooking" aria-hidden="true"><span>Food & cooking</span></div><div><span className="pick-label">Start here</span><h3>Cooking Classes</h3><p>Shop at a local market, explore the coconut village and learn to cook Vietnamese dishes in a hands-on class.</p><Link href="/cooking-classes-hoi-an">Compare Cooking Classes <span>→</span></Link></div></article>
         <article className="home-pick"><div className="home-pick-art art-boat" aria-hidden="true"><span>Local experience</span></div><div><h3>Basket Boat Experiences</h3><p>Understand the different styles before choosing the atmosphere that suits you.</p></div></article>
-        <article className="home-pick"><div className="home-pick-art art-family" aria-hidden="true"><span>Family travel</span></div><div><h3>Hoi An With Kids</h3><p>Practical ideas for families balancing fun, weather and an easy pace.</p></div></article>
+        <article className="home-pick"><div className="home-pick-art art-family" aria-hidden="true"><span>Family travel</span></div><div><h3>Hoi An With Kids</h3><p>Practical ideas for families balancing fun, weather and an easy pace.</p><Link href="/hoi-an-with-kids">Plan a Family Day <span>→</span></Link></div></article>
       </div>
     </section>
 
