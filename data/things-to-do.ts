@@ -5,7 +5,7 @@ export const thingsToDoQuickPicks: HubItem[] = [
   { id: "basket-boats", title: "Explore the Coconut Village & Basket Boats", shortDescription: "A light, social local activity that is easy to combine with other plans.", bestFor: "Families and first-time visitors", href: "/basket-boat-hoi-an", status: "live" },
   { id: "ancient-town", title: "Walk Hoi An Ancient Town", shortDescription: "Slow down for architecture, street life, craft and the changing light.", bestFor: "Culture, photography and first visits", status: "informational" },
   { id: "local-food", title: "Try Hoi An’s Local Food", shortDescription: "Use an evening to explore local dishes, markets and casual places to eat.", bestFor: "Food lovers and evening exploration", status: "informational" },
-  { id: "day-trip", title: "Take a Day Trip Beyond Hoi An", shortDescription: "Add a different side of Central Vietnam when your stay allows it.", bestFor: "Travelers staying 3+ days", status: "informational" },
+  { id: "my-son", title: "Visit My Son Sanctuary", shortDescription: "Add Cham heritage, archaeology and temple architecture when your stay allows it.", bestFor: "Culture travelers staying 3+ days", href: "/my-son-tours-from-hoi-an", status: "live" },
 ];
 
 export const interestCategories: HubItem[] = [
@@ -14,7 +14,7 @@ export const interestCategories: HubItem[] = [
   { id: "family", title: "Family Activities", shortDescription: "Choose activities with variety and a manageable pace.", examples: ["Cooking", "Basket boats", "Beaches", "Workshops"], href: "/hoi-an-with-kids", status: "live" },
   { id: "nature", title: "Nature & Outdoors", shortDescription: "Move beyond the old town into Hoi An’s greener spaces.", examples: ["Coconut forest", "Cycling", "Beaches", "Countryside"], status: "informational" },
   { id: "wellness", title: "Relax & Wellness", shortDescription: "Leave room for slower, restorative parts of the trip.", examples: ["Spa", "Massage", "Beach time", "Slow cafés"], status: "informational" },
-  { id: "day-trips", title: "Day Trips", shortDescription: "Use an extra day to see more of Central Vietnam.", examples: ["My Son", "Da Nang", "Ba Na Hills", "Hue"], status: "informational" },
+  { id: "my-son-trip", title: "My Son & Cultural Trips", shortDescription: "Use an extra day to explore Cham heritage beyond Hoi An.", examples: ["My Son Sanctuary", "Cham architecture", "Archaeology"], href: "/my-son-tours-from-hoi-an", status: "live" },
 ];
 
 export const experienceFormats = [

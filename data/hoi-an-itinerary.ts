@@ -48,7 +48,7 @@ export const dayTwoPaths = [
 
 export const dayThreeOptions = [
   { title: "Option A — Slow Hoi An", bestFor: "Couples, families and relaxed travelers", suggestions: ["An Bang Beach", "Café", "Spa", "Shopping", "Revisit Ancient Town"] },
-  { title: "Option B — Culture", bestFor: "History and culture travelers", description: "My Son Sanctuary is a separate UNESCO-listed Cham heritage site and a logical half-day or day-trip option from the Hoi An area.", suggestions: ["My Son Sanctuary"] },
+  { title: "Option B — Culture", bestFor: "History and culture travelers", description: "My Son Sanctuary is a separate UNESCO-listed Cham heritage site and a logical cultural-trip option from the Hoi An area.", suggestions: ["My Son Sanctuary"], href: "/my-son-tours-from-hoi-an", cta: "Decide How to Visit My Son" },
   { title: "Option C — Countryside", bestFor: "Active travelers", suggestions: ["Cycling", "Villages", "Farming areas", "Quieter roads outside Ancient Town"] },
 ];
 

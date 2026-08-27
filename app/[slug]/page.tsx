@@ -7,6 +7,7 @@ import { HoiAnWithKidsPage } from "@/components/hoi-an-with-kids-page";
 import { BasketBoatPage } from "@/components/basket-boat-page";
 import { ThreeDaysItineraryPage } from "@/components/three-days-itinerary-page";
 import { EditorialMethodologyPage } from "@/components/editorial-methodology-page";
+import { MySonPage } from "@/components/my-son-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -15,7 +16,7 @@ const legal: Record<string, { title: string; body: string[] }> = {
   "terms": { title: "Terms", body: ["Hoi An Local Days provides independent travel discovery and decision-support content. It is not currently the merchant of record for affiliate bookings.", "Prices and availability shown as reference information must be confirmed with the relevant provider. Booking, cancellation and refund terms are governed by the provider you choose."] },
 };
 
-const unfinishedSlugs = new Set(["food-tours-hoi-an", "my-son-tours-from-hoi-an", "day-trips-from-hoi-an", "hoi-an-airport-transfer", "where-to-stay-hoi-an", "hoi-an-itinerary"]);
+const unfinishedSlugs = new Set(["food-tours-hoi-an", "day-trips-from-hoi-an", "hoi-an-airport-transfer", "where-to-stay-hoi-an", "hoi-an-itinerary"]);
 
 export function generateStaticParams() { return [...landingPages.map((page) => ({ slug: page.slug })), ...Object.keys(legal).map((slug) => ({ slug })), { slug: "editorial-methodology" }]; }
 
@@ -46,6 +47,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Plan 3 days in Hoi An with a practical itinerary covering the Ancient Town, local food, cooking classes, basket boats, countryside, beaches and optional day trips.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
   }
+  if (slug === "my-son-tours-from-hoi-an") {
+    const title = "My Son Sanctuary from Hoi An: Best Ways to Visit";
+    const description = "Plan a trip to My Son Sanctuary from Hoi An. Compare morning, afternoon, group, private and independent visit styles to find what suits your trip.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+  }
   if (slug === "editorial-methodology") {
     const title = "How Hoi An Local Days Chooses What to Recommend";
     const description = "Learn how Hoi An Local Days evaluates experiences, traveler fit, local context, provider options, verification and affiliate independence.";
@@ -64,6 +70,7 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   if (slug === "hoi-an-with-kids") return <HoiAnWithKidsPage />;
   if (slug === "basket-boat-hoi-an") return <BasketBoatPage />;
   if (slug === "3-days-in-hoi-an") return <ThreeDaysItineraryPage />;
+  if (slug === "my-son-tours-from-hoi-an") return <MySonPage />;
   if (slug === "editorial-methodology") return <EditorialMethodologyPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();
