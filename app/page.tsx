@@ -5,12 +5,12 @@ import { PlanMyDay } from "@/components/plan-my-day";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 
 const categories = [
-  { name: "Cooking Classes", href: "/cooking-classes-hoi-an", note: "Market, garden or coconut forest" },
-  { name: "Basket Boat", href: "/basket-boat-hoi-an", note: "Short eco trips and family fun" },
-  { name: "Food Tours", href: "/food-tours-hoi-an", note: "Old-town tastes after dark" },
-  { name: "My Son", href: "/my-son-tours-from-hoi-an", note: "Sunrise and heritage options" },
-  { name: "Family Activities", href: "/hoi-an-with-kids", note: "Easy-paced, hands-on picks" },
-  { name: "Day Trips", href: "/day-trips-from-hoi-an", note: "Hue, Da Nang and beyond" },
+  { name: "Cooking Classes", href: "/cooking-classes-hoi-an", note: "Verified options coming soon" },
+  { name: "Basket Boat", href: "/basket-boat-hoi-an", note: "Verified options coming soon" },
+  { name: "Food Tours", href: "/food-tours-hoi-an", note: "Verified options coming soon" },
+  { name: "My Son", href: "/my-son-tours-from-hoi-an", note: "Verified options coming soon" },
+  { name: "Family Activities", href: "/hoi-an-with-kids", note: "Verified options coming soon" },
+  { name: "Day Trips", href: "/day-trips-from-hoi-an", note: "Verified options coming soon" },
 ];
 
 const audiences = [
