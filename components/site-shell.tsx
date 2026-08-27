@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export function Header() {
-  return <header className="site-header"><Link className="brand" href="/"><span className="brand-mark">H</span><span>Hoi An Local Days</span></Link><nav aria-label="Main navigation"><Link href="/things-to-do-in-hoi-an">Experiences</Link><Link href="/cooking-classes-hoi-an">Local picks</Link><Link href="/#guides">Guides</Link></nav><Link className="header-cta" href="/#plan">Plan my day</Link></header>;
+  return <header className="site-header"><Link className="brand" href="/"><span className="brand-mark">H</span><span>Hoi An Local Days</span></Link><nav aria-label="Main navigation"><Link href="/things-to-do-in-hoi-an">Things to Do</Link><Link href="/cooking-classes-hoi-an">Cooking Classes</Link><Link href="/hoi-an-with-kids">With Kids</Link><Link href="/day-trips-from-hoi-an">Day Trips</Link><Link href="/where-to-stay-hoi-an">Where to Stay</Link></nav><Link className="header-cta" href="/#plan-stay">Plan Your Trip</Link></header>;
 }
 
 export function Footer() {
