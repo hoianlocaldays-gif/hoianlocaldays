@@ -2,7 +2,7 @@ export type HubItem = { id: string; title: string; shortDescription: string; bes
 
 export const thingsToDoQuickPicks: HubItem[] = [
   { id: "cooking-class", title: "Take a Hoi An Cooking Class", shortDescription: "Combine local food, markets and a hands-on activity in one experience.", bestFor: "First-time visitors, families and food lovers", href: "/cooking-classes-hoi-an", status: "live" },
-  { id: "basket-boats", title: "Explore the Coconut Village & Basket Boats", shortDescription: "A light, social local activity that is easy to combine with other plans.", bestFor: "Families and first-time visitors", status: "informational" },
+  { id: "basket-boats", title: "Explore the Coconut Village & Basket Boats", shortDescription: "A light, social local activity that is easy to combine with other plans.", bestFor: "Families and first-time visitors", href: "/basket-boat-hoi-an", status: "live" },
   { id: "ancient-town", title: "Walk Hoi An Ancient Town", shortDescription: "Slow down for architecture, street life, craft and the changing light.", bestFor: "Culture, photography and first visits", status: "informational" },
   { id: "local-food", title: "Try Hoi An’s Local Food", shortDescription: "Use an evening to explore local dishes, markets and casual places to eat.", bestFor: "Food lovers and evening exploration", status: "informational" },
   { id: "day-trip", title: "Take a Day Trip Beyond Hoi An", shortDescription: "Add a different side of Central Vietnam when your stay allows it.", bestFor: "Travelers staying 3+ days", status: "informational" },

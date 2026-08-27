@@ -9,7 +9,7 @@ export type FamilyQuickPick = {
 
 export const familyQuickPicks: FamilyQuickPick[] = [
   { id: "cooking", title: "Take a Family-Friendly Cooking Class", description: "A hands-on way to combine food, culture and several local experiences in one half-day.", bestFor: ["Children who can participate safely", "Parents wanting a hands-on activity", "Families fitting several experiences into one half-day"], href: "/cooking-classes-hoi-an", cta: "Compare Cooking Classes" },
-  { id: "basket-boat", title: "Try a Basket Boat Experience", description: "A short, lively activity that can be easy to fit around the rest of the day.", bestFor: ["Families wanting something fun and easy", "Short activity windows", "First-time visitors"] },
+  { id: "basket-boat", title: "Try a Basket Boat Experience", description: "A short, lively activity that can be easy to fit around the rest of the day.", bestFor: ["Families wanting something fun and easy", "Short activity windows", "First-time visitors"], href: "/basket-boat-hoi-an", cta: "Choose a Basket Boat Style" },
   { id: "beach", title: "Spend Time at the Beach", description: "Leave room for a slower afternoon without a fixed sightseeing schedule.", bestFor: ["Slow afternoons", "Younger children", "Families wanting low-pressure time"] },
   { id: "craft", title: "Make a Lantern or Local Craft", description: "A quieter hands-on option that also works when the weather changes.", bestFor: ["Hands-on families", "Rainy periods", "Children who enjoy making things"] },
   { id: "old-town", title: "Explore the Old Town Early or Late", description: "Walk when the temperature is gentler and the streets are easier to enjoy.", bestFor: ["Avoiding midday heat", "Easy walking", "Food, lanterns and atmosphere"] },
@@ -24,7 +24,7 @@ export const ageGuidance = [
 
 export const familyCategories = [
   { id: "cooking", title: "Cooking & Food", description: "Cooking is hands-on, social and gives the family a shared activity rather than another stop to look at.", note: "Compare formats before choosing how much market, countryside or basket-boat time you want.", href: "/cooking-classes-hoi-an" },
-  { id: "basket-boats", title: "Basket Boats & Coconut Village", description: "Fun, visually memorable and easy to combine with cooking.", note: "Some experiences are lively and noisy, which may not suit every child." },
+  { id: "basket-boats", title: "Basket Boats & Coconut Village", description: "Fun, visually memorable and easy to combine with cooking.", note: "Some experiences are lively and noisy, which may not suit every child.", href: "/basket-boat-hoi-an" },
   { id: "crafts", title: "Lantern & Craft Workshops", description: "A useful hands-on choice for rainy periods or families who prefer a quieter pace.", note: "Choose a workshop length that matches the child’s attention and energy." },
   { id: "beaches", title: "Beaches", description: "An Bang and Cua Dai can create breathing room between structured activities.", note: "Conditions vary, so keep the plan flexible rather than building the whole day around a fixed schedule." },
   { id: "cycling", title: "Cycling & Countryside", description: "Better suited to older children, confident riders and families comfortable with outdoor activity.", note: "Check the route and conditions with the operator before choosing." },
