@@ -1,14 +1,126 @@
-import type { ProviderKey } from "./experiences";
+export type CookingProviderKey = "viator" | "getyourguide";
 
-export type AffiliateOffer = { provider: ProviderKey; campaign: string; affiliateUrl: string };
-export type CookingClass = { id: string; name: string; label: string; shortDescription: string; whyWePickedIt: string; bestFor: string[]; notIdealFor: string; lastVerified: string; offer: AffiliateOffer };
+export type CookingProvider = {
+  provider: CookingProviderKey;
+  productId: string;
+  url: string;
+  campaign: string;
+  enabled: boolean;
+};
 
-export const cookingClasses: CookingClass[] = [
-  { id: "141961P1", name: "Local Market, Basket Boat, Fishing & Cooking Experience", label: "Best Overall", shortDescription: "A well-rounded Hoi An experience combining local market, basket boat, fishing and hands-on Vietnamese cooking.", whyWePickedIt: "Combines several classic Hoi An experiences in one easy-to-understand activity.", bestFor: ["First-time visitors", "Couples", "Families"], notIdealFor: "Travelers looking primarily for an advanced culinary lesson.", lastVerified: "2026-08-27", offer: { provider: "viator", campaign: "hal-cooking-141961", affiliateUrl: "https://www.viator.com/tours/Hoi-An/Local-market-basket-boat-fishing-and-cooking-experience/d5229-141961P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-141961" } },
-  { id: "424184P4", name: "Hoi An Cooking Class, Local Market & Basket Boat", label: "Best for Families", shortDescription: "A full local experience combining a market visit, basket boat activity and hands-on cooking.", whyWePickedIt: "Its varied format gives families and first-time visitors several activities within one experience.", bestFor: ["Families", "First-time visitors"], notIdealFor: "Travelers who want a cooking-only format without other activities.", lastVerified: "2026-08-27", offer: { provider: "viator", campaign: "hal-cooking-cocolocal", affiliateUrl: "https://www.viator.com/tours/Hoi-An/Hoi-AnCooking-Class-Local-Market-Basket-Boat-and-Cooking/d5229-424184P4?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-cocolocal" } },
-  { id: "221841P24", name: "Hoi An Market, Basket Boat, Fishing & Cooking Class", label: "Best Personal Experience", shortDescription: "An engaging, hands-on format for travelers who value interaction with their host.", whyWePickedIt: "The positioning emphasizes an engaging host and a more personal cooking experience.", bestFor: ["Couples", "Travelers who value personal hosting"], notIdealFor: "Travelers who prefer a self-guided or low-interaction activity.", lastVerified: "2026-08-27", offer: { provider: "viator", campaign: "hal-cooking-221841", affiliateUrl: "https://www.viator.com/tours/Hoi-An/Cooking-Class-Hoi-An-Local-Market-Basket-Boat-Fishing-and-Cooking-Experience/d5229-221841P24?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-221841" } },
-  { id: "164857P1", name: "Hoi An Eco Cooking Tour", label: "Best for Food Lovers", shortDescription: "A cooking-focused option built around preparing a varied Vietnamese menu.", whyWePickedIt: "It places more emphasis on the cooking and menu than on bundling many different activities.", bestFor: ["Food lovers", "Hands-on cooks"], notIdealFor: "Travelers whose main priority is a broad sightseeing experience.", lastVerified: "2026-08-27", offer: { provider: "viator", campaign: "hal-cooking-164857", affiliateUrl: "https://www.viator.com/tours/Hoi-An/Hoi-An-Eco-Cooking-Tour/d5229-164857P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-164857" } },
-  { id: "201338P1", name: "Eco Cooking Class & Fishing by Bamboo Basket Boat", label: "Best Small Local Experience", shortDescription: "A smaller-scale experience combining market, fishing, coconut forest and cooking elements.", whyWePickedIt: "Its smaller-scale positioning suits travelers who want a more local-feeling format.", bestFor: ["Travelers seeking a smaller-scale activity", "Couples"], notIdealFor: "Travelers who prefer a larger, highly structured group program.", lastVerified: "2026-08-27", offer: { provider: "viator", campaign: "hal-cooking-201338", affiliateUrl: "https://www.viator.com/tours/Hoi-An/Eco-cooking-class-and-Fishing-tour-by-bamboo-basket-boat/d5229-201338P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-201338" } },
+export type CookingExperience = {
+  id: string;
+  name: string;
+  editorial: {
+    label: string;
+    positioning: string;
+    whyWePickedIt: string;
+    bestFor: string[];
+    notIdealFor: string;
+  };
+  providers: Partial<Record<CookingProviderKey, CookingProvider>>;
+  lastVerified: string;
+};
+
+const verified = "2026-08-27";
+
+export const cookingExperiences: CookingExperience[] = [
+  {
+    id: "classic-market-cooking",
+    name: "Classic Market, Basket Boat & Cooking Experience",
+    editorial: {
+      label: "Best Overall",
+      positioning: "A well-rounded introduction to the classic Hoi An cooking-class format, combining a local market, basket boat experience, fishing and hands-on Vietnamese cooking.",
+      whyWePickedIt: "A clear starting point for travelers who want the full classic format in one experience.",
+      bestFor: ["First-time visitors", "Travelers wanting the full classic experience", "Couples and friends"],
+      notIdealFor: "Travelers primarily looking for an in-depth culinary lesson without the sightseeing activities.",
+    },
+    providers: { viator: { provider: "viator", productId: "141961P1", url: "https://www.viator.com/tours/Hoi-An/Local-market-basket-boat-fishing-and-cooking-experience/d5229-141961P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-141961", campaign: "hal-cooking-141961", enabled: true } },
+    lastVerified: verified,
+  },
+  {
+    id: "cocolocal-farm",
+    name: "Cocolocal Farm Cooking Experience",
+    editorial: {
+      label: "Best for Families",
+      positioning: "A varied half-day local experience combining market discovery, basket boat activities and approachable hands-on Vietnamese cooking.",
+      whyWePickedIt: "Its approachable, varied format suits families and first-time visitors who want several activities together.",
+      bestFor: ["Families", "First-time visitors", "Travelers who want several activities in one experience"],
+      notIdealFor: "Travelers looking primarily for an advanced or highly technical culinary class.",
+    },
+    providers: {
+      viator: { provider: "viator", productId: "424184P4", url: "https://www.viator.com/tours/Hoi-An/Hoi-AnCooking-Class-Local-Market-Basket-Boat-and-Cooking/d5229-424184P4?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-cocolocal", campaign: "hal-cooking-cocolocal", enabled: true },
+      getyourguide: { provider: "getyourguide", productId: "1061073", url: "https://www.getyourguide.com/hoi-an-l831/hoi-an-cooking-class-market-tour-fishing-basket-boating-t1061073/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-cooking-cocolocal-gyg", campaign: "hal-cooking-cocolocal-gyg", enabled: true },
+    },
+    lastVerified: verified,
+  },
+  {
+    id: "organic-farm-cooking",
+    name: "Organic Farm Cooking Experience",
+    editorial: {
+      label: "Best Farm-to-Table",
+      positioning: "A cooking-focused experience set around an organic farm, with more emphasis on ingredients, produce and hands-on food preparation than the typical coconut-village combination tour.",
+      whyWePickedIt: "The farm setting and ingredient focus offer a distinct alternative to the classic combination format.",
+      bestFor: ["Food lovers", "Couples", "Travelers interested in ingredients and local produce", "Travelers prioritizing cooking over sightseeing"],
+      notIdealFor: "Travelers wanting the classic market + basket boat + cooking combination.",
+    },
+    providers: { getyourguide: { provider: "getyourguide", productId: "568322", url: "https://www.getyourguide.com/hoi-an-l831/cooking-class-in-the-middle-of-organic-farm-t568322/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-cooking-organicfarm-gyg", campaign: "hal-cooking-organicfarm-gyg", enabled: true } },
+    lastVerified: verified,
+  },
+  {
+    id: "lantern-cooking-combo",
+    name: "Lantern, Basket Boat & Cooking Experience",
+    editorial: {
+      label: "Best All-in-One",
+      positioning: "A broad Hoi An experience combining cooking with basket boats and lantern making, useful for travelers who want to fit several signature activities into limited time.",
+      whyWePickedIt: "It brings several recognizable Hoi An activities together for travelers with limited time.",
+      bestFor: ["First-time visitors", "Short stays", "Couples", "Travelers wanting variety"],
+      notIdealFor: "Travelers seeking a cooking-first or quieter culinary experience.",
+    },
+    providers: { getyourguide: { provider: "getyourguide", productId: "540267", url: "https://www.getyourguide.com/hoi-an-l831/hoi-an-basket-boat-with-lantern-making-cooking-class-tour-t540267/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-cooking-lantern-gyg", campaign: "hal-cooking-lantern-gyg", enabled: true } },
+    lastVerified: verified,
+  },
+  {
+    id: "personal-market-cooking",
+    name: "Personal Market, Basket Boat & Cooking Experience",
+    editorial: {
+      label: "Best Personal Experience",
+      positioning: "A hands-on market, basket-boat and cooking experience suited to travelers who value an engaging host and personal interaction.",
+      whyWePickedIt: "The experience is positioned around host interaction and a more personal hands-on format.",
+      bestFor: ["Couples", "Small groups", "Social travelers"],
+      notIdealFor: "Travelers who prefer a cooking-only format.",
+    },
+    providers: { viator: { provider: "viator", productId: "221841P24", url: "https://www.viator.com/tours/Hoi-An/Cooking-Class-Hoi-An-Local-Market-Basket-Boat-Fishing-and-Cooking-Experience/d5229-221841P24?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-221841", campaign: "hal-cooking-221841", enabled: true } },
+    lastVerified: verified,
+  },
+  {
+    id: "food-lovers-cooking",
+    name: "Vietnamese Cooking Experience for Food Lovers",
+    editorial: {
+      label: "Best for Food Lovers",
+      positioning: "A varied Vietnamese cooking experience for travelers who care about trying and preparing several local dishes.",
+      whyWePickedIt: "Its emphasis is on preparing a varied selection of Vietnamese dishes.",
+      bestFor: ["Food-focused travelers", "Couples", "Travelers interested in Vietnamese dishes"],
+      notIdealFor: "Travelers whose main priority is sightseeing rather than cooking.",
+    },
+    providers: { viator: { provider: "viator", productId: "164857P1", url: "https://www.viator.com/tours/Hoi-An/Hoi-An-Eco-Cooking-Tour/d5229-164857P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-164857", campaign: "hal-cooking-164857", enabled: true } },
+    lastVerified: verified,
+  },
+  {
+    id: "small-local-cooking",
+    name: "Small Local Cooking & Fishing Experience",
+    editorial: {
+      label: "Best Small Local Experience",
+      positioning: "A smaller-scale combination of local market, fishing, coconut-forest activities and cooking.",
+      whyWePickedIt: "Its smaller-scale format offers an alternative to broader, activity-packed combinations.",
+      bestFor: ["Couples", "Small groups", "Travelers preferring a smaller-scale experience"],
+      notIdealFor: "Travelers wanting an activity-packed all-in-one itinerary.",
+    },
+    providers: { viator: { provider: "viator", productId: "201338P1", url: "https://www.viator.com/tours/Hoi-An/Eco-cooking-class-and-Fishing-tour-by-bamboo-basket-boat/d5229-201338P1?pid=P00316970&mcid=42383&medium=link&campaign=hal-cooking-201338", campaign: "hal-cooking-201338", enabled: true } },
+    lastVerified: verified,
+  },
 ];
 
-export const cookingClassQuickPicks = cookingClasses.slice(0, 3);
+export const cookingQuickPicks = ["classic-market-cooking", "cocolocal-farm", "organic-farm-cooking"]
+  .map((id) => cookingExperiences.find((experience) => experience.id === id))
+  .filter((experience): experience is CookingExperience => Boolean(experience));
