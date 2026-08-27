@@ -18,7 +18,15 @@ export function CookingClassPage() {
       <p className="cooking-lead">Seven carefully selected cooking experiences for different types of travelers — from family-friendly classes to farm-to-table cooking and all-in-one Hoi An experiences.</p>
       <AffiliateDisclosure />
       <EditorSignal />
-      <nav className="quick-nav" aria-label="On this page"><a href="#quick-picks">Quick picks</a><a href="#compare-all">Compare all 7</a><a href="#how-we-choose">How we choose</a></nav>
+      <nav className="quick-nav" aria-label="On this page"><a href="#choose-a-format">Choose a format</a><a href="#quick-picks">Quick picks</a><a href="#compare-all">Compare all 7</a></nav>
+    </section>
+    <section className="format-section section" id="choose-a-format">
+      <div className="hub-heading"><p className="eyebrow">Understand the choice</p><h2>Choose the Experience Before the Provider</h2><p>The biggest difference is not the booking platform. It is how much of the half-day is devoted to cooking versus markets, basket boats and countryside activities.</p></div>
+      <div className="format-grid">
+        <article><h3>All-in-One Experience</h3><p>Choose this when you want a market, basket boat and cooking in one easy first-time introduction.</p><small>Check the inclusions before booking a separate basket boat activity.</small></article>
+        <article><h3>Cooking-Focused or Farm-Based</h3><p>Choose this when ingredients, preparation and time in the kitchen matter more than fitting in every signature activity.</p><small>A better fit than an all-in-one tour for travelers primarily interested in food.</small></article>
+        <article><h3>Private or Small-Group</h3><p>Choose this when interaction, flexibility or a calmer pace matters more than the widest activity list.</p><small>Do not pay for privacy if a sociable group format already suits your trip.</small></article>
+      </div>
     </section>
     <section className="section cooking-section" id="quick-picks">
       <div className="section-heading"><p className="eyebrow">Quick picks</p><h2>Short on Time? Start Here</h2><p>Three distinct starting points for a classic first visit, a family day or a cooking-focused farm experience.</p></div>

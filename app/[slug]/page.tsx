@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound, permanentRedirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { LandingPage } from "@/components/landing-page";
 import { CookingClassPage } from "@/components/cooking-class-page";
 import { ThingsToDoHub } from "@/components/things-to-do-hub";
@@ -12,13 +12,21 @@ import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
   "affiliate-disclosure": { title: "Affiliate Disclosure", body: ["Some links on Hoi An Local Days may be affiliate links. If you book through one of these links, we may earn a small commission at no extra cost to you.", "Affiliate relationships do not guarantee placement. We aim to explain why an experience is included and who it suits. Provider prices, availability and terms can change; always review them on the booking provider’s website."] },
-  "privacy-policy": { title: "Privacy Policy", body: ["This first version does not require an account and does not store Plan My Day answers on a server.", "When analytics is enabled later, this policy must be updated with the service names, data collected, retention periods and opt-out choices. External booking providers apply their own privacy policies."] },
+  "privacy-policy": { title: "Privacy Policy", body: ["Hoi An Local Days does not require a visitor account. Our current analytics events do not ask for names, email addresses, phone numbers, form content, custom user IDs or precise location.", "When website analytics is enabled, we use Google Analytics 4 to understand pages viewed, meaningful navigation between our guides, affiliate-link clicks and basic technical or device information supplied by the analytics service. We configure GA4 without automatic page views, Google signals or ad-personalization signals, and we do not use this setup for advertising or remarketing.", "Analytics configuration and visitor consent are separate matters. The current site does not include a consent-management platform; applicable consent and opt-out requirements should be reviewed before analytics is enabled for production visitors.", "Booking providers and other external websites apply their own privacy policies when you follow a link away from Hoi An Local Days."] },
   "terms": { title: "Terms", body: ["Hoi An Local Days provides independent travel discovery and decision-support content. It is not currently the merchant of record for affiliate bookings.", "Prices and availability shown as reference information must be confirmed with the relevant provider. Booking, cancellation and refund terms are governed by the provider you choose."] },
 };
 
-const unfinishedSlugs = new Set(["food-tours-hoi-an", "day-trips-from-hoi-an", "hoi-an-airport-transfer", "where-to-stay-hoi-an", "hoi-an-itinerary"]);
+const unfinishedSlugs = new Set(["food-tours-hoi-an", "day-trips-from-hoi-an", "hoi-an-airport-transfer", "where-to-stay-hoi-an"]);
 
-export function generateStaticParams() { return [...landingPages.map((page) => ({ slug: page.slug })), ...Object.keys(legal).map((slug) => ({ slug })), { slug: "editorial-methodology" }]; }
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return [
+    ...landingPages.filter((page) => !unfinishedSlugs.has(page.slug) && page.slug !== "hoi-an-itinerary").map((page) => ({ slug: page.slug })),
+    ...Object.keys(legal).map((slug) => ({ slug })),
+    { slug: "editorial-methodology" },
+  ];
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params; const page = getLandingPage(slug); const legalPage = legal[slug];
@@ -64,7 +72,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const page = getLandingPage(slug);
-  if (slug === "hoi-an-itinerary") permanentRedirect("/3-days-in-hoi-an");
   if (slug === "cooking-classes-hoi-an") return <CookingClassPage />;
   if (slug === "things-to-do-in-hoi-an") return <ThingsToDoHub />;
   if (slug === "hoi-an-with-kids") return <HoiAnWithKidsPage />;

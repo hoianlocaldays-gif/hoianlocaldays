@@ -4,6 +4,7 @@ export type Provider = {
   key: ProviderKey;
   label: string;
   url: string | null;
+  productId: string | null;
   campaign: string;
 };
 
@@ -25,8 +26,8 @@ export type Experience = {
 };
 
 const pendingProviders = (campaign: string): Provider[] => [
-  { key: "viator", label: "Viator", url: null, campaign },
-  { key: "getyourguide", label: "GetYourGuide", url: null, campaign },
+  { key: "viator", label: "Viator", url: null, productId: null, campaign },
+  { key: "getyourguide", label: "GetYourGuide", url: null, productId: null, campaign },
 ];
 
 // Category-level placeholders only. Add real products after verified provider
