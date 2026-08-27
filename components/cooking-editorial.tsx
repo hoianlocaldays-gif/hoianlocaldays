@@ -2,7 +2,7 @@ import Link from "next/link";
 import { AffiliateCTA } from "./affiliate-cta";
 import type { CookingExperience, CookingProvider } from "@/data/cooking-classes";
 
-const page = "cooking-classes-hoi-an";
+const defaultPage = "cooking-classes-hoi-an";
 const providerName = { viator: "Viator", getyourguide: "GetYourGuide" } as const;
 
 export function WhyWePickedIt({ children }: { children: string }) {
@@ -22,7 +22,7 @@ export function LastVerified({ date }: { date: string }) {
   return <small className="last-verified">Booking links verified {formatted}</small>;
 }
 
-export function ProviderButtons({ experience, position }: { experience: CookingExperience; position: string }) {
+export function ProviderButtons({ experience, position, page = defaultPage }: { experience: Pick<CookingExperience, "id" | "providers">; position: string; page?: string }) {
   const providers = Object.values(experience.providers).filter((provider): provider is CookingProvider => Boolean(provider?.enabled));
   if (providers.length === 1) {
     const provider = providers[0];

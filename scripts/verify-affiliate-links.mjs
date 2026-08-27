@@ -1,21 +1,26 @@
 import { readFileSync } from "node:fs";
 
-const source = readFileSync(new URL("../data/cooking-classes.ts", import.meta.url), "utf8");
+const sources = ["../data/cooking-classes.ts", "../data/basket-boat.ts"].map((path) => readFileSync(new URL(path, import.meta.url), "utf8"));
 const viatorCampaigns = new Map([
   ["141961P1", "hal-cooking-141961"],
   ["424184P4", "hal-cooking-cocolocal"],
   ["221841P24", "hal-cooking-221841"],
   ["164857P1", "hal-cooking-164857"],
   ["201338P1", "hal-cooking-201338"],
+  ["349311P2", "hal-basketboat-overall-viator"],
+  ["201338P2", "hal-basketboat-family-viator"],
 ]);
 const getYourGuideCampaigns = new Map([
   ["1061073", "hal-cooking-cocolocal-gyg"],
   ["568322", "hal-cooking-organicfarm-gyg"],
   ["540267", "hal-cooking-lantern-gyg"],
+  ["624499", "hal-basketboat-popular-gyg"],
+  ["886005", "hal-basketboat-quiet-gyg"],
+  ["543538", "hal-basketboat-short-gyg"],
 ]);
-const urls = [...source.matchAll(/url: "(https:\/\/[^\"]+)"/g)].map((match) => match[1]);
+const urls = sources.flatMap((source) => [...source.matchAll(/url: "(https:\/\/[^\"]+)"/g)].map((match) => match[1]));
 
-if (urls.length !== 8) throw new Error(`Expected 8 supplied affiliate URLs, found ${urls.length}.`);
+if (urls.length !== 13) throw new Error(`Expected 13 supplied affiliate URLs, found ${urls.length}.`);
 for (const href of urls) {
   const url = new URL(href);
   if (url.hostname === "www.viator.com") {
@@ -35,4 +40,4 @@ for (const href of urls) {
   throw new Error(`Unauthorized affiliate hostname: ${url.hostname}`);
 }
 
-console.log("Verified 5 Viator and 3 GetYourGuide affiliate URLs.");
+console.log("Verified 7 Viator and 6 GetYourGuide affiliate URLs across Cooking Classes and Basket Boats.");
