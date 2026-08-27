@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LandingPage } from "@/components/landing-page";
 import { CookingClassPage } from "@/components/cooking-class-page";
+import { ThingsToDoHub } from "@/components/things-to-do-hub";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -19,6 +20,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Compare locally selected cooking classes in Hoi An, including options for families, food lovers, couples and small groups.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
   }
+  if (slug === "things-to-do-in-hoi-an") {
+    const title = "Best Things to Do in Hoi An | Local Guide 2026";
+    const description = "Discover the best things to do in Hoi An, from cooking classes and local food to culture, family activities, beaches and day trips.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+  }
   if (page) return { title: `${page.title} | Hoi An Local Days`, description: page.description, alternates: { canonical: `/${slug}` }, openGraph: { title: page.title, description: page.description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title: page.title, description: page.description } };
   if (legalPage) return { title: `${legalPage.title} | Hoi An Local Days`, alternates: { canonical: `/${slug}` } };
   return {};
@@ -27,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const page = getLandingPage(slug);
   if (slug === "cooking-classes-hoi-an") return <CookingClassPage />;
+  if (slug === "things-to-do-in-hoi-an") return <ThingsToDoHub />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();
   return <main className="legal-page section"><p className="eyebrow">Hoi An Local Days</p><h1>{legalPage.title}</h1>{legalPage.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</main>;
