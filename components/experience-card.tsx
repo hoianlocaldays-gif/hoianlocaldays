@@ -4,10 +4,6 @@ import Link from "next/link";
 import type { Experience } from "@/data/experiences";
 import { track } from "@/lib/tracking";
 
-export function AffiliateDisclosure() {
-  return <p className="affiliate-note"><strong>Affiliate disclosure:</strong> Some links may be affiliate links. We may earn a small commission if you book through them, at no extra cost to you.</p>;
-}
-
 export function ProviderButtons({ experience, page, position }: { experience: Experience; page: string; position: string }) {
   const active = experience.providers.filter((provider) => provider.url);
   if (!active.length) return <div className="provider-pending"><span>Provider links pending verification</span><small>Viator · GetYourGuide ready to connect</small></div>;

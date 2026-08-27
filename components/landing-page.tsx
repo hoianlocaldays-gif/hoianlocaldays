@@ -2,7 +2,8 @@ import Link from "next/link";
 import { getExperience } from "@/data/experiences";
 import type { LandingPage as PageData } from "@/data/pages";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
-import { AffiliateDisclosure, ExperienceCard } from "./experience-card";
+import { ExperienceCard } from "./experience-card";
+import { AffiliateDisclosure } from "./affiliate-disclosure";
 
 export function LandingPage({ page }: { page: PageData }) {
   const items = page.experienceIds.map(getExperience).filter(Boolean);

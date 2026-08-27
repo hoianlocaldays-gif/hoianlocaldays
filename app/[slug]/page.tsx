@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LandingPage } from "@/components/landing-page";
+import { CookingClassPage } from "@/components/cooking-class-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -13,6 +14,11 @@ export function generateStaticParams() { return [...landingPages.map((page) => (
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params; const page = getLandingPage(slug); const legalPage = legal[slug];
+  if (slug === "cooking-classes-hoi-an") {
+    const title = "Best Cooking Classes in Hoi An (2026) | Hoi An Local Days";
+    const description = "Compare locally selected cooking classes in Hoi An, including options for families, food lovers, couples and small groups.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+  }
   if (page) return { title: `${page.title} | Hoi An Local Days`, description: page.description, alternates: { canonical: `/${slug}` }, openGraph: { title: page.title, description: page.description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title: page.title, description: page.description } };
   if (legalPage) return { title: `${legalPage.title} | Hoi An Local Days`, alternates: { canonical: `/${slug}` } };
   return {};
@@ -20,6 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const page = getLandingPage(slug);
+  if (slug === "cooking-classes-hoi-an") return <CookingClassPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();
   return <main className="legal-page section"><p className="eyebrow">Hoi An Local Days</p><h1>{legalPage.title}</h1>{legalPage.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</main>;
