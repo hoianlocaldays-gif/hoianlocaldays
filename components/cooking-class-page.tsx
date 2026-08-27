@@ -10,8 +10,8 @@ function ProductCard({ item, position, compact = false }: { item: CookingClass; 
   return <article className={compact ? "cooking-card cooking-card-quick" : "cooking-card"}>
     <div className="cooking-card-heading"><span className="pick-label">{item.label}</span><small>Viator · {item.id}</small></div>
     <h3>{item.name}</h3>
-    <p>{item.shortDescription}</p>
-    {!compact && <dl className="cooking-facts"><div><dt>Best for</dt><dd>{item.bestFor.join(" · ")}</dd></div><div><dt>Experience style</dt><dd>{item.experienceStyle}</dd></div></dl>}
+    {compact ? <p><strong>Why we picked it:</strong> {item.whyWePickedIt}</p> : <p>{item.shortDescription}</p>}
+    <dl className="cooking-facts"><div><dt>Best for</dt><dd>{item.bestFor.join(" · ")}</dd></div>{!compact && <div><dt>Why we picked it</dt><dd>{item.whyWePickedIt}</dd></div>}{!compact && <div><dt>Not ideal for</dt><dd>{item.notIdealFor}</dd></div>}</dl>
     <AffiliateCTA experienceId={item.id} provider={item.offer.provider} campaign={item.offer.campaign} page={pageSlug} position={position} href={item.offer.affiliateUrl} />
   </article>;
 }
@@ -35,7 +35,7 @@ export function CookingClassPage() {
       <div className="cooking-quick-grid">{cookingClassQuickPicks.map((item, index) => <ProductCard key={item.id} item={item} compact position={`quick_pick_${index + 1}`} />)}</div>
     </section>
     <section className="section cooking-compare" id="compare-all">
-      <div className="section-heading inverse"><p className="eyebrow">Side-by-side shortlist</p><h2>Compare All 5 Cooking Classes</h2><p>No invented prices, ratings, review counts or availability.</p></div>
+      <div className="section-heading inverse"><p className="eyebrow">Side-by-side shortlist</p><h2>Compare All 5 Cooking Classes</h2><p>Compare the experience style and choose the best fit for your trip.</p></div>
       <div className="cooking-list">{cookingClasses.map((item, index) => <ProductCard key={item.id} item={item} position={`comparison_${index + 1}`} />)}</div>
     </section>
     <section className="section how-we-choose" id="how-we-choose"><div><p className="eyebrow">Our method</p><h2>How We Choose</h2></div><p>We compare experiences based on overall experience quality, suitability for different travelers, group style, local character and ease of booking.</p></section>
