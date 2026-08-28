@@ -36,7 +36,7 @@ export function CookingClassPage() {
       <div className="section-heading inverse"><p className="eyebrow">Editorial shortlist</p><h2>Compare All 7 Cooking Experiences</h2><p>Choose the experience first, then use an available booking provider.</p></div>
       <div className="editorial-comparison-list">{cookingExperiences.map((experience, index) => <div id={experience.id} key={experience.id}><CookingComparisonCard experience={experience} position={`comparison_${index + 1}`} /></div>)}</div>
     </section>
-    <section className="section how-we-choose" id="how-we-choose"><div><p className="eyebrow">Our method</p><h2>How We Choose Our Recommendations</h2></div><div className="method-copy"><p>Hoi An Local Days compares experiences based on the overall quality of the experience, how distinctive it is, who it suits best, local character, cooking depth, group style and ease of booking.</p><p>We do not rank an experience simply because it offers the lowest price or the highest affiliate commission.</p></div></section>
+    <section className="section how-we-choose" id="how-we-choose"><div><p className="eyebrow">Our method</p><h2>How We Choose Our Recommendations</h2></div><div className="method-copy"><p>Hoi An Local Days compares experiences based on the overall quality of the experience, how distinctive it is, who it suits best, local character, cooking depth, group style and ease of booking.</p><p>Price and booking relationships do not determine our editorial ranking.</p></div></section>
     <RelatedGuides />
   </main>;
 }

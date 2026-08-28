@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AffiliateDisclosure } from "./affiliate-disclosure";
 import { EditorSignal } from "./editor-signal";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 
@@ -18,6 +17,6 @@ export function EditorialMethodologyPage() {
     <section className="methodology-hero section"><p className="eyebrow">Our editorial approach</p><h1>How Hoi An Local Days Chooses What to Recommend</h1><p>Our role is to help travelers make a better Hoi An decision first, then show where an experience can be booked when that is genuinely useful.</p><EditorSignal /></section>
     <section className="methodology-principles section">{principles.map((principle, index) => <article key={principle.title}><span>{String(index + 1).padStart(2, "0")}</span><div><h2>{principle.title}</h2><p>{principle.body}</p></div></article>)}</section>
     <section className="methodology-verification section"><div><p className="eyebrow">Value before booking</p><h2>A Useful Answer Can Be “Choose Less”</h2></div><div><p>We distinguish between information checked against current provider listings, our editorial analysis of traveler fit and trade-offs, patterns observed in traveler feedback when used, and firsthand or local knowledge where it is genuinely available.</p><p>A recommendation should still help if no booking follows. That may mean suggesting a simpler format, protecting time to rest or pointing out that one activity already includes another.</p><p>We do not imply that every listed experience has been personally tested.</p></div></section>
-    <section className="methodology-affiliate section"><div><p className="eyebrow">Commercial transparency</p><h2>Affiliate Independence</h2></div><div><p>Affiliate availability or commission should not determine whether an experience is recommended or which editorial label it receives.</p><AffiliateDisclosure compact /></div></section>
+    <section className="methodology-affiliate section"><div><p className="eyebrow">Commercial transparency</p><h2>Affiliate Independence</h2></div><div><p>Booking relationships do not determine whether an experience is recommended or which editorial label it receives. Traveler fit, useful distinctions and honest trade-offs come first.</p><Link href="/affiliate-disclosure">Read our affiliate disclosure →</Link></div></section>
   </main>;
 }

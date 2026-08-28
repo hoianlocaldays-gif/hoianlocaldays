@@ -115,6 +115,35 @@ test("rendered affiliate links preserve the V1 tracking contract", async () => {
   assert.ok(getYourGuide >= 8, `expected rendered GetYourGuide links, found ${getYourGuide}`);
 });
 
+test("commercial pages use one lightweight disclosure without exposing internal business strategy", async () => {
+  const commercialRoutes = ["/cooking-classes-hoi-an", "/basket-boat-hoi-an", "/my-son-tours-from-hoi-an"];
+  const disclosure = "Some booking links may earn Hoi An Local Days a commission at no extra cost to you.";
+  const prohibitedPublicCopy = /\bEPC\b|conversion rate|attribution window|revenue target|highest affiliate commission|provider profitability|Google signals|automatic page views|GA4 configuration/i;
+  for (const route of commercialRoutes) {
+    const html = await readFile(routeFile(route), "utf8");
+    const visibleHtml = html.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+    assert.equal(visibleHtml.split(disclosure).length - 1, 1, `${route} must contain one concise disclosure`);
+    assert.match(html, /href="\/affiliate-disclosure"/i, `${route} must link to the full disclosure`);
+    assert.doesNotMatch(html, prohibitedPublicCopy, `${route} exposes internal business detail`);
+  }
+});
+
+test("trust pages preserve editorial independence without publishing analytics architecture", async () => {
+  const [disclosure, methodology, privacy] = await Promise.all([
+    readFile(routeFile("/affiliate-disclosure"), "utf8"),
+    readFile(routeFile("/editorial-methodology"), "utf8"),
+    readFile(routeFile("/privacy-policy"), "utf8"),
+  ]);
+  assert.match(disclosure, /may receive a commission/i);
+  assert.match(disclosure, /recommend a simpler option/i);
+  assert.match(disclosure, /suggest not purchasing an additional activity/i);
+  assert.match(methodology, /Traveler fit, useful distinctions and honest trade-offs come first/i);
+  assert.match(methodology, /A Useful Answer Can Be [“\"]Choose Less[”\"]/i);
+  assert.doesNotMatch(methodology, /conversion|revenue|campaign|attribution|EPC/i);
+  assert.match(privacy, /limited website analytics/i);
+  assert.doesNotMatch(privacy, /Google Analytics 4|GA4|Google signals|automatic page views|dataLayer|measurement ID/i);
+});
+
 test("the build is configured as a runtime-free static export", async () => {
   const config = await readFile(new URL("next.config.ts", root), "utf8");
   assert.match(config, /output:\s*["']export["']/);
