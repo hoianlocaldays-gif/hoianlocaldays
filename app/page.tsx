@@ -3,7 +3,7 @@ import { TrackedLink } from "@/components/tracked-link";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 
 const discovery = [
-  { name: "Food & Cooking", note: "Markets, local dishes and hands-on classes", href: "/cooking-classes-hoi-an", accent: "food" },
+  { name: "Food & Cooking", note: "Understand local dishes first, then decide whether a class fits", href: "/hoi-an-food-guide", accent: "food" },
   { name: "Local Experiences", note: "A considered starting point for exploring Hoi An", href: "#picks", accent: "local" },
   { name: "Family Activities", note: "Ideas shaped around different ages and energy levels", href: "/hoi-an-with-kids", accent: "family" },
   { name: "Culture", note: "Heritage, craft and local context", href: "/things-to-do-in-hoi-an", accent: "culture" },
@@ -18,6 +18,7 @@ const planningCards = [
 
 const homeCtaIds: Record<string, string> = {
   "/cooking-classes-hoi-an": "home_cooking",
+  "/hoi-an-food-guide": "home_food_guide",
   "/basket-boat-hoi-an": "home_basket_boat",
   "/hoi-an-with-kids": "home_kids",
   "/things-to-do-in-hoi-an": "home_things_to_do",

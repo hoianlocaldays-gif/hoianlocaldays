@@ -41,5 +41,5 @@ export function CookingComparisonCard({ experience, position, page = defaultPage
 }
 
 export function RelatedGuides() {
-  return <section className="section cooking-next"><p className="eyebrow">Planning the rest of your stay?</p><h2>Keep Planning Your Hoi An Trip</h2><div><Link href="/3-days-in-hoi-an">3-Day Itinerary <span>→</span></Link><TrackedLink href="/basket-boat-hoi-an" sourcePage="cooking-classes-hoi-an" destinationPage="/basket-boat-hoi-an" section="related_guides" ctaId="cooking_basket_boat">Choosing a Basket Boat <span>→</span></TrackedLink><Link href="/hoi-an-with-kids">Hoi An With Kids <span>→</span></Link></div></section>;
+  return <section className="section cooking-next"><p className="eyebrow">Planning the rest of your stay?</p><h2>Keep Planning Your Hoi An Trip</h2><div><Link href="/hoi-an-food-guide">What to Eat in Hoi An <span>→</span></Link><Link href="/3-days-in-hoi-an">3-Day Itinerary <span>→</span></Link><TrackedLink href="/basket-boat-hoi-an" sourcePage="cooking-classes-hoi-an" destinationPage="/basket-boat-hoi-an" section="related_guides" ctaId="cooking_basket_boat">Choosing a Basket Boat <span>→</span></TrackedLink><Link href="/hoi-an-with-kids">Hoi An With Kids <span>→</span></Link></div></section>;
 }

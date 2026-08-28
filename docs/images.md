@@ -23,3 +23,19 @@ Audit date: 2026-08-27. `Yes` means the image was verified in the provider-owned
 | myson-adventure | `/images/experiences/my-son/myson-adventure.webp` | GetYourGuide | 519118 | https://www.getyourguide.com/hoi-an-l831/my-son-sanctuary-and-mountain-trekking-pilgrimage-t519118/ | Yes | 2026-08-27 | Provider hero collage; trekking and waterfall components visible. |
 
 No traveler-review image was knowingly used. Fourteen images were confirmed directly from provider pages. The final three are explicitly modeled as owner-selected and are not represented as verified GetYourGuide gallery images.
+
+## Food guide temporary editorial illustrations
+
+Added locally on 2026-08-28 for the visual review of `/hoi-an-food-guide`. These seven images were generated specifically for HAL as temporary editorial illustrations. They are not provider photographs, do not document a particular restaurant, vendor, market stall or exact preparation, and should be replaced with HAL original photography when available. No third-party branding or readable location signage is intentionally shown.
+
+| Section | Local image | Source type | Intended use | Replacement status |
+|---|---|---|---|---|
+| Hero | `/images/editorial/food-guide/hero.webp` | HAL-generated editorial illustration | General Hoi An food spread | Replace with HAL original |
+| Cao lau | `/images/editorial/food-guide/cao-lau.webp` | HAL-generated editorial illustration | Explain the dish's texture and components | Replace with HAL original |
+| Chicken rice | `/images/editorial/food-guide/chicken-rice.webp` | HAL-generated editorial illustration | Show the balance of rice, chicken, herbs and accompaniments | Replace with HAL original |
+| Banh mi | `/images/editorial/food-guide/banh-mi.webp` | HAL-generated editorial illustration | Show a generic balanced sandwich format | Replace with HAL original |
+| Banh xeo | `/images/editorial/food-guide/banh-xeo.webp` | HAL-generated editorial illustration | Show pancakes with wrappers, herbs and sauce | Replace with HAL original |
+| Morning market | `/images/editorial/food-guide/market.webp` | HAL-generated editorial illustration | Support ingredient and market-etiquette context | Replace with HAL original |
+| Cam Nam | `/images/editorial/food-guide/cam-nam.webp` | HAL-generated editorial illustration | Show banh dap and a separate clam preparation together | Replace with HAL original |
+
+All files are local 1200 × 800 WebP assets. The hero is loaded eagerly; the six below-fold images are lazy-loaded. Their combined footprint is approximately 632 KB.

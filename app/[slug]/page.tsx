@@ -9,6 +9,7 @@ import { ThreeDaysItineraryPage } from "@/components/three-days-itinerary-page";
 import { EditorialMethodologyPage } from "@/components/editorial-methodology-page";
 import { MySonPage } from "@/components/my-son-page";
 import { CamThanhGuidePage } from "@/components/cam-thanh-guide-page";
+import { HoiAnFoodGuidePage } from "@/components/hoi-an-food-guide-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -28,6 +29,7 @@ export function generateStaticParams() {
     ...Object.keys(legal).map((slug) => ({ slug })),
     { slug: "editorial-methodology" },
     { slug: "cam-thanh-coconut-village" },
+    { slug: "hoi-an-food-guide" },
   ];
 }
 
@@ -68,6 +70,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Plan a Cam Thanh coconut village visit with practical guidance on basket boat costs, timing, lively and quiet areas, optional extras and common mistakes.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
+  if (slug === "hoi-an-food-guide") {
+    const title = "Hoi An Food Guide: What to Eat & Local Tips";
+    const description = "Discover what to eat in Hoi An, from cao lau and chicken rice to banh xeo and Cam Nam clams, with practical market, street-food and local tips.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
   if (slug === "editorial-methodology") {
     const title = "How Hoi An Local Days Chooses What to Recommend";
     const description = "Learn how Hoi An Local Days evaluates experiences, traveler fit, local context, provider options, verification and affiliate independence.";
@@ -91,6 +98,7 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   if (slug === "3-days-in-hoi-an") return <ThreeDaysItineraryPage />;
   if (slug === "my-son-tours-from-hoi-an") return <MySonPage />;
   if (slug === "cam-thanh-coconut-village") return <CamThanhGuidePage />;
+  if (slug === "hoi-an-food-guide") return <HoiAnFoodGuidePage />;
   if (slug === "editorial-methodology") return <EditorialMethodologyPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();

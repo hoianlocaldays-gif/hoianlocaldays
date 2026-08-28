@@ -11,6 +11,7 @@ const launchRoutes = [
   "/cooking-classes-hoi-an",
   "/basket-boat-hoi-an",
   "/cam-thanh-coconut-village",
+  "/hoi-an-food-guide",
   "/my-son-tours-from-hoi-an",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",
@@ -189,5 +190,38 @@ test("Cam Thanh guide protects informational intent and links the content cluste
   for (const route of ["/basket-boat-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an"]) {
     const html = await readFile(routeFile(route), "utf8");
     assert.match(html, /href="\/cam-thanh-coconut-village"/i, `${route} must link contextually to Cam Thanh`);
+  }
+});
+
+test("Hoi An food guide protects informational intent and supports first-timer decisions", async () => {
+  const food = await readFile(routeFile("/hoi-an-food-guide"), "utf8");
+  const visibleHtml = food.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(food, /Hoi An Food Guide: What to Eat &amp; How to Eat It/i);
+  assert.match(food, /practical shortlist, not a definitive ranking/i);
+  assert.match(food, /char siu-style pork/i);
+  assert.match(food, /do not assume every modern kitchen uses water from Ba Le well/i);
+  assert.match(food, /If You Only Have One Day to Eat in Hoi An/i);
+  assert.match(food, /Compare Hoi An Cooking Classes/i);
+  assert.match(food, /href="\/editorial-methodology"/i);
+  for (const topic of [/Cao Lau/i, /Hoi An Chicken Rice/i, /Hoi An Banh Mi/i, /Hoi An-Style Banh Xeo/i, /Banh Dap &amp; Cam Nam Clams/i, /What About White Rose/i, /What About Mot/i, /Visit Hoi An Market/i, /How to Approach Street Food/i]) assert.match(food, topic);
+  for (const route of ["/cooking-classes-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/cam-thanh-coconut-village", "/basket-boat-hoi-an"]) assert.match(food, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com/i);
+  assert.doesNotMatch(visibleHtml, /foodie paradise|hidden gem|tantalize your taste buds|100% safe|guaranteed safe/i);
+  assert.match(food, /WHO Guide on Safe Food for Travellers/i);
+  const foodImages = ["hero", "cao-lau", "chicken-rice", "banh-mi", "banh-xeo", "market", "cam-nam"];
+  for (const image of foodImages) {
+    const path = `images/editorial/food-guide/${image}.webp`;
+    await access(new URL(path, output));
+    assert.match(food, new RegExp(`src="/${path}"`, "i"));
+  }
+  assert.equal((food.match(/<img\b[^>]*\/images\/editorial\/food-guide\//gi) ?? []).length, 7);
+  assert.match(food, /src="\/images\/editorial\/food-guide\/hero\.webp"[^>]*loading="eager"[^>]*fetchpriority="high"/i);
+  assert.match(food, /src="\/images\/editorial\/food-guide\/cao-lau\.webp"[^>]*loading="lazy"/i);
+  assert.doesNotMatch(food, /<img\b[^>]*src="https?:\/\//i);
+  assert.doesNotMatch(food, /cocolocal/i);
+
+  for (const route of ["/", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/cooking-classes-hoi-an"]) {
+    const html = await readFile(routeFile(route), "utf8");
+    assert.match(html, /href="\/hoi-an-food-guide"/i, `${route} must link contextually to the food guide`);
   }
 });

@@ -10,6 +10,7 @@ const launchRoutes = [
   "/cooking-classes-hoi-an",
   "/basket-boat-hoi-an",
   "/cam-thanh-coconut-village",
+  "/hoi-an-food-guide",
   "/my-son-tours-from-hoi-an",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",

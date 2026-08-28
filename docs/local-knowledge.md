@@ -50,6 +50,15 @@ Classification:
 | White Rose need not be a first priority for a time-limited visitor. | C | Owner opinion | Present as editorial prioritization only. |
 | Most White Rose dumplings come from one producer. | D | Unverified local story | Do not publish until independently verified. |
 | Ba Le well, ash, Japanese/Chinese influence and trading-port origin stories for cao lau. | D | Folklore/historical claims not yet checked | Do not repeat as settled fact. |
+| Cao lau is served with only a small amount of sauce rather than as a soup. | A | Da Nang tourism portal, Cao Lau Hoi An: https://danangfantasticity.com/en/tinh-hoa-am-thuc-da-nang/cao-lau-hoi-an, reviewed 2026-08-28 | Individual bowls and sauce quantities vary. |
+| Hoi An chicken rice commonly uses fragrant rice flavored with chicken broth and serves shredded chicken with Vietnamese herbs and tart/pickled sides. | A | Vietnam Tourism, Explore the Food of Hoi An: https://www.vietnam.travel/things-to-do/explore-food-hoi-an, reviewed 2026-08-28 | Do not present one canonical recipe or uncontested origin. |
+| Banh xeo is commonly assembled with rice paper, herbs/greens and dipping sauce; regional versions differ. | A | Vietnam Tourism, Explore the Food of Hoi An, reviewed 2026-08-28 | Phrase as a common eating format, not the only correct method. |
+| Cam Nam is associated with banh dap and stir-fried river clams served with crisp rice paper. | A | Hoi An heritage portal: https://www.hoianworldheritage.org.vn/en/news/Traditionnal-Hoi-An-food/Fresh-Rice-Paper-In-Cam-Nam-131.hwh, reviewed 2026-08-28 | Avoid romanticizing low price or calling it inherently more authentic. |
+| Banh dap combines soft fresh rice paper and crisp grilled rice paper, pressed before breaking and dipping. | A | Hoi An heritage portal, Fresh Rice Paper in Cam Nam, reviewed 2026-08-28 | Preparation and dipping sauce vary by vendor. |
+| White Rose refers to Hoi An steamed banh bao/banh vac dumplings; official tourism sources describe a specialist family producer. | A with source caveat | Vietnam Tourism, Explore the Food of Hoi An; source uses family-tradition language, reviewed 2026-08-28 | Publish the producer detail cautiously; do not present guarded recipes or well-water stories as independently proven history. |
+| Mot is a popular contemporary visitor drink but need not be framed as a major historic food tradition. | B/C | Owner observation and HAL editorial judgment, reviewed 2026-08-28 | Do not manufacture heritage significance from social-media popularity. |
+| Tra Que grows herbs and vegetables associated in official local sources with dishes including cao lau, Mi Quang and banh xeo. | A | Da Nang tourism portal, Tra Que Traditional Vegetable Farming Village: https://danangfantasticity.com/tra-que-traditional-vegetable-farming-village-hoi-an, reviewed 2026-08-28 | Do not claim every herb served in Hoi An came from Tra Que. |
+| Hoi An's documented trading-port history does not by itself prove a specific Japanese or Chinese origin for cao lau. | C/D | UNESCO verifies the trading-port and cultural-fusion context, not a single noodle origin; reviewed 2026-08-28 | Keep influence/origin claims explicitly uncertain. |
 
 ## Hoi An Market
 
@@ -59,6 +68,7 @@ Classification:
 | Morning food-market activity differs from the late-day/night-market visitor experience. | B | Owner local observation | Avoid implying one is “more authentic” as a universal fact. |
 | Ask before close-up photos or touching produce; avoid blocking working areas and aggressive bargaining over small values. | C | HAL etiquette guidance based on owner observation | Phrase respectfully, not as formal regulation. |
 | “Choose a busy stall, watch it being cooked, and eat it piping hot.” | C | HAL risk-reduction guidance | Never promise food safety; allergies/coeliac needs require direct discussion. |
+| Thorough cooking, serving food steaming hot, separating raw/cooked food and safe holding temperatures reduce foodborne risk. | A | WHO Guide on Safe Food for Travellers and WHO/FAO street-food guidance, reviewed 2026-08-28 | Risk reduction only; never guarantee safety from visual inspection. |
 
 ## Source review notes
 
@@ -66,5 +76,9 @@ Classification:
 - Da Nang City Tourism Information Portal, Bay Mau Coconut Forest, accessed 2026-08-28.
 - Da Nang City Tourism Information Portal, bamboo and coconut house craft in Cam Thanh, accessed 2026-08-28.
 - Hoi An World Heritage information portal, basket boats and Cam Thanh tourism/livelihood context, accessed 2026-08-28.
+- Vietnam Tourism, Explore the Food of Hoi An, accessed 2026-08-28.
+- Da Nang City Tourism Information Portal, Cao Lau Hoi An and Tra Que village references, accessed 2026-08-28.
+- Hoi An World Heritage information portal, Cam Nam rice paper and clam tradition, accessed 2026-08-28.
+- WHO, Guide on Safe Food for Travellers and WHO/FAO street-food vending guidance, accessed 2026-08-28.
 
 This document is internal. It must not expose private commercial terms, commissions or operator-confidential information.
