@@ -72,11 +72,16 @@ test("placeholder routes are absent from the static output", async () => {
 
 test("sitemap contains only launch-ready routes", async () => {
   const xml = await readFile(new URL("sitemap.xml", output), "utf8");
+  assert.match(xml, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
+  assert.match(xml, /<urlset\s+xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
+  assert.doesNotMatch(xml, /<!doctype html|<html\b/i);
+  assert.equal((xml.match(/<url>/g) ?? []).length, launchRoutes.length);
   for (const route of launchRoutes) {
     const canonical = route === "/" ? "https://hoianlocaldays.com" : `https://hoianlocaldays.com${route}`;
     assert.match(xml, new RegExp(`<loc>${canonical.replaceAll("/", "\\/")}<\\/loc>`));
   }
   for (const route of placeholders) assert.doesNotMatch(xml, new RegExp(route));
+  assert.doesNotMatch(xml, /pages\.dev|localhost|netlify\.app/i);
   assert.doesNotMatch(xml, /<changefreq>|<priority>/i);
 });
 
@@ -89,6 +94,7 @@ test("robots and Cloudflare Pages static controls are exported", async () => {
   assert.match(robots, /Allow:\s*\//i);
   assert.match(robots, /Sitemap:\s*https:\/\/hoianlocaldays\.com\/sitemap\.xml/i);
   assert.match(redirects, /^\/hoi-an-itinerary\s+\/3-days-in-hoi-an\s+308\s*$/m);
+  assert.match(headers, /^\/sitemap\.xml\s*\n\s+Content-Type:\s*application\/xml;\s*charset=utf-8\s*$/mi);
   assert.match(headers, /X-Content-Type-Options:\s*nosniff/i);
   assert.match(headers, /Content-Security-Policy:\s*frame-ancestors 'none'/i);
 });
