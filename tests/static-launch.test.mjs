@@ -10,6 +10,7 @@ const launchRoutes = [
   "/things-to-do-in-hoi-an",
   "/cooking-classes-hoi-an",
   "/basket-boat-hoi-an",
+  "/cam-thanh-coconut-village",
   "/my-son-tours-from-hoi-an",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",
@@ -170,4 +171,23 @@ test("Cloudflare deploys the generated static export without an SSR adapter", as
   assert.match(wranglerConfig, /"directory":\s*"\.\/out"/);
   assert.match(wranglerConfig, /"not_found_handling":\s*"404-page"/);
   assert.doesNotMatch(packageJson + wranglerConfig, /opennextjs-cloudflare|\.next\/standalone/i);
+});
+
+test("Cam Thanh guide protects informational intent and links the content cluster", async () => {
+  const camThanh = await readFile(routeFile("/cam-thanh-coconut-village"), "utf8");
+  const visibleHtml = camThanh.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(camThanh, /Cam Thanh Coconut Village: What to Know Before You Go/i);
+  assert.match(camThanh, /Based on our current local observation/i);
+  assert.match(camThanh, /prices can change|prices, water conditions|planning references/i);
+  assert.match(camThanh, /href="\/basket-boat-hoi-an"/i);
+  assert.match(camThanh, /href="\/cooking-classes-hoi-an"/i);
+  assert.match(camThanh, /href="\/things-to-do-in-hoi-an"/i);
+  assert.match(camThanh, /href="\/3-days-in-hoi-an"/i);
+  assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com/i);
+  assert.doesNotMatch(visibleHtml, /official price|100% safe|hidden gem|authentic experience guaranteed/i);
+
+  for (const route of ["/basket-boat-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an"]) {
+    const html = await readFile(routeFile(route), "utf8");
+    assert.match(html, /href="\/cam-thanh-coconut-village"/i, `${route} must link contextually to Cam Thanh`);
+  }
 });

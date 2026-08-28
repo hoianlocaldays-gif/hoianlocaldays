@@ -70,3 +70,73 @@
 .editorial-comparison-card>.experience-card-image{border-radius:.15rem}
 @media(max-width:900px){.editorial-comparison-card:has(>.experience-card-image){grid-template-columns:160px 1fr 1fr}.editorial-comparison-card:has(>.experience-card-image) .comparison-action{grid-column:2/-1}}
 @media(max-width:620px){.experience-card-content{padding:1.15rem}.editorial-comparison-card:has(>.experience-card-image){grid-template-columns:1fr}.editorial-comparison-card:has(>.experience-card-image) .comparison-action{grid-column:auto}.editorial-comparison-card>.experience-card-image{margin:-1.1rem -1.1rem 0}.editorial-comparison-card>.experience-card-image img{width:calc(100% + 2.2rem);max-width:none}}
+
+/* Cam Thanh informational guide */
+.cam-thanh-guide{--guide-muted:rgba(29,45,41,.7)}
+.cam-thanh-guide h2{font-size:clamp(2.35rem,4.6vw,4.2rem)}
+.cam-thanh-guide h3{margin:0 0 .75rem;font:500 1.45rem/1.18 var(--serif)}
+.cam-thanh-guide p,.cam-thanh-guide li{line-height:1.7}
+.cam-thanh-hero{max-width:1100px;padding-top:5rem;padding-bottom:4rem}
+.cam-thanh-hero h1{max-width:1000px;font-size:clamp(3.5rem,6.4vw,6.2rem)}
+.cam-thanh-hero>p:not(.eyebrow){max-width:820px;margin:1.5rem 0;color:var(--guide-muted);font-size:1.15rem}
+.cam-thanh-hero aside{max-width:820px;padding:1rem 1.2rem;border-left:4px solid var(--gold);background:var(--white);line-height:1.65}
+.cam-thanh-hero .quick-nav{margin-top:1.6rem}
+.cam-thanh-intro,.cam-thanh-worth,.cam-thanh-timing,.cam-thanh-ride,.cam-thanh-costs,.cam-thanh-extras,.cam-thanh-touristy,.cam-thanh-story,.cam-thanh-overlap,.cam-thanh-options,.cam-thanh-checklist{display:grid;grid-template-columns:.72fr 1.28fr;gap:4rem}
+.cam-thanh-intro{background:var(--white)}
+.cam-thanh-intro p,.cam-thanh-ride p,.cam-thanh-touristy p,.cam-thanh-story p,.cam-thanh-overlap p,.cam-thanh-options p{margin-top:0;color:var(--guide-muted)}
+.cam-thanh-worth{background:var(--yellow)}
+.cam-thanh-verdicts{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.cam-thanh-verdicts article{padding:1.3rem;background:rgba(255,255,255,.58)}
+.cam-thanh-verdicts ul{margin:0;padding-left:1.15rem;color:var(--guide-muted)}
+.cam-thanh-timing{background:var(--green);color:#fff}
+.cam-thanh-time-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.cam-thanh-time-grid article{padding:1.2rem;border:1px solid rgba(255,255,255,.23)}
+.cam-thanh-time-grid span{color:var(--yellow);font-size:.69rem;font-weight:850;text-transform:uppercase;letter-spacing:.08em}
+.cam-thanh-time-grid p{margin:0;color:rgba(255,255,255,.73);font-size:.82rem}
+.cam-thanh-caution{grid-column:2;margin:0;color:rgba(255,255,255,.68);font-size:.76rem}
+.cam-thanh-atmosphere{background:#e9e3d4}
+.cam-thanh-atmosphere>div:first-child{max-width:760px;margin-bottom:2rem}
+.cam-thanh-atmosphere>div:first-child>p:last-child{color:var(--guide-muted)}
+.cam-thanh-atmosphere>div:nth-child(2){display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.cam-thanh-atmosphere article{padding:1.4rem;border-top:4px solid var(--clay);background:var(--white)}
+.cam-thanh-atmosphere article>span{color:var(--clay);font-size:.68rem;font-weight:850}
+.cam-thanh-atmosphere article p{color:var(--guide-muted)}
+.cam-thanh-atmosphere article strong{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+.cam-thanh-atmosphere aside{margin-top:1rem;padding:1rem 1.2rem;border-left:3px solid var(--green);background:rgba(255,255,255,.5);line-height:1.6}
+.cam-thanh-ride{background:var(--white)}
+.cam-thanh-costs{background:var(--yellow)}
+.cam-thanh-costs>div:first-child>p:last-child{color:var(--guide-muted)}
+.cam-thanh-costs>p,.cam-thanh-costs>aside{grid-column:2;margin:0;color:var(--guide-muted);line-height:1.65}
+.cam-thanh-costs>aside{margin-top:.5rem;padding:1rem;border:1px solid rgba(29,45,41,.2)}
+.cam-thanh-price-card{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.cam-thanh-price-card>div{padding:1rem;background:var(--white)}
+.cam-thanh-price-card span,.cam-thanh-price-card small{display:block;color:var(--guide-muted);font-size:.68rem}
+.cam-thanh-price-card strong{display:block;margin:.7rem 0;font:500 1.35rem var(--serif)}
+.cam-thanh-extras{background:var(--clay);color:#fff}
+.cam-thanh-extras>div:last-child>p{margin-top:0;color:rgba(255,255,255,.76)}
+.cam-thanh-rule{display:grid;gap:.35rem;margin:1rem 0;padding:1.1rem;border:1px solid rgba(255,255,255,.25)}
+.cam-thanh-rule strong{color:var(--yellow);font-size:.7rem;text-transform:uppercase;letter-spacing:.07em}
+.cam-thanh-practical{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;background:var(--white)}
+.cam-thanh-practical article{padding:1.5rem;border-top:4px solid var(--gold);background:var(--paper)}
+.cam-thanh-practical p:last-child{color:var(--guide-muted)}
+.cam-thanh-touristy{background:var(--yellow)}
+.cam-thanh-story{background:var(--white)}
+.cam-thanh-sources{padding-top:1rem;border-top:1px solid var(--line);font-size:.76rem}
+.cam-thanh-sources a{text-decoration:underline;text-underline-offset:3px}
+.cam-thanh-overlap{background:var(--green);color:#fff}
+.cam-thanh-overlap p{color:rgba(255,255,255,.74)}
+.cam-thanh-overlap .primary-button{margin-top:.7rem;background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.cam-thanh-options{background:#e9e3d4}
+.cam-thanh-options .secondary-button{margin-top:.6rem}
+.cam-thanh-checklist{background:var(--white)}
+.cam-thanh-checklist ol{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.cam-thanh-checklist li{display:grid;grid-template-columns:38px 1fr;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.cam-thanh-checklist li span{color:var(--clay);font-size:.68rem;font-weight:850}
+.cam-thanh-checklist li p{margin:0}
+.cam-thanh-checklist nav{grid-column:2;display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+.cam-thanh-checklist nav a,.context-link,.hub-local-note a{font-size:.76rem;font-weight:850;text-decoration:underline;text-underline-offset:3px}
+.hub-local-note{display:grid;grid-template-columns:.65fr 1fr auto;gap:1.2rem;align-items:center;margin-top:1rem;padding:1rem 1.2rem;border-left:3px solid var(--gold);background:var(--white)}
+.hub-local-note span{color:rgba(29,45,41,.7);font-size:.8rem;line-height:1.5}
+.duplicate-note a{text-decoration:underline;text-underline-offset:3px}
+.context-link{display:inline-block;margin-top:.7rem}
+@media(max-width:760px){.cam-thanh-hero{padding-top:3rem;padding-bottom:3rem}.cam-thanh-hero h1{font-size:clamp(2.65rem,12vw,3.8rem)}.cam-thanh-hero>p:not(.eyebrow){font-size:1rem}.cam-thanh-intro,.cam-thanh-worth,.cam-thanh-timing,.cam-thanh-ride,.cam-thanh-costs,.cam-thanh-extras,.cam-thanh-touristy,.cam-thanh-story,.cam-thanh-overlap,.cam-thanh-options,.cam-thanh-checklist{grid-template-columns:1fr;gap:1.2rem}.cam-thanh-verdicts,.cam-thanh-time-grid,.cam-thanh-atmosphere>div:nth-child(2),.cam-thanh-practical,.cam-thanh-price-card{grid-template-columns:1fr}.cam-thanh-caution,.cam-thanh-costs>p,.cam-thanh-costs>aside,.cam-thanh-checklist nav{grid-column:1}.cam-thanh-price-card>div{display:grid;grid-template-columns:1fr auto;gap:.25rem 1rem;align-items:center}.cam-thanh-price-card strong{grid-column:2;grid-row:1/3;margin:0;text-align:right}.cam-thanh-overlap .primary-button,.cam-thanh-options .secondary-button{width:100%;text-align:center}.hub-local-note{grid-template-columns:1fr;gap:.5rem}}

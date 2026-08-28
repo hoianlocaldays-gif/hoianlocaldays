@@ -8,6 +8,7 @@ import { BasketBoatPage } from "@/components/basket-boat-page";
 import { ThreeDaysItineraryPage } from "@/components/three-days-itinerary-page";
 import { EditorialMethodologyPage } from "@/components/editorial-methodology-page";
 import { MySonPage } from "@/components/my-son-page";
+import { CamThanhGuidePage } from "@/components/cam-thanh-guide-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -26,6 +27,7 @@ export function generateStaticParams() {
     ...landingPages.filter((page) => !unfinishedSlugs.has(page.slug) && page.slug !== "hoi-an-itinerary").map((page) => ({ slug: page.slug })),
     ...Object.keys(legal).map((slug) => ({ slug })),
     { slug: "editorial-methodology" },
+    { slug: "cam-thanh-coconut-village" },
   ];
 }
 
@@ -61,6 +63,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Plan a trip to My Son Sanctuary from Hoi An. Compare morning, afternoon, group, private and independent visit styles to find what suits your trip.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
+  if (slug === "cam-thanh-coconut-village") {
+    const title = "Cam Thanh Coconut Village Guide: Basket Boats, Costs & What to Expect";
+    const description = "Plan a Cam Thanh coconut village visit with practical guidance on basket boat costs, timing, lively and quiet areas, optional extras and common mistakes.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
   if (slug === "editorial-methodology") {
     const title = "How Hoi An Local Days Chooses What to Recommend";
     const description = "Learn how Hoi An Local Days evaluates experiences, traveler fit, local context, provider options, verification and affiliate independence.";
@@ -83,6 +90,7 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   if (slug === "basket-boat-hoi-an") return <BasketBoatPage />;
   if (slug === "3-days-in-hoi-an") return <ThreeDaysItineraryPage />;
   if (slug === "my-son-tours-from-hoi-an") return <MySonPage />;
+  if (slug === "cam-thanh-coconut-village") return <CamThanhGuidePage />;
   if (slug === "editorial-methodology") return <EditorialMethodologyPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();
