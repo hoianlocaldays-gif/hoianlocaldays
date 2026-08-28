@@ -17,6 +17,7 @@ const legal: Record<string, { title: string; body: string[] }> = {
 };
 
 const unfinishedSlugs = new Set(["food-tours-hoi-an", "day-trips-from-hoi-an", "hoi-an-airport-transfer", "where-to-stay-hoi-an"]);
+const socialImage = { url: "/og.png", width: 1200, height: 630, alt: "Hoi An Local Days" };
 
 export const dynamicParams = false;
 
@@ -33,40 +34,44 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (slug === "cooking-classes-hoi-an") {
     const title = "Best Cooking Classes in Hoi An (2026) | Hoi An Local Days";
     const description = "Compare locally selected cooking classes in Hoi An, including options for families, food lovers, couples and small groups.";
-    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
   if (slug === "things-to-do-in-hoi-an") {
     const title = "Best Things to Do in Hoi An | Local Guide 2026";
     const description = "Discover the best things to do in Hoi An, from cooking classes and local food to culture, family activities, beaches and day trips.";
-    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
   if (slug === "hoi-an-with-kids") {
     const title = "Hoi An With Kids: Best Family Things to Do | 2026 Guide";
     const description = "Plan a family trip to Hoi An with practical recommendations for cooking classes, basket boats, beaches, crafts, Old Town and easy family days.";
-    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
   if (slug === "basket-boat-hoi-an") {
     const title = "Hoi An Basket Boat: How to Choose the Best Experience";
     const description = "Compare the main types of Hoi An basket boat experiences, from short coconut-forest rides to cooking-class and family-friendly combinations.";
-    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
   if (slug === "3-days-in-hoi-an") {
     const title = "3 Days in Hoi An: A Relaxed First-Time Itinerary";
     const description = "Plan 3 days in Hoi An with a practical itinerary covering the Ancient Town, local food, cooking classes, basket boats, countryside, beaches and optional day trips.";
-    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
   if (slug === "my-son-tours-from-hoi-an") {
     const title = "My Son Sanctuary from Hoi An: Best Ways to Visit";
     const description = "Plan a trip to My Son Sanctuary from Hoi An. Compare morning, afternoon, group, private and independent visit styles to find what suits your trip.";
-    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
   if (slug === "editorial-methodology") {
     const title = "How Hoi An Local Days Chooses What to Recommend";
     const description = "Learn how Hoi An Local Days evaluates experiences, traveler fit, local context, provider options, verification and affiliate independence.";
-    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title, description } };
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
-  if (page) return { title: `${page.title} | Hoi An Local Days`, description: page.description, alternates: { canonical: `/${slug}` }, robots: unfinishedSlugs.has(slug) ? { index: false, follow: false } : undefined, openGraph: { title: page.title, description: page.description, url: `/${slug}`, type: "article" }, twitter: { card: "summary_large_image", title: page.title, description: page.description } };
-  if (legalPage) return { title: `${legalPage.title} | Hoi An Local Days`, alternates: { canonical: `/${slug}` } };
+  if (page) return { title: `${page.title} | Hoi An Local Days`, description: page.description, alternates: { canonical: `/${slug}` }, robots: unfinishedSlugs.has(slug) ? { index: false, follow: false } : undefined, openGraph: { title: page.title, description: page.description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title: page.title, description: page.description, images: [socialImage.url] } };
+  if (legalPage) {
+    const title = `${legalPage.title} | Hoi An Local Days`;
+    const description = `${legalPage.title} for Hoi An Local Days.`;
+    return { title, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "website" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
   return {};
 }
 

@@ -47,12 +47,18 @@ async function exists(url) {
   }
 }
 
-test("static export contains every launch route with one H1 and canonical metadata", async () => {
+test("static export contains every launch route with indexable production metadata", async () => {
   for (const route of launchRoutes) {
     const html = await readFile(routeFile(route), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${route} must contain one H1`);
     const canonical = route === "/" ? "https://hoianlocaldays.com" : `https://hoianlocaldays.com${route}`;
     assert.match(html, new RegExp(`<link[^>]+rel=["']canonical["'][^>]+href=["']${canonical.replaceAll("/", "\\/")}["']`, "i"), `${route} must use its canonical URL`);
+    assert.match(html, /<title>[^<]+<\/title>/i, `${route} must contain a title`);
+    assert.match(html, /<meta[^>]+name=["']description["'][^>]+content=["'][^"']+["']/i, `${route} must contain a meta description`);
+    assert.doesNotMatch(html, /<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i, `${route} must remain indexable`);
+    assert.match(html, new RegExp(`<meta[^>]+property=["']og:url["'][^>]+content=["']${canonical.replaceAll("/", "\\/")}["']`, "i"), `${route} must use its canonical Open Graph URL`);
+    assert.match(html, /<meta[^>]+property=["']og:image["'][^>]+content=["']https:\/\/hoianlocaldays\.com\/og\.png["']/i, `${route} must use the public Open Graph image`);
+    assert.doesNotMatch(html, /pages\.dev|netlify\.app|localhost/i, `${route} exposes a non-production hostname`);
     for (const copy of developmentCopy) assert.doesNotMatch(html, new RegExp(copy, "i"), `${route} exposes development copy`);
   }
 });
