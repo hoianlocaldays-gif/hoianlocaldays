@@ -148,3 +148,14 @@ test("the build is configured as a runtime-free static export", async () => {
   const config = await readFile(new URL("next.config.ts", root), "utf8");
   assert.match(config, /output:\s*["']export["']/);
 });
+
+test("Cloudflare deploys the generated static export without an SSR adapter", async () => {
+  const [packageJson, wranglerConfig] = await Promise.all([
+    readFile(new URL("package.json", root), "utf8"),
+    readFile(new URL("wrangler.jsonc", root), "utf8"),
+  ]);
+  assert.match(packageJson, /"build":\s*"npm run build:static"/);
+  assert.match(wranglerConfig, /"directory":\s*"\.\/out"/);
+  assert.match(wranglerConfig, /"not_found_handling":\s*"404-page"/);
+  assert.doesNotMatch(packageJson + wranglerConfig, /opennextjs-cloudflare|\.next\/standalone/i);
+});

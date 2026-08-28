@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm run verify:affiliate && next build",
+    "build": "npm run build:static",
     "build:static": "npm run verify:affiliate && next build --webpack",
     "verify:affiliate": "node scripts/verify-affiliate-links.mjs",
     "start": "next start",
