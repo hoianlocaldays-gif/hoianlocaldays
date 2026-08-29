@@ -39,3 +39,17 @@ Added locally on 2026-08-28 for the visual review of `/hoi-an-food-guide`. These
 | Cam Nam | `/images/editorial/food-guide/cam-nam.webp` | HAL-generated editorial illustration | Show banh dap and a separate clam preparation together | Replace with HAL original |
 
 All files are local 1200 × 800 WebP assets. The hero is loaded eagerly; the six below-fold images are lazy-loaded. Their combined footprint is approximately 632 KB.
+
+## Market guide temporary editorial illustrations
+
+Added locally on 2026-08-29 for the owner review of `/hoi-an-market-guide`. These five images were generated specifically for HAL as temporary editorial illustrations. They are not documentary photographs of Hoi An Market and do not verify a real vendor, stall, ingredient source or trading condition. They contain no intentional third-party branding or readable location signage and should be replaced with HAL-owned photography before they are treated as documentary imagery.
+
+| Section | Local image | Source type | Intended use | Replacement status |
+|---|---|---|---|---|
+| Hero | `/images/editorial/market-guide/hero.webp` | HAL-generated editorial illustration | Generic working morning market establishing scene | Replace with HAL original |
+| Herbs and produce | `/images/editorial/market-guide/herbs-produce.webp` | HAL-generated editorial illustration | Help travelers notice herbs, green papaya, banana blossom and turmeric | Replace with HAL original |
+| Seafood | `/images/editorial/market-guide/seafood.webp` | HAL-generated editorial illustration | Explain the working seafood area without identifying a vendor | Replace with HAL original |
+| Ingredient detail | `/images/editorial/market-guide/ingredients.webp` | HAL-generated editorial illustration | Support noodle, rice-paper and condiment distinctions | Replace with HAL original |
+| Interaction | `/images/editorial/market-guide/interaction.webp` | HAL-generated editorial illustration | Support respectful ingredient-selection context | Replace with HAL original |
+
+All files are local 1200 × 800 WebP assets. The hero is eager and the four below-fold files are lazy-loaded. Combined footprint is approximately 696 KB.

@@ -1,6 +1,6 @@
 # HAL Local Knowledge Register
 
-Last reviewed: 2026-08-28
+Last reviewed: 2026-08-29
 
 Classification:
 
@@ -69,6 +69,13 @@ Classification:
 | Ask before close-up photos or touching produce; avoid blocking working areas and aggressive bargaining over small values. | C | HAL etiquette guidance based on owner observation | Phrase respectfully, not as formal regulation. |
 | “Choose a busy stall, watch it being cooked, and eat it piping hot.” | C | HAL risk-reduction guidance | Never promise food safety; allergies/coeliac needs require direct discussion. |
 | Thorough cooking, serving food steaming hot, separating raw/cooked food and safe holding temperatures reduce foodborne risk. | A | WHO Guide on Safe Food for Travellers and WHO/FAO street-food guidance, reviewed 2026-08-28 | Risk reduction only; never guarantee safety from visual inspection. |
+| Hoi An Market is the traditional market on Tran Phu Street near the Bach Dang riverside area in the Ancient Town. | A | Da Nang City Tourism Information Portal, Hoi An Market: https://danangfantasticity.com/en/hoi-an-market, reviewed 2026-08-29 | Use “Hoi An Market” for the central working market; distinguish it from the visitor-facing night market. |
+| The market includes produce, spices, seafood, dried goods and non-food retail grouped across different areas. | A | Da Nang City Tourism Information Portal, Hoi An Market, reviewed 2026-08-29 | Product mix and individual stalls change; do not publish a fixed inventory. |
+| The market is a working marketplace used for daily exchange, not only a visitor attraction. | A/C | Official tourism description plus HAL editorial framing, reviewed 2026-08-29 | Avoid romantic claims about “authenticity.” |
+| Fast turnover can be a useful food-stall signal but cannot establish that food is safe. | C | HAL practical judgment checked against WHO/CDC risk-reduction guidance, reviewed 2026-08-29 | Pair with hot cooking, raw/cooked separation and safe holding guidance; never guarantee safety. |
+| Fully cooked food served hot is generally a safer traveler choice; raw produce and garnishes require additional judgment. | A | CDC Yellow Book: Food and Water Precautions for Travelers, https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/food-and-water-precautions-for-travelers.html, reviewed 2026-08-29 | General travel-health guidance only, not medical advice or a guarantee. |
+| Turmeric is always used in every Hoi An banh xeo or Mi Quang recipe. | D/rejected | Recipes vary and gathered sources do not support a universal claim. | Publish only as a common association; never “always.” |
+| Every Hoi An market herb comes from Tra Que. | D/rejected | Official sources connect Tra Que produce to local dishes but do not establish provenance for every market bundle. | Explicitly avoid this claim. |
 
 ## Source review notes
 
@@ -80,5 +87,7 @@ Classification:
 - Da Nang City Tourism Information Portal, Cao Lau Hoi An and Tra Que village references, accessed 2026-08-28.
 - Hoi An World Heritage information portal, Cam Nam rice paper and clam tradition, accessed 2026-08-28.
 - WHO, Guide on Safe Food for Travellers and WHO/FAO street-food vending guidance, accessed 2026-08-28.
+- Da Nang City Tourism Information Portal, Hoi An Market, accessed 2026-08-29.
+- CDC Yellow Book, Food and Water Precautions for Travelers, accessed 2026-08-29.
 
 This document is internal. It must not expose private commercial terms, commissions or operator-confidential information.

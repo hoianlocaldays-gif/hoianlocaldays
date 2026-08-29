@@ -12,6 +12,7 @@ const launchRoutes = [
   "/basket-boat-hoi-an",
   "/cam-thanh-coconut-village",
   "/hoi-an-food-guide",
+  "/hoi-an-market-guide",
   "/my-son-tours-from-hoi-an",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",
@@ -223,5 +224,31 @@ test("Hoi An food guide protects informational intent and supports first-timer d
   for (const route of ["/", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/cooking-classes-hoi-an"]) {
     const html = await readFile(routeFile(route), "utf8");
     assert.match(html, /href="\/hoi-an-food-guide"/i, `${route} must link contextually to the food guide`);
+  }
+});
+
+test("Hoi An market guide supports purposeful visits without becoming an affiliate page", async () => {
+  const market = await readFile(routeFile("/hoi-an-market-guide"), "utf8");
+  const visibleHtml = market.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(market, /Hoi An Market Guide: When to Go, What to See &amp; Local Tips/i);
+  assert.match(market, /06:00[–-]08:00/i);
+  assert.match(market, /07:30[–-]09:00/i);
+  for (const topic of [/What Is Hoi An Market/i, /Best Time to Visit Hoi An Market/i, /Ingredients That Explain Hoi An Food/i, /How to Visit Respectfully/i, /Is Street Food at Hoi An Market Safe/i, /Do You Need a Guided Market Tour/i, /Practical Market Checklist/i]) assert.match(market, topic);
+  for (const route of ["/hoi-an-food-guide", "/cooking-classes-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/editorial-methodology"]) assert.match(market, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  assert.match(market, /Compare Hoi An Cooking Classes/i);
+  assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|whatsapp/i);
+  assert.doesNotMatch(visibleHtml, /guaranteed safe|100% safe|hidden gem|authentic experience guaranteed/i);
+  const marketImages = ["hero", "herbs-produce", "seafood", "ingredients", "interaction"];
+  for (const image of marketImages) {
+    const path = `images/editorial/market-guide/${image}.webp`;
+    await access(new URL(path, output));
+    assert.match(market, new RegExp(`src="/${path}"`, "i"));
+  }
+  assert.equal((market.match(/<img\b[^>]*\/images\/editorial\/market-guide\//gi) ?? []).length, 5);
+  assert.match(market, /src="\/images\/editorial\/market-guide\/hero\.webp"[^>]*loading="eager"[^>]*fetchpriority="high"/i);
+  assert.doesNotMatch(market, /<img\b[^>]*src="https?:\/\//i);
+  for (const route of ["/hoi-an-food-guide", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an"]) {
+    const html = await readFile(routeFile(route), "utf8");
+    assert.match(html, /href="\/hoi-an-market-guide"/i, `${route} must link contextually to the market guide`);
   }
 });

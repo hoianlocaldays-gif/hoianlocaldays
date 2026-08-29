@@ -10,6 +10,7 @@ import { EditorialMethodologyPage } from "@/components/editorial-methodology-pag
 import { MySonPage } from "@/components/my-son-page";
 import { CamThanhGuidePage } from "@/components/cam-thanh-guide-page";
 import { HoiAnFoodGuidePage } from "@/components/hoi-an-food-guide-page";
+import { HoiAnMarketGuidePage } from "@/components/hoi-an-market-guide-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -30,6 +31,7 @@ export function generateStaticParams() {
     { slug: "editorial-methodology" },
     { slug: "cam-thanh-coconut-village" },
     { slug: "hoi-an-food-guide" },
+    { slug: "hoi-an-market-guide" },
   ];
 }
 
@@ -75,6 +77,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Discover what to eat in Hoi An, from cao lau and chicken rice to banh xeo and Cam Nam clams, with practical market, street-food and local tips.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
+  if (slug === "hoi-an-market-guide") {
+    const title = "Hoi An Market Guide: When to Go & What to See";
+    const description = "Plan a purposeful visit to Hoi An Market: the best time to go, ingredients to notice, respectful etiquette, food-safety guidance and local tips.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
   if (slug === "editorial-methodology") {
     const title = "How Hoi An Local Days Chooses What to Recommend";
     const description = "Learn how Hoi An Local Days evaluates experiences, traveler fit, local context, provider options, verification and affiliate independence.";
@@ -99,6 +106,7 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   if (slug === "my-son-tours-from-hoi-an") return <MySonPage />;
   if (slug === "cam-thanh-coconut-village") return <CamThanhGuidePage />;
   if (slug === "hoi-an-food-guide") return <HoiAnFoodGuidePage />;
+  if (slug === "hoi-an-market-guide") return <HoiAnMarketGuidePage />;
   if (slug === "editorial-methodology") return <EditorialMethodologyPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();

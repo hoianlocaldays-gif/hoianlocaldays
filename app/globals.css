@@ -222,3 +222,70 @@
 .food-final>p:not(.eyebrow){max-width:760px;color:var(--food-muted);font-size:1rem}
 @media(max-width:900px){.food-guide-hero{grid-template-columns:1fr;gap:1.8rem}.food-guide-hero .food-visual{transform:none}.food-deep-dive{gap:2.2rem}}
 @media(max-width:760px){.food-guide-hero{padding-top:3rem;padding-bottom:3rem}.food-guide-hero h1{font-size:clamp(2.65rem,12vw,3.75rem)}.food-hero-copy>p:not(.eyebrow){font-size:1rem}.food-guide-heading,.food-deep-dive,.food-market,.food-safety,.food-learning,.food-plan,.food-secondary{grid-template-columns:1fr;gap:1.25rem}.food-deep-dive>.food-visual,.food-deep-dive.food-image-right>.food-visual{position:relative;top:auto;grid-column:1;grid-row:1}.food-deep-dive>.food-story,.food-deep-dive.food-image-right>.food-story{grid-column:1;grid-row:2}.food-shortlist-list a{grid-template-columns:36px 1fr;gap:.45rem 1rem}.food-shortlist-list p,.food-shortlist-list b{grid-column:2}.food-detail-grid{grid-template-columns:1fr}.food-section-label>span{margin-bottom:.8rem;font-size:3rem}.food-learning-links{align-items:stretch;flex-direction:column}.food-learning-links .primary-button{width:100%;text-align:center}.food-plan nav{grid-column:1}}
+
+/* Hoi An market guide */
+.market-guide-page{--market-muted:rgba(29,45,41,.7)}
+.market-guide-page h2{font-size:clamp(2.3rem,4.4vw,4.05rem)}
+.market-guide-page h3{font:500 1.35rem/1.2 var(--serif)}
+.market-guide-page p,.market-guide-page li,.market-guide-page dd{line-height:1.7}
+.market-guide-hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:3.2rem;align-items:center;max-width:none;padding-top:5rem;padding-bottom:4rem}
+.market-guide-hero h1{max-width:800px;font-size:clamp(3.25rem,5.2vw,5.55rem)}
+.market-guide-hero>div>p:not(.eyebrow){max-width:760px;color:var(--market-muted);font-size:1.12rem}
+.market-visual{margin:0;overflow:hidden;border-radius:2px;background:#ded8ca;box-shadow:0 18px 50px rgba(29,45,41,.12)}
+.market-visual img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.market-quick{display:grid;grid-template-columns:.68fr 1.32fr;gap:4rem;background:var(--yellow)}
+.market-quick dl{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:0}
+.market-quick dl>div{padding:1.15rem;background:rgba(255,255,255,.62)}
+.market-quick dt{margin-bottom:.45rem;font-size:.68rem;font-weight:850;text-transform:uppercase;letter-spacing:.07em}
+.market-quick dd{margin:0;color:var(--market-muted);font-size:.82rem}
+.market-intro,.market-missed,.market-safety,.market-checklist{display:grid;grid-template-columns:.7fr 1.3fr;gap:4rem}
+.market-intro{background:var(--white)}
+.market-intro>div:last-child>p,.market-missed>div:last-child>p{margin-top:0;color:var(--market-muted)}
+.market-sources,.market-source-note{padding-top:1rem;border-top:1px solid currentColor;font-size:.74rem}
+.market-sources a,.market-source-note a{text-decoration:underline;text-underline-offset:3px}
+.market-timing{display:grid;grid-template-columns:.55fr 1.45fr;gap:3rem;background:var(--green);color:#fff}
+.market-timing>div:first-child>p:last-child{color:rgba(255,255,255,.7)}
+.market-time-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.market-time-grid article{padding:1.2rem;border:1px solid rgba(255,255,255,.24)}
+.market-time-grid span{color:var(--yellow);font-size:.7rem;font-weight:850;letter-spacing:.07em}
+.market-time-grid h3{margin:.65rem 0}
+.market-time-grid p{margin:0;color:rgba(255,255,255,.72);font-size:.8rem}
+.market-look,.market-etiquette-section,.market-guided{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr);gap:4rem;align-items:start}
+.market-look{background:#e9e3d4}
+.market-look>div>p,.market-guided>div>p{color:var(--market-muted)}
+.market-look ul,.market-etiquette-section ul{padding-left:1.15rem}
+.market-look li+li,.market-etiquette-section li+li{margin-top:.45rem}
+.market-ingredients{display:grid;grid-template-columns:.72fr 1.28fr;gap:1.2rem 4rem;background:var(--white)}
+.market-heading{grid-column:1/-1;display:grid;grid-template-columns:.4fr 1fr .6fr;gap:2rem;align-items:end;margin-bottom:1rem}
+.market-heading>p:last-child{margin:0;color:var(--market-muted)}
+.market-ingredients>.market-visual{position:sticky;top:6.5rem}
+.market-ingredient-list{border-top:1px solid var(--line)}
+.market-ingredient-list article{display:grid;grid-template-columns:42px 1fr;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.market-ingredient-list span{color:var(--clay);font-size:.67rem;font-weight:850}
+.market-ingredient-list h3,.market-ingredient-list p{margin:0}
+.market-ingredient-list p{color:var(--market-muted);font-size:.8rem}
+.market-source-note{grid-column:2;margin:0;color:var(--market-muted)}
+.market-missed{background:var(--yellow)}
+.market-missed aside{padding:1.1rem 1.2rem;border-left:4px solid var(--clay);background:rgba(255,255,255,.55);line-height:1.65}
+.market-etiquette-section{background:var(--white)}
+.market-etiquette-section>div>p:last-child{color:var(--market-muted)}
+.market-safety{background:var(--clay);color:#fff}
+.market-safety .eyebrow{color:var(--yellow)}
+.market-safety>div:last-child>p{color:rgba(255,255,255,.78)}
+.market-safety .market-rule{margin-top:0;padding:1rem 1.2rem;border:1px solid rgba(255,255,255,.35);color:#fff;font:500 1.35rem/1.45 var(--serif)}
+.market-guided{background:#e9e3d4}
+.market-bridges{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;background:var(--green)}
+.market-bridges article{display:flex;flex-direction:column;padding:1.6rem;background:var(--white)}
+.market-bridges article:last-child{background:var(--yellow)}
+.market-bridges h2{font-size:clamp(2rem,3vw,3rem)}
+.market-bridges p:not(.eyebrow){color:var(--market-muted)}
+.market-bridges a{align-self:flex-start;margin-top:auto}
+.market-checklist{background:var(--white)}
+.market-checklist ol{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.market-checklist li{display:grid;grid-template-columns:42px 1fr;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.market-checklist li span{color:var(--clay);font-size:.68rem;font-weight:850}
+.market-checklist li p{margin:0}
+.market-checklist nav{grid-column:2;display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+.market-checklist nav a{font-size:.75rem;font-weight:850;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.market-guide-hero{grid-template-columns:1fr;gap:1.8rem}.market-ingredients{gap:1.5rem 2rem}}
+@media(max-width:760px){.market-guide-hero{padding-top:3rem;padding-bottom:3rem}.market-guide-hero h1{font-size:clamp(2.6rem,11.5vw,3.7rem)}.market-guide-hero>div>p:not(.eyebrow){font-size:1rem}.market-quick,.market-intro,.market-timing,.market-look,.market-ingredients,.market-missed,.market-etiquette-section,.market-safety,.market-guided,.market-bridges,.market-checklist,.market-heading{grid-template-columns:1fr;gap:1.25rem}.market-quick dl,.market-time-grid{grid-template-columns:1fr}.market-heading,.market-source-note,.market-checklist nav{grid-column:1}.market-ingredients>.market-visual{position:relative;top:auto}.market-bridges a{width:100%;text-align:center}.market-visual{box-shadow:0 10px 30px rgba(29,45,41,.1)}}
