@@ -59,6 +59,20 @@ Classification:
 | Mot is a popular contemporary visitor drink but need not be framed as a major historic food tradition. | B/C | Owner observation and HAL editorial judgment, reviewed 2026-08-28 | Do not manufacture heritage significance from social-media popularity. |
 | Tra Que grows herbs and vegetables associated in official local sources with dishes including cao lau, Mi Quang and banh xeo. | A | Da Nang tourism portal, Tra Que Traditional Vegetable Farming Village: https://danangfantasticity.com/tra-que-traditional-vegetable-farming-village-hoi-an, reviewed 2026-08-28 | Do not claim every herb served in Hoi An came from Tra Que. |
 | Hoi An's documented trading-port history does not by itself prove a specific Japanese or Chinese origin for cao lau. | C/D | UNESCO verifies the trading-port and cultural-fusion context, not a single noodle origin; reviewed 2026-08-28 | Keep influence/origin claims explicitly uncertain. |
+| Traditional accounts repeatedly describe cao lau rice as treated with alkaline ash water before steaming and cutting. | A with source variation | Hoi An heritage portal, Da Nang tourism portal and Vietnam Tourism; reviewed 2026-08-29 | Sources differ on rice, ash source and exact processing. Describe the repeated traditional method, not one fixed technical formula. |
+| Ba Le well is a documented heritage place with a strong traditional association with cao lau. | A with cultural caveat | Hoi An heritage portal, Ba Le Well and Cao Lau features; reviewed 2026-08-29 | Do not claim every modern restaurant uses Ba Le water. Vietnam Tourism explicitly notes strict traditional practice is unlikely to be universal. |
+| Cao lau's exact origin remains debated; Japanese- and Chinese-influence explanations are plausible narratives rather than proven single origins. | A/C | Hoi An heritage portal says origins are hotly debated; UNESCO verifies trading-port cultural fusion but not a noodle lineage; reviewed 2026-08-29 | Separate documented port history from speculative dish genealogy. |
+| Mi Quang is a regional Quang Nam–Da Nang noodle dish commonly served with only enough broth to coat or partly cover the noodles, herbs, peanuts and rice cracker. | A | Da Nang City Tourism Information Portal, Mi Quang; reviewed 2026-08-29 | Proteins, noodle color and serving style vary. Do not call it soup-free or reduce it to one recipe. |
+| Rice-based cao lau noodles do not make the completed dish automatically gluten-free. | A/general dietary caution | Coeliac UK travel guidance: rice noodles may be gluten-free but soy sauce may contain wheat and shared preparation creates cross-contact risk; reviewed 2026-08-29 | No restaurant-specific guarantee; advise direct discussion of noodles, marinades, sauce and shared equipment. |
+| Hoi An/Central-style banh xeo is generally smaller than the large southern format. | A with regional caveat | Hoi An heritage portal; Vietnam Tourism Mekong Delta guide describes the southern version as huge; reviewed 2026-08-29 | Publish as a broad tendency, not a two-style national taxonomy. |
+| Hoi An banh xeo is commonly eaten hot with herbs/greens, rice paper where provided and dipping sauce. | A/B | Hoi An heritage portal and Vietnam Tourism; aligns with owner local knowledge; reviewed 2026-08-29 | Wrapper, herb mix and serving setup vary by vendor. |
+| Rice flour is a common batter base; local official sources also describe soybean, spring onion and optional coconut/turmeric additions. | A with recipe variation | Hoi An heritage portal, Banh Xeo; reviewed 2026-08-29 | Never claim coconut milk, turmeric or one batter formula is universal in Hoi An. |
+| “Xeo” is described as an onomatopoeic reference to the sizzling sound when batter hits the hot pan. | A | Hoi An heritage portal, Banh Xeo; reviewed 2026-08-29 | Phrase as the source's name explanation, not a broader linguistic thesis. |
+| Common local filling descriptions include shrimp, thin pork and bean sprouts, with variation across cooks. | A/B | Hoi An heritage portal plus owner local knowledge; reviewed 2026-08-29 | Do not imply every Hoi An pancake contains the same filling. |
+| Hoi An banh xeo dipping sauces vary, including fish-sauce-based sweet-sour dips and thicker soybean/peanut sauces. | A with vendor variation | Hoi An heritage portal local food features; reviewed 2026-08-29 | Never label one sauce as the only authentic Hoi An sauce; flag fish, peanut, soy and wheat questions. |
+| Hot banh xeo has a local association with cooler/rainy weather. | A/B cultural context | Hoi An heritage portal and owner observation; reviewed 2026-08-29 | Do not invent a fixed season or claim rain is required. |
+| Rice-flour batter does not make the completed banh xeo automatically gluten-free. | A/general dietary caution | Coeliac UK travel guidance plus kitchen cross-contact principles; reviewed 2026-08-29 | Batter mixes, sauces, soy sauce, shared pans/oil and utensils require direct confirmation. |
+| Banh xeo is worth prioritizing for most first-time visitors because wrapping reveals how fried, fresh, herbal and dipping components work together. | C | HAL editorial judgment informed by owner local knowledge | Include traveler-fit caveats; no superlatives. |
 
 ## Hoi An Market
 
@@ -89,5 +103,12 @@ Classification:
 - WHO, Guide on Safe Food for Travellers and WHO/FAO street-food vending guidance, accessed 2026-08-28.
 - Da Nang City Tourism Information Portal, Hoi An Market, accessed 2026-08-29.
 - CDC Yellow Book, Food and Water Precautions for Travelers, accessed 2026-08-29.
+- UNESCO World Heritage Centre, Hoi An Ancient Town, accessed 2026-08-29.
+- Hoi An World Heritage information portal, Ba Le Well and Cao Lau features, accessed 2026-08-29.
+- Vietnam Tourism, 4 Must-Try Dishes in Hoi An, accessed 2026-08-29.
+- Da Nang City Tourism Information Portal, Cao Lau and Mi Quang references, accessed 2026-08-29.
+- Coeliac UK, gluten-free travel guidance, accessed 2026-08-29.
+- Hoi An World Heritage information portal, Banh Xeo English and Vietnamese features, accessed 2026-08-29.
+- Vietnam Tourism, Vietnamese Home Recipes and Dining in the Mekong Delta, accessed 2026-08-29.
 
 This document is internal. It must not expose private commercial terms, commissions or operator-confidential information.

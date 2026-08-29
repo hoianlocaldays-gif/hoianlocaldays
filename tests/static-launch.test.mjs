@@ -13,6 +13,8 @@ const launchRoutes = [
   "/cam-thanh-coconut-village",
   "/hoi-an-food-guide",
   "/hoi-an-market-guide",
+  "/cao-lau-hoi-an",
+  "/banh-xeo-hoi-an",
   "/my-son-tours-from-hoi-an",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",
@@ -251,4 +253,68 @@ test("Hoi An market guide supports purposeful visits without becoming an affilia
     const html = await readFile(routeFile(route), "utf8");
     assert.match(html, /href="\/hoi-an-market-guide"/i, `${route} must link contextually to the market guide`);
   }
+});
+
+test("Cao lau guide answers first-timer questions without overstating origin or dietary safety", async () => {
+  const caoLau = await readFile(routeFile("/cao-lau-hoi-an"), "utf8");
+  const visibleHtml = caoLau.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(caoLau, /Cao Lau in Hoi An: What It Is &amp; How to Eat It/i);
+  for (const topic of [/What Is Cao Lau/i, /What Is in Cao Lau/i, /Why Cao Lau Has So Little Broth/i, /What Makes Cao Lau Noodles Different/i, /The Ba Le Well Story/i, /Did Cao Lau Come From Japan or China/i, /Cao Lau vs Mi Quang/i, /How Do You Eat Cao Lau/i, /Is Cao Lau Worth Trying/i, /What to Look for in Your First Bowl/i, /Is Cao Lau Vegetarian or Gluten-Free/i]) assert.match(caoLau, topic);
+  assert.match(caoLau, /strongly associates its water with traditional cao lau production/i);
+  assert.match(caoLau, /does not prove one specific origin/i);
+  assert.match(caoLau, /should not automatically be treated as gluten-free/i);
+  assert.match(caoLau, /not every class teaches cao lau/i);
+  for (const route of ["/hoi-an-food-guide", "/hoi-an-market-guide", "/cooking-classes-hoi-an", "/3-days-in-hoi-an", "/editorial-methodology"]) assert.match(caoLau, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|whatsapp/i);
+  assert.doesNotMatch(visibleHtml, /proven Japanese origin|guaranteed gluten-free|best restaurant/i);
+  const localImages = [
+    "images/editorial/food-guide/cao-lau.webp",
+    "images/editorial/cao-lau/noodle-detail.webp",
+    "images/editorial/cao-lau/mixed-bowl.webp",
+    "images/editorial/market-guide/ingredients.webp",
+  ];
+  for (const path of localImages) {
+    await access(new URL(path, output));
+    assert.match(caoLau, new RegExp(`src="/${path.replaceAll("/", "\\/")}"`, "i"));
+  }
+  assert.equal((caoLau.match(/<img\b/gi) ?? []).length, 4);
+  assert.match(caoLau, /src="\/images\/editorial\/food-guide\/cao-lau\.webp"[^>]*loading="eager"[^>]*fetchpriority="high"/i);
+  assert.doesNotMatch(caoLau, /<img\b[^>]*src="https?:\/\//i);
+
+  const food = await readFile(routeFile("/hoi-an-food-guide"), "utf8");
+  assert.match(food, /href="\/cao-lau-hoi-an"/i, "food guide must link contextually to the Cao Lau guide");
+});
+
+test("Banh xeo guide explains the complete eating format without becoming a recipe or affiliate page", async () => {
+  const banhXeo = await readFile(routeFile("/banh-xeo-hoi-an"), "utf8");
+  const visibleHtml = banhXeo.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(banhXeo, /Banh Xeo in Hoi An: What It Is &amp; How to Eat It/i);
+  for (const topic of [/What Is Banh Xeo/i, /What Makes Hoi An-Style Banh Xeo Different/i, /What(?:&apos;|&#x27;|')s Inside Banh Xeo/i, /Why the Herbs, Wrapper &amp; Sauce Matter/i, /How to Eat Banh Xeo/i, /What Dipping Sauce Comes With It/i, /Hoi An Banh Xeo vs Southern Banh Xeo/i, /Is Banh Xeo Vegetarian or Gluten-Free/i, /Banh Xeo vs Cao Lau/i, /Is Banh Xeo Worth Trying/i, /Want to Learn How It(?:&apos;|&#x27;|')s Made/i]) assert.match(banhXeo, topic);
+  assert.match(banhXeo, /coconut milk is present in some recipes and regional styles, not a universal Hoi An requirement/i);
+  assert.match(banhXeo, /Neither should be declared the only [“"]authentic[”"] Hoi An option/i);
+  assert.match(banhXeo, /should not automatically be called gluten-free/i);
+  assert.match(banhXeo, /not included in every program/i);
+  for (const route of ["/hoi-an-food-guide", "/cao-lau-hoi-an", "/hoi-an-market-guide", "/cooking-classes-hoi-an", "/3-days-in-hoi-an", "/editorial-methodology"]) assert.match(banhXeo, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|whatsapp/i);
+  assert.doesNotMatch(visibleHtml, /best banh xeo restaurant|guaranteed gluten-free|only authentic sauce|coconut milk is always/i);
+  const localImages = [
+    "images/editorial/food-guide/banh-xeo.webp",
+    "images/editorial/banh-xeo/serving-setup.webp",
+    "images/editorial/banh-xeo/pan-cooking.webp",
+    "images/editorial/banh-xeo/wrap-dipping.webp",
+  ];
+  for (const path of localImages) {
+    await access(new URL(path, output));
+    assert.match(banhXeo, new RegExp(`src="/${path.replaceAll("/", "\\/")}"`, "i"));
+  }
+  assert.equal((banhXeo.match(/<img\b/gi) ?? []).length, 4);
+  assert.match(banhXeo, /src="\/images\/editorial\/food-guide\/banh-xeo\.webp"[^>]*loading="eager"[^>]*fetchpriority="high"/i);
+  assert.doesNotMatch(banhXeo, /<img\b[^>]*src="https?:\/\//i);
+
+  const [food, caoLau] = await Promise.all([
+    readFile(routeFile("/hoi-an-food-guide"), "utf8"),
+    readFile(routeFile("/cao-lau-hoi-an"), "utf8"),
+  ]);
+  assert.match(food, /href="\/banh-xeo-hoi-an"/i, "food guide must link contextually to the Banh Xeo guide");
+  assert.match(caoLau, /href="\/banh-xeo-hoi-an"/i, "Cao Lau guide must link contextually to the Banh Xeo guide");
 });

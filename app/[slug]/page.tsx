@@ -11,6 +11,8 @@ import { MySonPage } from "@/components/my-son-page";
 import { CamThanhGuidePage } from "@/components/cam-thanh-guide-page";
 import { HoiAnFoodGuidePage } from "@/components/hoi-an-food-guide-page";
 import { HoiAnMarketGuidePage } from "@/components/hoi-an-market-guide-page";
+import { CaoLauGuidePage } from "@/components/cao-lau-guide-page";
+import { BanhXeoGuidePage } from "@/components/banh-xeo-guide-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -32,6 +34,8 @@ export function generateStaticParams() {
     { slug: "cam-thanh-coconut-village" },
     { slug: "hoi-an-food-guide" },
     { slug: "hoi-an-market-guide" },
+    { slug: "cao-lau-hoi-an" },
+    { slug: "banh-xeo-hoi-an" },
   ];
 }
 
@@ -82,6 +86,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Plan a purposeful visit to Hoi An Market: the best time to go, ingredients to notice, respectful etiquette, food-safety guidance and local tips.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
+  if (slug === "cao-lau-hoi-an") {
+    const title = "Cao Lau in Hoi An: What It Is & How to Eat It";
+    const description = "Understand Hoi An's cao lau: what is in the bowl, why the noodles are different, how to eat it, and how it compares with Mi Quang.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
+  if (slug === "banh-xeo-hoi-an") {
+    const title = "Banh Xeo in Hoi An: What It Is & How to Eat It";
+    const description = "Understand Hoi An-style banh xeo: what is in the pancake, how to wrap and eat it, sauce variations, regional differences and dietary notes.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
   if (slug === "editorial-methodology") {
     const title = "How Hoi An Local Days Chooses What to Recommend";
     const description = "Learn how Hoi An Local Days evaluates experiences, traveler fit, local context, provider options, verification and affiliate independence.";
@@ -107,6 +121,8 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   if (slug === "cam-thanh-coconut-village") return <CamThanhGuidePage />;
   if (slug === "hoi-an-food-guide") return <HoiAnFoodGuidePage />;
   if (slug === "hoi-an-market-guide") return <HoiAnMarketGuidePage />;
+  if (slug === "cao-lau-hoi-an") return <CaoLauGuidePage />;
+  if (slug === "banh-xeo-hoi-an") return <BanhXeoGuidePage />;
   if (slug === "editorial-methodology") return <EditorialMethodologyPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();

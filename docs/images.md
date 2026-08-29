@@ -53,3 +53,29 @@ Added locally on 2026-08-29 for the owner review of `/hoi-an-market-guide`. Thes
 | Interaction | `/images/editorial/market-guide/interaction.webp` | HAL-generated editorial illustration | Support respectful ingredient-selection context | Replace with HAL original |
 
 All files are local 1200 × 800 WebP assets. The hero is eager and the four below-fold files are lazy-loaded. Combined footprint is approximately 696 KB.
+
+## Cao lau guide temporary editorial illustrations
+
+Added locally on 2026-08-29 for `/cao-lau-hoi-an`. The page reuses two existing HAL-generated editorial illustrations and adds two new HAL-generated temporary illustrations. None documents a specific restaurant, vendor, Ba Le well visit or verified preparation method. They contain no intentional third-party branding and should be replaced with HAL original photography.
+
+| Section | Local image | Source type | Intended use | Replacement status |
+|---|---|---|---|---|
+| Hero | `/images/editorial/food-guide/cao-lau.webp` | Reused HAL-generated editorial illustration | Introduce a generic cao lau-inspired bowl | Replace with HAL original |
+| Bowl components | `/images/editorial/cao-lau/noodle-detail.webp` | HAL-generated editorial illustration | Show noodle, pork, herbs, sprouts and crisp contrast | Replace with HAL original |
+| Eating method | `/images/editorial/cao-lau/mixed-bowl.webp` | HAL-generated editorial illustration | Show noodles coated after mixing, not submerged in soup | Replace with HAL original |
+| Ingredient context | `/images/editorial/market-guide/ingredients.webp` | Reused HAL-generated editorial illustration | Support general noodle and condiment context | Replace with HAL original |
+
+The two new files are local 1200 × 800 WebP assets with a combined footprint of approximately 160 KB. Only the reused hero loads eagerly; all other page images are lazy-loaded. No image of Ba Le well is used because HAL does not yet have an authorized, verified local source.
+
+## Banh xeo guide temporary editorial illustrations
+
+Added locally on 2026-08-29 for `/banh-xeo-hoi-an`. The page reuses the existing Food Guide banh xeo illustration and adds three HAL-generated temporary editorial illustrations. They do not document a real restaurant, cook, vendor or exact regional recipe. No third-party branding or readable venue signage is intentionally shown.
+
+| Section | Local image | Source type | Intended use | Replacement status |
+|---|---|---|---|---|
+| Hero | `/images/editorial/food-guide/banh-xeo.webp` | Reused HAL-generated editorial illustration | Introduce the wrapped eating format | Replace with HAL original |
+| Cooking | `/images/editorial/banh-xeo/pan-cooking.webp` | HAL-generated editorial illustration | Explain pan heat and crisping | Replace with HAL original |
+| Serving setup | `/images/editorial/banh-xeo/serving-setup.webp` | HAL-generated editorial illustration | Show pancake, herbs, wrapper and sauce as separate components | Replace with HAL original |
+| Dipping context | `/images/editorial/banh-xeo/wrap-dipping.webp` | HAL-generated editorial illustration | Show a manageable completed roll and light dipping action | Replace with HAL original |
+
+All three new files are local 1200 × 800 WebP assets with a combined footprint of approximately 268 KB. The reused hero is eager; the three new images are lazy-loaded.
