@@ -79,3 +79,66 @@ Added locally on 2026-08-29 for `/banh-xeo-hoi-an`. The page reuses the existing
 | Dipping context | `/images/editorial/banh-xeo/wrap-dipping.webp` | HAL-generated editorial illustration | Show a manageable completed roll and light dipping action | Replace with HAL original |
 
 All three new files are local 1200 × 800 WebP assets with a combined footprint of approximately 268 KB. The reused hero is eager; the three new images are lazy-loaded.
+
+## My Son Sanctuary informational guide image reuse
+
+Added to `/my-son-sanctuary-guide` on 2026-08-29. The guide reuses two existing local 1200 × 800 WebP files that were previously verified in the hero/gallery area of their linked provider product pages. Reuse does not establish that HAL personally visited the site or that either photograph documents a specific claim, date, tour format or conservation phase.
+
+| Section | Local image | Existing source record | Intended use | Replacement status |
+|---|---|---|---|---|
+| Hero | `/images/experiences/my-son/myson-overall-group.webp` | Viator 375749P1, verified-provider | General surviving temple landscape | Replace with HAL original documentary photograph |
+| Surviving remains | `/images/experiences/my-son/myson-private.webp` | Viator 212568P6, verified-provider | General brick structures and weathered remains | Replace with HAL original documentary photograph |
+
+No image is presented as evidence for a precise construction date, religious ceremony, war event or restoration intervention. The page intentionally uses only two images until HAL has its own accurately documented My Son photography.
+
+## Cooking class expectations guide image reuse
+
+Added to `/what-to-expect-hoi-an-cooking-class` on 2026-08-29. Four existing local 1200 × 800 WebP assets are reused to explain broad class moments. Three retain their verified-provider provenance from the experience image register; one is an existing HAL-generated market illustration. None proves a universal class flow, menu, group size or level of participation.
+
+| Section | Local image | Source type | Intended use | Replacement status |
+|---|---|---|---|---|
+| Hero/workstation | `/images/experiences/cooking/classic-market-cooking.webp` | Verified-provider, Viator 141961P1 | General organized cooking station | Replace with HAL original |
+| Market value | `/images/editorial/market-guide/interaction.webp` | HAL-generated editorial illustration | Ingredient-selection context | Replace with HAL original |
+| Group/instructor | `/images/experiences/cooking/personal-market-cooking.webp` | Verified-provider, Viator 221841P24 | General instructor demonstration | Replace with HAL original |
+| Finished dishes | `/images/experiences/cooking/food-lovers-cooking.webp` | Verified-provider, Viator 164857P1 | General post-cooking meal context | Replace with HAL original |
+
+No Cocolocal Farm image, third-party branding or remote runtime image is used on this page.
+
+## How many days guide image reuse
+
+Added to `/how-many-days-in-hoi-an` on 2026-08-29. The page uses four existing local images only as broad experience-block context. It does not claim that they form an itinerary, represent a particular stay length or document a firsthand HAL visit.
+
+| Section | Local image | Source type | Intended use | Replacement status |
+|---|---|---|---|---|
+| Cooking block | `/images/experiences/cooking/classic-market-cooking.webp` | Verified-provider, Viator 141961P1 | Illustrate that a full cooking experience consumes a meaningful block | Replace with HAL original |
+| Cam Thanh block | `/images/experiences/basket-boat/quieter-basketboat.webp` | Verified-provider, GetYourGuide 886005 | Illustrate a Cam Thanh combination block | Replace with HAL original |
+| My Son block | `/images/experiences/my-son/myson-overall-group.webp` | Verified-provider, Viator 375749P1 | Illustrate a deliberate cultural half-day block | Replace with HAL original |
+| Food and slow time | `/images/editorial/food-guide/hero.webp` | HAL-generated editorial illustration | Support non-bookable food and slow-time planning | Replace with HAL original |
+
+HAL currently has no authorized, verified Old Town image suitable for this guide. The hero therefore uses an editorial decision strip rather than misrepresenting another experience image as Old Town. No Cocolocal Farm image, remote runtime image or new third-party asset is used.
+
+## Hoi An Old Town guide image reuse
+
+Added to `/hoi-an-old-town-guide` on 2026-08-29. HAL does not currently have authorized, verified documentary photography of Old Town, the Japanese Covered Bridge, assembly halls or old houses. The flagship heritage sections therefore use typography and information design instead of an unrelated or misleading image.
+
+Two existing HAL-generated editorial illustrations appear only in the market-and-food transition:
+
+| Section | Local image | Source type | Intended use | Replacement status |
+|---|---|---|---|---|
+| Market transition | `/images/editorial/market-guide/hero.webp` | HAL-generated editorial illustration | Generic working-market context | Replace with HAL original |
+| Food transition | `/images/editorial/food-guide/cao-lau.webp` | HAL-generated editorial illustration | Generic cao lau food context | Replace with HAL original |
+
+The public caption states that these are editorial illustrations and not documentary photographs of a specific vendor, market scene or restaurant. Neither image is presented as Old Town architectural evidence. No Cocolocal Farm image, third-party branding or remote runtime URL is used.
+
+## Basket boat with kids guide image reuse
+
+Added to `/basket-boat-hoi-an-with-kids` on 2026-08-29. Four existing local 1200 × 800 WebP experience images are reused to distinguish general ride and route atmosphere. They do not prove child-safety equipment, operator policy, minimum age, capacity or conditions on a future ride.
+
+| Section | Local image | Existing source record | Intended use | Replacement status |
+|---|---|---|---|---|
+| Experience overview | `/images/experiences/basket-boat/family-basketboat.webp` | Verified-provider, GetYourGuide 886005 | General passenger ride among coconut palms | Replace with HAL original family photograph |
+| Spinning distinction | `/images/experiences/basket-boat/popular-coconut-basketboat.webp` | Verified-provider, Viator 70617P3 | General lively activity context; not evidence that a child should spin | Replace with HAL original, adult-only spinning photograph |
+| Central route | `/images/experiences/basket-boat/classic-basketboat.webp` | Verified-provider, Viator 127262P3 | More active multi-boat context | Replace with HAL original |
+| Quieter route | `/images/experiences/basket-boat/quieter-basketboat.webp` | Verified-provider, GetYourGuide 886005 | Lower-key waterway context | Replace with HAL original |
+
+No image is labeled as proof of a correctly fitted child life jacket or safe boarding because the current library cannot verify those details. No Cocolocal Farm image, third-party logo or remote runtime URL is used.

@@ -21,7 +21,7 @@ export function CookingClassPage() {
       <nav className="quick-nav" aria-label="On this page"><a href="#choose-a-format">Choose a format</a><a href="#quick-picks">Quick picks</a><a href="#compare-all">Compare all 7</a></nav>
     </section>
     <section className="format-section section" id="choose-a-format">
-      <div className="hub-heading"><p className="eyebrow">Understand the choice</p><h2>Choose the Experience Before the Provider</h2><p>The biggest difference is not the booking platform. It is how much of the half-day is devoted to cooking versus markets, basket boats and countryside activities.</p></div>
+      <div className="hub-heading"><p className="eyebrow">Understand the choice</p><h2>Choose the Experience Before the Provider</h2><p>The biggest difference is not the booking platform. It is how much of the half-day is devoted to cooking versus markets, basket boats and countryside activities.</p><p><Link className="context-link" href="/what-to-expect-hoi-an-cooking-class">First understand what actually happens in a Hoi An cooking class →</Link></p></div>
       <div className="format-grid">
         <article><h3>All-in-One Experience</h3><p>Choose this when you want a market, basket boat and cooking in one easy first-time introduction.</p><small>Check the inclusions before booking a separate basket boat activity.</small></article>
         <article><h3>Cooking-Focused or Farm-Based</h3><p>Choose this when ingredients, preparation and time in the kitchen matter more than fitting in every signature activity.</p><small>A better fit than an all-in-one tour for travelers primarily interested in food.</small></article>

@@ -16,6 +16,11 @@ const launchRoutes = [
   "/cao-lau-hoi-an",
   "/banh-xeo-hoi-an",
   "/my-son-tours-from-hoi-an",
+  "/my-son-sanctuary-guide",
+  "/what-to-expect-hoi-an-cooking-class",
+  "/how-many-days-in-hoi-an",
+  "/hoi-an-old-town-guide",
+  "/basket-boat-hoi-an-with-kids",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",
   "/editorial-methodology",
@@ -317,4 +322,158 @@ test("Banh xeo guide explains the complete eating format without becoming a reci
   ]);
   assert.match(food, /href="\/banh-xeo-hoi-an"/i, "food guide must link contextually to the Banh Xeo guide");
   assert.match(caoLau, /href="\/banh-xeo-hoi-an"/i, "Cao Lau guide must link contextually to the Banh Xeo guide");
+});
+
+test("My Son Sanctuary guide bridges heritage context and practical visit decisions", async () => {
+  const guide = await readFile(routeFile("/my-son-sanctuary-guide"), "utf8");
+  const visibleHtml = guide.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(guide, /My Son Sanctuary Guide: What to Know Before You Visit/i);
+  for (const topic of [/What Is My Son Sanctuary/i, /Why My Son Matters/i, /What Will You Actually See/i, /What Does the Visit Feel Like/i, /Best Time to Visit During the Day/i, /What to Wear and Bring/i, /Do You Need a Guide/i, /Can You Visit My Son Independently/i, /Is My Son Worth Visiting/i, /Where My Son Fits Into a Hoi An Trip/i]) assert.match(guide, topic);
+  assert.match(guide, /criteria \(ii\) and \(iii\)/i);
+  assert.match(guide, /4th to the 13th centuries/i);
+  assert.match(guide, /Second World War, the First Indochina War and especially the Second Indochina War/i);
+  assert.match(guide, /not an automatic priority for every short stay/i);
+  for (const route of ["/my-son-tours-from-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/editorial-methodology"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  assert.equal((visibleHtml.match(/href="\/my-son-tours-from-hoi-an"/gi) ?? []).length, 1);
+  assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|best tour|book now|limited availability/i);
+  assert.doesNotMatch(visibleHtml, /VND\s?[\d,]+|opens? at|closes? at|performance at/i);
+  assert.equal((guide.match(/<h1\b/gi) ?? []).length, 1);
+  assert.equal((guide.match(/<img\b/gi) ?? []).length, 2);
+  for (const image of ["images/experiences/my-son/myson-overall-group.webp", "images/experiences/my-son/myson-private.webp"]) {
+    await access(new URL(image, output));
+    assert.match(guide, new RegExp(`src="/${image.replaceAll("/", "\\/")}"`, "i"));
+  }
+  assert.doesNotMatch(guide, /<img\b[^>]*src="https?:\/\//i);
+  for (const route of ["/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/my-son-tours-from-hoi-an"]) {
+    const html = await readFile(routeFile(route), "utf8");
+    assert.match(html, /href="\/my-son-sanctuary-guide"/i, `${route} must link contextually to the My Son guide`);
+  }
+});
+
+test("cooking class expectations guide supports decisions without duplicating the money page", async () => {
+  const guide = await readFile(routeFile("/what-to-expect-hoi-an-cooking-class"), "utf8");
+  const visibleHtml = guide.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(guide, /What Happens in a Hoi An Cooking Class/i);
+  for (const topic of [/What Does a Hoi An Cooking Class Usually Include/i, /Cooking-Only vs a Half-Day Experience/i, /Does the Market Visit Actually Add Value/i, /Why Some Classes Include Basket Boats or Farms/i, /How Hands-On Will the Cooking Be/i, /Does Group Size Matter/i, /What Will You Cook/i, /Dietary Requirements and Allergies/i, /Are Cooking Classes Good With Kids/i, /Is a Half-Day Cooking Experience Worth It/i, /What to Check Before Booking/i]) assert.match(guide, topic);
+  assert.match(guide, /Ingredient substitution and cross-contact control are different questions/i);
+  assert.match(guide, /class around 15 guests or more can begin to feel meaningfully larger/i);
+  assert.match(guide, /techniques and decisions you can use again/i);
+  for (const route of ["/cooking-classes-hoi-an", "/hoi-an-market-guide", "/hoi-an-food-guide", "/cam-thanh-coconut-village", "/basket-boat-hoi-an", "/hoi-an-with-kids", "/editorial-methodology"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  assert.match(visibleHtml, /href="\/cooking-classes-hoi-an"[^>]*>Compare Hoi An Cooking Classes/i);
+  assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|book now|limited spots|#1 cooking/i);
+  assert.doesNotMatch(visibleHtml, /VND\s?[\d,]+|70% guarantee/i);
+  assert.equal((guide.match(/<h1\b/gi) ?? []).length, 1);
+  const images = ["images/experiences/cooking/classic-market-cooking.webp", "images/editorial/market-guide/interaction.webp", "images/experiences/cooking/personal-market-cooking.webp", "images/experiences/cooking/food-lovers-cooking.webp"];
+  for (const image of images) { await access(new URL(image, output)); assert.match(guide, new RegExp(`src="/${image.replaceAll("/", "\\/")}"`, "i")); }
+  assert.equal((guide.match(/<img\b/gi) ?? []).length, 4);
+  assert.doesNotMatch(guide, /<img\b[^>]*src="https?:\/\//i);
+  for (const route of ["/cooking-classes-hoi-an", "/things-to-do-in-hoi-an", "/hoi-an-market-guide"]) {
+    const html = await readFile(routeFile(route), "utf8");
+    assert.match(html, /href="\/what-to-expect-hoi-an-cooking-class"/i, `${route} must link contextually to the expectations guide`);
+  }
+});
+
+test("stay-length guide gives a nuanced planning framework without becoming an itinerary", async () => {
+  const guide = await readFile(routeFile("/how-many-days-in-hoi-an"), "utf8");
+  const visibleHtml = guide.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(guide, /How Many Days in Hoi An Do You Need/i);
+  for (const topic of [
+    /Is One Day in Hoi An Enough/i,
+    /What Can You Do With Two Days/i,
+    /Why Three Days Works Well for a First Visit/i,
+    /When a Longer Stay Makes Sense/i,
+    /How Many Days by Traveler Type/i,
+    /Count Experiences, Not Just Attractions/i,
+    /Days vs Nights/i,
+    /How to Split Time Between Hoi An and Da Nang/i,
+  ]) assert.match(guide, topic);
+  assert.match(guide, /around three days is a strong starting point/i);
+  assert.match(guide, /Two days can work well/i);
+  assert.match(guide, /four or more makes sense/i);
+  for (const route of [
+    "/3-days-in-hoi-an",
+    "/things-to-do-in-hoi-an",
+    "/my-son-sanctuary-guide",
+    "/what-to-expect-hoi-an-cooking-class",
+    "/cam-thanh-coconut-village",
+    "/hoi-an-food-guide",
+    "/hoi-an-with-kids",
+    "/editorial-methodology",
+  ]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|book now|check availability|limited spots/i);
+  assert.equal((guide.match(/<h1\b/gi) ?? []).length, 1);
+  const images = [
+    "images/experiences/cooking/classic-market-cooking.webp",
+    "images/experiences/basket-boat/quieter-basketboat.webp",
+    "images/experiences/my-son/myson-overall-group.webp",
+    "images/editorial/food-guide/hero.webp",
+  ];
+  for (const image of images) { await access(new URL(image, output)); assert.match(guide, new RegExp(`src="/${image.replaceAll("/", "\\/")}"`, "i")); }
+  assert.equal((guide.match(/<img\b/gi) ?? []).length, 4);
+  assert.doesNotMatch(guide, /<img\b[^>]*src="https?:\/\//i);
+  for (const route of ["/", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/hoi-an-with-kids"]) {
+    const html = await readFile(routeFile(route), "utf8");
+    assert.match(html, /href="\/how-many-days-in-hoi-an"/i, `${route} must link contextually to the stay-length guide`);
+  }
+});
+
+test("Old Town guide explains the heritage district without becoming a listicle or affiliate page", async () => {
+  const guide = await readFile(routeFile("/hoi-an-old-town-guide"), "utf8");
+  const visibleHtml = guide.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(guide, /Hoi An Old Town Guide: What to See &amp; How to Visit/i);
+  for (const topic of [
+    /What Is Hoi An Old Town/i,
+    /Why Is Hoi An a UNESCO World Heritage Site/i,
+    /What Should You Actually See/i,
+    /Hoi An Old Town by Day vs Evening/i,
+    /When Is the Best Time to Explore/i,
+    /How Much Time Do You Need/i,
+    /How to Walk the Old Town Without Rushing/i,
+    /How Heritage Tickets Work/i,
+    /The Japanese Covered Bridge/i,
+    /Market and Food Along the Way/i,
+    /Common First-Time Mistakes/i,
+    /Old Town Is Only One Part of Hoi An/i,
+  ]) assert.match(guide, topic);
+  assert.match(guide, /inscribed Hoi An Ancient Town in 1999 under criteria \(ii\) and \(v\)/i);
+  assert.match(guide, /VND 80,000/i);
+  assert.match(guide, /VND 120,000/i);
+  assert.match(guide, /checked 29 August 2026/i);
+  assert.match(guide, /up to three days/i);
+  assert.doesNotMatch(visibleHtml, /top 10|viator\.com|getyourguide\.com|cocolocal|book now|check availability|limited spots/i);
+  assert.equal((guide.match(/<h1\b/gi) ?? []).length, 1);
+  for (const route of ["/things-to-do-in-hoi-an", "/how-many-days-in-hoi-an", "/3-days-in-hoi-an", "/hoi-an-market-guide", "/hoi-an-food-guide", "/my-son-sanctuary-guide", "/hoi-an-with-kids", "/editorial-methodology"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  const images = ["images/editorial/market-guide/hero.webp", "images/editorial/food-guide/cao-lau.webp"];
+  for (const image of images) { await access(new URL(image, output)); assert.match(guide, new RegExp(`src="/${image.replaceAll("/", "\\/")}"`, "i")); }
+  assert.equal((guide.match(/<img\b/gi) ?? []).length, 2);
+  assert.doesNotMatch(guide, /<img\b[^>]*src="https?:\/\//i);
+  for (const route of ["/", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/how-many-days-in-hoi-an"]) {
+    const html = await readFile(routeFile(route), "utf8");
+    assert.match(html, /href="\/hoi-an-old-town-guide"/i, `${route} must link contextually to the Old Town guide`);
+  }
+});
+
+test("basket boat with kids guide supports a family decision without making safety guarantees", async () => {
+  const guide = await readFile(routeFile("/basket-boat-hoi-an-with-kids"), "utf8");
+  const visibleHtml = guide.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  assert.match(guide, /Hoi An Basket Boat With Kids: What Parents Should Know/i);
+  for (const topic of [/What Is the Basket Boat Experience Like for Children/i, /Is There a Minimum Age/i, /Life Jackets and Active Adult Supervision/i, /Normal Paddle Ride vs Basket Boat Spinning/i, /Lively Areas vs Quieter Cam Thanh Routes/i, /How Long Does the Ride Take/i, /Best Time of Day With Children/i, /Is It Suitable for Babies or Toddlers/i, /What Should Parents Ask/i, /Is the Basket Boat Worth It With Kids/i, /Combining Basket Boats With a Cooking Class/i, /Compare Basket Boat Options/i]) assert.match(guide, topic);
+  assert.match(guide, /no verified universal minimum age/i);
+  assert.match(guide, /around age three and above commonly participate/i);
+  assert.match(guide, /<strong>not<\/strong> a universal minimum-age rule/i);
+  assert.match(guide, /appropriately sized, correctly fitting life jacket/i);
+  assert.match(guide, /does not require[^<]*spin/i);
+  assert.match(guide, /Many local rides are around 40–50 minutes/i);
+  assert.doesNotMatch(visibleHtml, /universally safe|completely safe|minimum age is 3|safest operator|viator\.com|getyourguide\.com|cocolocal|book now|limited spots/i);
+  assert.equal((guide.match(/<h1\b/gi) ?? []).length, 1);
+  assert.equal((visibleHtml.match(/>Compare Hoi An Basket Boat Options<\/a>/gi) ?? []).length, 1, "family guide must use one primary commercial bridge");
+  for (const route of ["/basket-boat-hoi-an", "/cam-thanh-coconut-village", "/hoi-an-with-kids", "/how-many-days-in-hoi-an", "/what-to-expect-hoi-an-cooking-class", "/cooking-classes-hoi-an", "/editorial-methodology"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  const images = ["images/experiences/basket-boat/family-basketboat.webp", "images/experiences/basket-boat/popular-coconut-basketboat.webp", "images/experiences/basket-boat/classic-basketboat.webp", "images/experiences/basket-boat/quieter-basketboat.webp"];
+  for (const image of images) { await access(new URL(image, output)); assert.match(guide, new RegExp(`src="/${image.replaceAll("/", "\\/")}"`, "i")); }
+  assert.equal((guide.match(/<img\b/gi) ?? []).length, 4);
+  assert.doesNotMatch(guide, /<img\b[^>]*src="https?:\/\//i);
+  for (const route of ["/hoi-an-with-kids", "/cam-thanh-coconut-village", "/basket-boat-hoi-an", "/things-to-do-in-hoi-an"]) {
+    const html = await readFile(routeFile(route), "utf8");
+    assert.match(html, /href="\/basket-boat-hoi-an-with-kids"/i, `${route} must link contextually to the family basket-boat guide`);
+  }
 });

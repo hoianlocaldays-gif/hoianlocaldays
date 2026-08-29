@@ -77,3 +77,91 @@ Purpose: replace the four temporary illustrations on [[Banh Xeo in Hoi An]] with
 - [ ] Cook preparing the pancake: obtain explicit permission and keep the pan workflow unobstructed.
 
 Keep original high-resolution files. Record date, approximate time, location, permission status, confirmed ingredients and whether any food was restyled for the image.
+
+## My Son Sanctuary guide replacements
+
+Purpose: replace reused provider imagery on [[My Son Sanctuary Guide]] with HAL-owned documentary photography.
+
+- [ ] Wide sanctuary landscape showing the relationship between towers, valley and surrounding mountains.
+- [ ] Recognizable temple group photographed from an authorized visitor path.
+- [ ] Brickwork detail without touching or leaning equipment against the monument.
+- [ ] Carving or sculpture detail with the group/location recorded from official signage.
+- [ ] Walking path showing realistic visitor scale without identifiable faces.
+- [ ] Shade and exposed-area context for practical planning.
+- [ ] Interpretation signage with readable official wording and location recorded.
+- [ ] Conservation/restoration context only where photography is permitted; do not infer the intervention date or method.
+- [ ] Early-morning atmosphere only when capture time is recorded and supports the caption.
+
+Shoot horizontal 3:2 with crop room. Record capture date, time, temple group, signage used for identification and any photography restrictions. Do not climb, touch or stage objects on protected structures. Avoid identifiable visitors and children unless permission is documented.
+
+## Cooking class expectations guide replacements
+
+Purpose: replace reused provider imagery and the temporary market illustration on [[What Happens in a Hoi An Cooking Class]] with HAL-owned operational photography.
+
+- [ ] Market guide holding and explaining a confirmed herb; record its name.
+- [ ] Guest smelling a herb with permission and no staged reaction.
+- [ ] Ingredient selection or weighing connected to the later menu.
+- [ ] Clean individual workstation before the class begins.
+- [ ] Knife/preparation action with safe hand position and permission.
+- [ ] Pan action showing the guest actively cooking.
+- [ ] Instructor demonstration with enough surrounding context to show the setup.
+- [ ] Guest completing a cooking step independently after instruction.
+- [ ] Finished four-dish spread only when it reflects the actual class menu.
+- [ ] Small and larger group context without identifiable faces where possible.
+- [ ] Recipe card or written instructions without personal information or unauthorized branding.
+- [ ] Child cooking under visible adult supervision, only with guardian and venue permission.
+- [ ] Dietary substitution example with the changed ingredient confirmed by the cook.
+
+Record date, venue permission, class format, actual group size, whether the photographed step was performed by the guest and whether any setup was restaged. Do not photograph confidential SOPs, guest names, private recipes or identifiable children without documented permission.
+
+## How many days guide replacements
+
+Purpose: replace reused experience imagery on [[How Many Days in Hoi An]] with HAL-owned photographs that distinguish pace and planning blocks without implying a fixed itinerary.
+
+- [ ] Old Town morning establishing view with capture time and exact location recorded.
+- [ ] Old Town evening atmosphere without implying that every night has the same crowd level.
+- [ ] Half-day cooking context showing the activity duration through a real sequence, with venue permission.
+- [ ] Quiet Cam Thanh boat context without spinning-party cues or unrelated branding.
+- [ ] My Son landscape from an authorized visitor path, with temple group recorded.
+- [ ] Unhurried food moment that does not identify or recommend an unverified restaurant.
+- [ ] Family rest or shaded pause, only with guardian permission if children are identifiable.
+- [ ] Beach or countryside slow-time context with capture date and location recorded.
+- [ ] Arrival/departure transition image that communicates limited usable time without showing personal travel documents.
+
+Shoot horizontal 3:2 with safe crop room for mobile cards. Record date, approximate time, location and permission status. Do not stage a single set of photographs as a universal one-, two- or three-day itinerary.
+
+## Hoi An Old Town guide replacements
+
+Purpose: establish an HAL-owned documentary library for [[Hoi An Old Town Guide]] and replace the two temporary market/food illustrations.
+
+- [ ] Wide Old Town street in the morning, with street and capture time recorded.
+- [ ] Same or comparable area in late afternoon for a truthful light comparison.
+- [ ] Evening lantern street and blue-hour lantern scene without artificial lantern additions.
+- [ ] Riverfront wide showing the relationship between buildings, quay and water.
+- [ ] Japanese Covered Bridge wide and architectural detail, following current access rules.
+- [ ] Yellow façade, wooden shutters, tiled roof and carved timber details with exact building recorded.
+- [ ] Assembly hall exterior and permitted interior; record institution and photography rules.
+- [ ] Old house courtyard/interior only with operator or resident permission.
+- [ ] Current heritage ticket, official signage or ticket counter without personal data.
+- [ ] Quieter side street and busier riverfront for contrast without claiming fixed crowd levels.
+- [ ] Market transition and local food served in an Old Town context, with vendor permission.
+- [ ] Bicycle/street-scale scene without obstructing movement.
+- [ ] Rainy-day Old Town with capture date and actual weather recorded.
+
+Prioritize horizontal 3:2 with crop room for mobile. Record date, time, exact location, building/site name, permission status and whether a space was in active religious/community use. Do not use AI reconstruction as documentary evidence or photograph identifiable worshippers and children without permission.
+
+## Basket boat with kids guide replacements
+
+Purpose: replace reused provider imagery on [[Basket Boat in Hoi An With Kids]] with HAL-owned, permission-cleared family context.
+
+- [ ] Normal family boat from a distance, with operator and route recorded.
+- [ ] Correctly worn child-sized life jacket, only after fit is checked by a competent operator and guardian permission is documented.
+- [ ] Adult and child boarding context with both dock and operator visible.
+- [ ] Parent and child seated position without unsafe staging.
+- [ ] Calm outer route and wide Cam Thanh waterway.
+- [ ] Busy central area showing realistic boat density without sensational framing.
+- [ ] Spinning boat with adults only; never place a child for the photograph.
+- [ ] Dock/boarding surface and hand-assistance context.
+- [ ] Shade versus exposed-sun context at the actual time photographed.
+
+Avoid identifiable child faces unless guardian permission is documented. Record date, time, operator, route, actual passenger count, life-jacket availability, weather, whether the scene was restaged and whether any optional activity incurred a charge. Photography must never interfere with boarding, seating or supervision.

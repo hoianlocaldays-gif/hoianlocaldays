@@ -12,6 +12,8 @@ const discovery = [
 ];
 
 const planningCards = [
+  { title: "Hoi An Old Town", note: "Understand the heritage area before choosing what to see.", href: "/hoi-an-old-town-guide" },
+  { title: "How Many Days?", note: "Choose a realistic stay length before filling the itinerary.", href: "/how-many-days-in-hoi-an" },
   { title: "3 Days in Hoi An", note: "Balance the old town, local experiences and downtime.", href: "/3-days-in-hoi-an" },
   { title: "Hoi An With Kids", note: "Shape the day around pace, heat and hands-on activities.", href: "/hoi-an-with-kids" },
 ];
@@ -23,6 +25,8 @@ const homeCtaIds: Record<string, string> = {
   "/hoi-an-with-kids": "home_kids",
   "/things-to-do-in-hoi-an": "home_things_to_do",
   "/3-days-in-hoi-an": "home_itinerary",
+  "/how-many-days-in-hoi-an": "home_stay_length",
+  "/hoi-an-old-town-guide": "home_old_town",
 };
 
 export default function Home() {

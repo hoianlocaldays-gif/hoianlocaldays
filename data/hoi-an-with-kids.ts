@@ -24,7 +24,7 @@ export const ageGuidance = [
 
 export const familyCategories = [
   { id: "cooking", title: "Cooking & Food", description: "Cooking is hands-on, social and gives the family a shared activity rather than another stop to look at.", note: "Compare formats before choosing how much market, countryside or basket-boat time you want.", href: "/cooking-classes-hoi-an" },
-  { id: "basket-boats", title: "Basket Boats & Coconut Village", description: "Fun, visually memorable and easy to combine with cooking.", note: "Some experiences are lively and noisy, which may not suit every child.", href: "/basket-boat-hoi-an" },
+  { id: "basket-boat", title: "Basket Boats & Coconut Village", description: "Fun, visually memorable and easy to combine with cooking.", note: "Some experiences are lively and noisy, which may not suit every child.", href: "/basket-boat-hoi-an" },
   { id: "crafts", title: "Lantern & Craft Workshops", description: "A useful hands-on choice for rainy periods or families who prefer a quieter pace.", note: "Choose a workshop length that matches the child’s attention and energy." },
   { id: "beaches", title: "Beaches", description: "An Bang and Cua Dai can create breathing room between structured activities.", note: "Conditions vary, so keep the plan flexible rather than building the whole day around a fixed schedule." },
   { id: "cycling", title: "Cycling & Countryside", description: "Better suited to older children, confident riders and families comfortable with outdoor activity.", note: "Check the route and conditions with the operator before choosing." },

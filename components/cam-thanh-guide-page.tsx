@@ -89,7 +89,7 @@ export function CamThanhGuidePage() {
 
     <section className="cam-thanh-checklist section" id="checklist">
       <div><p className="eyebrow">Before leaving</p><h2>Quick Practical Checklist</h2></div>
-      <ol><li><span>01</span><p>Choose lively or quiet before choosing an operator.</p></li><li><span>02</span><p>Check whether another tour already includes a basket boat.</p></li><li><span>03</span><p>Confirm entrance, boat, duration and optional extras.</p></li><li><span>04</span><p>Ask the price before accepting spinning or entertainment.</p></li><li><span>05</span><p>Wear cool clothing and bring sun protection.</p></li><li><span>06</span><p>Use life jackets and supervise children closely.</p></li><li><span>07</span><p>Remember that tipping is voluntary.</p></li></ol>
+      <ol><li><span>01</span><p>Choose lively or quiet before choosing an operator.</p></li><li><span>02</span><p>Check whether another tour already includes a basket boat.</p></li><li><span>03</span><p>Confirm entrance, boat, duration and optional extras.</p></li><li><span>04</span><p>Ask the price before accepting spinning or entertainment.</p></li><li><span>05</span><p>Wear cool clothing and bring sun protection.</p></li><li><span>06</span><p>Use life jackets and supervise children closely. <Link href="/basket-boat-hoi-an-with-kids">Parents can use the detailed family decision guide.</Link></p></li><li><span>07</span><p>Remember that tipping is voluntary.</p></li></ol>
       <nav aria-label="Continue planning"><Link href="/things-to-do-in-hoi-an">Explore More Things to Do</Link><Link href="/3-days-in-hoi-an">Fit Cam Thanh Into 3 Days</Link><Link href="/editorial-methodology">How HAL Verifies Recommendations</Link></nav>
     </section>
   </main>;

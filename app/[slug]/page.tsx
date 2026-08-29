@@ -13,6 +13,11 @@ import { HoiAnFoodGuidePage } from "@/components/hoi-an-food-guide-page";
 import { HoiAnMarketGuidePage } from "@/components/hoi-an-market-guide-page";
 import { CaoLauGuidePage } from "@/components/cao-lau-guide-page";
 import { BanhXeoGuidePage } from "@/components/banh-xeo-guide-page";
+import { MySonSanctuaryGuidePage } from "@/components/my-son-sanctuary-guide-page";
+import { CookingClassExpectationsPage } from "@/components/cooking-class-expectations-page";
+import { HowManyDaysPage } from "@/components/how-many-days-page";
+import { HoiAnOldTownGuidePage } from "@/components/hoi-an-old-town-guide-page";
+import { BasketBoatWithKidsPage } from "@/components/basket-boat-with-kids-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -36,6 +41,11 @@ export function generateStaticParams() {
     { slug: "hoi-an-market-guide" },
     { slug: "cao-lau-hoi-an" },
     { slug: "banh-xeo-hoi-an" },
+    { slug: "my-son-sanctuary-guide" },
+    { slug: "what-to-expect-hoi-an-cooking-class" },
+    { slug: "how-many-days-in-hoi-an" },
+    { slug: "hoi-an-old-town-guide" },
+    { slug: "basket-boat-hoi-an-with-kids" },
   ];
 }
 
@@ -96,6 +106,31 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Understand Hoi An-style banh xeo: what is in the pancake, how to wrap and eat it, sauce variations, regional differences and dietary notes.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
+  if (slug === "my-son-sanctuary-guide") {
+    const title = "My Son Sanctuary Guide: What to Know Before You Visit";
+    const description = "Understand My Son Sanctuary before visiting from Hoi An, including its Champa history, temple ruins, walking, heat, timing and guide options.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
+  if (slug === "what-to-expect-hoi-an-cooking-class") {
+    const title = "What Happens in a Hoi An Cooking Class?";
+    const description = "Understand Hoi An cooking class formats, market visits, hands-on instruction, group sizes, menus, dietary needs and family considerations.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
+  if (slug === "how-many-days-in-hoi-an") {
+    const title = "How Many Days in Hoi An Do You Need?";
+    const description = "Decide whether to spend 1, 2, 3 or 4+ days in Hoi An based on your pace, interests, family needs and the experiences you want to include.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
+  if (slug === "hoi-an-old-town-guide") {
+    const title = "Hoi An Old Town Guide: What to See & How to Visit";
+    const description = "Understand Hoi An Old Town, what heritage to see, day versus evening, current ticket guidance, walking strategy and how it fits into a first visit.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
+  if (slug === "basket-boat-hoi-an-with-kids") {
+    const title = "Hoi An Basket Boat With Kids: What Parents Should Know";
+    const description = "Plan a Hoi An basket boat ride with children: age policies, life jackets, supervision, spinning, lively versus quieter routes, heat and parent questions.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
   if (slug === "editorial-methodology") {
     const title = "How Hoi An Local Days Chooses What to Recommend";
     const description = "Learn how Hoi An Local Days evaluates experiences, traveler fit, local context, provider options, verification and affiliate independence.";
@@ -123,6 +158,11 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   if (slug === "hoi-an-market-guide") return <HoiAnMarketGuidePage />;
   if (slug === "cao-lau-hoi-an") return <CaoLauGuidePage />;
   if (slug === "banh-xeo-hoi-an") return <BanhXeoGuidePage />;
+  if (slug === "my-son-sanctuary-guide") return <MySonSanctuaryGuidePage />;
+  if (slug === "what-to-expect-hoi-an-cooking-class") return <CookingClassExpectationsPage />;
+  if (slug === "how-many-days-in-hoi-an") return <HowManyDaysPage />;
+  if (slug === "hoi-an-old-town-guide") return <HoiAnOldTownGuidePage />;
+  if (slug === "basket-boat-hoi-an-with-kids") return <BasketBoatWithKidsPage />;
   if (slug === "editorial-methodology") return <EditorialMethodologyPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();

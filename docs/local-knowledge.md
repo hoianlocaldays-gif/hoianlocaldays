@@ -93,6 +93,33 @@ Classification:
 
 ## Source review notes
 
+## My Son Sanctuary
+
+| Claim | Class | Source/evidence | Publication caution |
+| --- | --- | --- | --- |
+| My Son developed from approximately the 4th to the 13th centuries and served as the religious and political capital of Champa for much of its existence. | A | UNESCO World Heritage Centre, My Son Sanctuary, reviewed 2026-08-29 | Use the broad development period; avoid assigning every visible structure a date without monument-level evidence. |
+| UNESCO inscribed My Son in 1999 under criteria (ii) and (iii). | A | UNESCO World Heritage Centre inscription record and Decision 23 COM VIII.C.1, reviewed 2026-08-29 | Do not paraphrase this as an award or visitor ranking. |
+| My Son demonstrates Champa adaptation of influences from Indian Hindu art and architecture. | A | UNESCO criterion (ii), reviewed 2026-08-29 | “Influence” does not mean the sanctuary is simply Indian architecture transplanted to Vietnam. |
+| Shiva was the principal Hindu deity associated with the sanctuary, and the site also expressed royal authority. | A | UNESCO periodic reporting; Da Nang tourism heritage guidance, reviewed 2026-08-29 | Keep the explanation accessible; do not overstate one uniform ritual practice across ten centuries. |
+| Visitors encounter eight groups of 71 standing monuments plus buried archaeology within the World Heritage property. | A | UNESCO World Heritage Centre integrity statement, reviewed 2026-08-29 | Avoid implying all 71 are complete towers or equally accessible. |
+| The monuments suffered damage during the Second World War, First Indochina War and especially the Second Indochina War. | A | UNESCO World Heritage Centre integrity and conservation records, reviewed 2026-08-29 | Avoid sensational language and unsupported destruction percentages. |
+| Conservation began in the early 20th century and later continued through Vietnamese and international cooperation. | A | UNESCO World Heritage Centre; UNESCO Italy-supported conservation project, reviewed 2026-08-29 | Do not imply restoration is finished or that every intervention used the same method. |
+| Current official tourism guidance places My Son roughly 35–40 km from Hoi An. | A with source variation | Vietnam Tourism and Da Nang Tourism Promotion Center, reviewed 2026-08-29 | Treat as approximate; route and pickup point change actual distance/time. |
+| The visitor approach includes an internal shuttle for part of the route, but the sanctuary still involves outdoor walking. | A | Vietnam Tourism official visitor guidance, reviewed 2026-08-29 | Do not describe the shuttle as a complete accessibility solution. |
+| Comfortable shoes, sun protection and modest clothing are appropriate. Visitors should not climb, carve or touch protected structures. | A/C | Vietnam Tourism and Da Nang official heritage etiquette, reviewed 2026-08-29 | Practical guidance, not a safety guarantee. |
+| Earlier visits are generally a more comfortable starting point for heat-sensitive travelers. | C supported by official guidance | Current official tourism sources promote early visits and confirm outdoor walking; reviewed 2026-08-29 | Do not guarantee temperature, light or crowd levels. |
+| A half day is the most useful planning unit from Hoi An. | C | HAL editorial judgment based on official distance and visit structure | Not a fixed tour duration or admission rule. |
+| Current admission prices, opening hours and cultural performance schedules. | D for evergreen publication | Official 2026 sources currently publish differing seasonal/end times and schedules | Omit from evergreen guide; direct visitors to current official information. |
+| My Son is universally essential for every Hoi An visitor. | D/rejected | Editorial overstatement unsupported by traveler-fit evidence | Publish a nuanced fit/skip decision instead. |
+
+My Son source review:
+
+- UNESCO World Heritage Centre, My Son Sanctuary and Decision 23 COM VIII.C.1, accessed 2026-08-29.
+- UNESCO World Heritage Centre conservation records and nomination/conservation documentation, accessed 2026-08-29.
+- UNESCO, restoration of Champa Kingdom monuments at My Son, accessed 2026-08-29.
+- Vietnam Tourism, Explore the Global Cultural and Historical Values of My Son Sanctuary and The Mystic My Son, accessed 2026-08-29.
+- Da Nang Tourism Promotion Center, My Son visitor and heritage guidance, accessed 2026-08-29.
+
 - UNESCO Cu Lao Cham–Hoi An Biosphere Reserve, accessed 2026-08-28.
 - Da Nang City Tourism Information Portal, Bay Mau Coconut Forest, accessed 2026-08-28.
 - Da Nang City Tourism Information Portal, bamboo and coconut house craft in Cam Thanh, accessed 2026-08-28.
@@ -112,3 +139,49 @@ Classification:
 - Vietnam Tourism, Vietnamese Home Recipes and Dining in the Mekong Delta, accessed 2026-08-29.
 
 This document is internal. It must not expose private commercial terms, commissions or operator-confidential information.
+
+## Hoi An Old Town
+
+| Claim | Class | Source/evidence | Publication caution |
+| --- | --- | --- | --- |
+| Hoi An Ancient Town was inscribed on the World Heritage List in 1999 under criteria (ii) and (v). | A | UNESCO World Heritage Centre property 948 and Decision 23 COM VIII.C.1, reviewed 2026-08-29 | Describe this as heritage inscription, not an award or visitor ranking. |
+| It is an exceptionally well-preserved small-scale trading port active from the 15th to the 19th centuries. | A | UNESCO World Heritage Centre, reviewed 2026-08-29 | Use the broad period for the town; do not assign it to every visible building. |
+| The town reflects a fusion of indigenous and foreign cultures, principally Chinese and Japanese with later European influences. | A | UNESCO Outstanding Universal Value statement, reviewed 2026-08-29 | Cultural exchange does not prove every popular origin story about a named monument or dish. |
+| UNESCO documents 1,107 timber-frame buildings and an urban plan connected to street-facing commerce and river access. | A | UNESCO Outstanding Universal Value statement, reviewed 2026-08-29 | Do not imply every building is open, unrestored or identical in age. |
+| The Japanese Covered Bridge is a covered wooden bridge with a pagoda/temple component; UNESCO describes the surviving structure as dating from the 18th century. | A | UNESCO World Heritage Centre, reviewed 2026-08-29 | Exact first-construction dates, builders and folklore vary; qualify or omit them. |
+| In daylight the urban fabric and architectural detail are easier to interpret; evening emphasizes lantern, dining and riverfront atmosphere. | C | HAL editorial judgment based on the different visual/operational uses of the town | Do not guarantee crowd levels, light or opening conditions. |
+| A few hours gives orientation; half a day supports selected interiors; day plus evening provides the clearest contrast. | C | HAL planning framework | Not an official or universal duration requirement. |
+| The official heritage center announcement dated 28 January 2026 publishes VND 80,000 and VND 120,000 ticket structures with different included monuments. | A/time-sensitive | Hoi An World Cultural Heritage Conservation Center, “Announcement of the visiting in Hoi An Ancient Town,” reviewed 2026-08-29 | Date-stamp. Inclusion and price may change; refer readers to current official information. |
+| The same official notice says one purchase is valid for the visitor's Hoi An stay, up to three days. | A/time-sensitive | Hoi An World Cultural Heritage Conservation Center, reviewed 2026-08-29 | Do not extrapolate beyond the current notice. |
+| “Public streets are always free and only interiors require tickets.” | D/rejected | The current official notice asks visitors to purchase tickets before entering and includes the general townscape in the ticket benefit. | Do not publish this common blog simplification as a current official rule. |
+| Old Town and My Son are complementary: one is a living historic trading-town ensemble; the other is a Champa religious and archaeological sanctuary. | A/C | UNESCO property descriptions plus HAL decision framing | Do not create a simplistic “which is better” ranking. |
+
+Old Town source review:
+
+- UNESCO World Heritage Centre, Hoi An Ancient Town, property 948, accessed 2026-08-29.
+- UNESCO World Heritage Committee, Decision 23 COM VIII.C.1, accessed 2026-08-29.
+- Hoi An World Cultural Heritage Conservation Center, Announcement of the visiting in Hoi An Ancient Town, published 2026-01-28 and accessed 2026-08-29.
+- Hoi An World Cultural Heritage Conservation Center, Japanese Covered Bridge cultural reference PDF, accessed 2026-08-29; used only as supporting context because precise origin accounts require qualification.
+
+## Basket Boat With Kids
+
+| Claim | Class | Source/evidence | Publication caution |
+|---|---|---|---|
+| Children around age three and above commonly participate locally. | B | Owner local observation, reviewed 2026-08-29 | Not a universal minimum age or safety guarantee; operator policies vary. |
+| No authoritative universal minimum age for all Cam Thanh basket-boat operators was identified. | D/current research limit | Review of official local tourism/heritage and waterway-safety sources, 2026-08-29 | State that families must confirm the selected operator's policy. |
+| Children should wear an appropriately sized, correctly fitted life jacket and remain actively supervised. | A/B/C | Vietnam inland-waterway safety law supports life-saving equipment, safety instruction, stable seating and supervised boarding; owner operational observation | Do not promise that a life jacket makes a ride completely safe. |
+| Passenger-waterway operators must check safety conditions, explain safety equipment, keep passengers in safe seated positions and avoid overloading. | A | Vietnam Inland Waterway Navigation Law, Articles 78–79, reviewed 2026-08-29 | Legal applicability to a particular basket-boat operation is not adjudicated by HAL; publish as general safety context. |
+| Waterway-safety authorities emphasize life jackets and life-saving equipment for small and rudimentary craft. | A | Vietnam Inland Waterway Administration document 915/CĐTNĐ-VT-ATGT (2020), reviewed 2026-08-29 | Do not imply HAL inspected or certified an operator. |
+| Normal paddling and rapid spinning are substantially different experiences. | B/C | Owner local observation and HAL family decision framing | Operator arrangement, transfer and charge vary. |
+| Spinning may use a specialized boat and is commonly optional. | B | Owner local observation | Do not state this as every operator's policy. Do not recommend spinning for young children. |
+| Central activity areas can be lively; outer routes may feel quieter. | B | Owner local observation | Never promise no crowds, silence or a fixed route atmosphere. |
+| Many local rides are approximately 40–50 minutes. | B | Owner local observation | Duration, waiting and package structure vary. |
+| Earlier periods are generally more comfortable than hot midday for many families. | B/C | Owner observation and HAL practical judgment | No exact weather, temperature or crowd guarantee. |
+| The best family choice depends on temperament, seating, water comfort, life-jacket fit, noise/heat sensitivity and instruction-following—not age alone. | C | HAL decision framework based on safety context and owner observation | Not medical or operator-specific advice. |
+
+Basket-boat family source review:
+
+- Vietnam Inland Waterway Navigation Law 2004, amended/current consolidated text, Articles 78–79, accessed 2026-08-29.
+- Vietnam Inland Waterway Administration, document 915/CĐTNĐ-VT-ATGT on safety for rudimentary watercraft, issued 2020-05-26, accessed 2026-08-29.
+- Hoi An World Cultural Heritage Conservation Center, Reflections on the Basket Boat in Hoi An, accessed 2026-08-29.
+- Existing owner local observations in this document, reviewed 2026-08-29.
