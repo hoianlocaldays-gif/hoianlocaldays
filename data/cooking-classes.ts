@@ -1,6 +1,6 @@
 import type { ExperienceImage } from "./experience-image";
 
-export type CookingProviderKey = "viator" | "getyourguide";
+export type CookingProviderKey = "viator" | "getyourguide" | "direct";
 
 export type CookingProvider = {
   provider: CookingProviderKey;
@@ -23,11 +23,12 @@ export type CookingExperience = {
   providers: Partial<Record<CookingProviderKey, CookingProvider>>;
   image: ExperienceImage | null;
   lastVerified: string;
+  published?: boolean;
 };
 
 const verified = "2026-08-27";
 
-export const cookingExperiences: CookingExperience[] = [
+const cookingCatalog: CookingExperience[] = [
   {
     id: "classic-market-cooking",
     name: "Classic Market, Basket Boat & Cooking Experience",
@@ -60,6 +61,22 @@ export const cookingExperiences: CookingExperience[] = [
     lastVerified: verified,
   },
   {
+    id: "tra-que-garden",
+    name: "Tra Que Garden Cooking & Farming Experience",
+    editorial: {
+      label: "Best Cooking + Farming",
+      positioning: "A direct local experience in Tra Que Vegetable Village that combines hands-on farm time with Vietnamese cooking in the garden setting.",
+      whyWePickedIt: "It is the clearest fit for travelers who specifically want both vegetable-garden context and practical cooking, without adding a market visit or basket-boat ride.",
+      bestFor: ["Travelers interested in farming and fresh ingredients", "Couples and families", "Travelers who prefer booking directly with a local host"],
+      notIdealFor: "Travelers wanting a market tour, basket-boat ride or hotel pickup included in the same experience.",
+    },
+    providers: {
+      direct: { provider: "direct", productId: "tra-que-garden-direct", url: "https://traquegarden.hoianlocaldays.com/", campaign: "hal-cooking-tra-que-garden-direct", enabled: true },
+    },
+    image: { src: "/images/experiences/cooking/tra-que-garden.jpg", alt: "Guests preparing fresh ingredients at a cooking table beside the gardens in Tra Que Vegetable Village", sourcePlatform: "owner-supplied", sourceProductId: "tra-que-garden-direct", sourceType: "owner-selected", downloadedAt: "2026-10-11", qualityStatus: "good" },
+    lastVerified: "2026-10-11",
+  },
+  {
     id: "organic-farm-cooking",
     name: "Organic Farm Cooking Experience",
     editorial: {
@@ -72,6 +89,7 @@ export const cookingExperiences: CookingExperience[] = [
     providers: { getyourguide: { provider: "getyourguide", productId: "568322", url: "https://www.getyourguide.com/hoi-an-l831/cooking-class-in-the-middle-of-organic-farm-t568322/?partner_id=QJ5SJBN&utm_medium=online_publisher&cmp=hal-cooking-organicfarm-gyg", campaign: "hal-cooking-organicfarm-gyg", enabled: true } },
     image: { src: "/images/experiences/cooking/organic-farm-cooking.webp", alt: "Cooking class surrounded by organic produce at Tra Que in Hoi An", sourcePlatform: "owner-supplied", sourceProductId: "568322", sourcePage: "https://pin.it/4HIwKxEf3", sourceType: "owner-selected", downloadedAt: verified, qualityStatus: "replace-when-better-source-available" },
     lastVerified: verified,
+    published: false,
   },
   {
     id: "lantern-cooking-combo",
@@ -131,6 +149,8 @@ export const cookingExperiences: CookingExperience[] = [
   },
 ];
 
-export const cookingQuickPicks = ["classic-market-cooking", "cocolocal-farm", "organic-farm-cooking"]
+export const cookingExperiences = cookingCatalog.filter((experience) => experience.published !== false);
+
+export const cookingQuickPicks = ["classic-market-cooking", "cocolocal-farm", "tra-que-garden"]
   .map((id) => cookingExperiences.find((experience) => experience.id === id))
   .filter((experience): experience is CookingExperience => Boolean(experience));

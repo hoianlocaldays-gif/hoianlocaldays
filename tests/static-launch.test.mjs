@@ -135,6 +135,12 @@ test("rendered affiliate links preserve the V1 tracking contract", async () => {
   }
   assert.ok(viator >= 10, `expected rendered Viator links, found ${viator}`);
   assert.ok(getYourGuide >= 8, `expected rendered GetYourGuide links, found ${getYourGuide}`);
+
+  const cooking = await readFile(routeFile("/cooking-classes-hoi-an"), "utf8");
+  assert.equal(cooking.match(/href="https:\/\/traquegarden\.hoianlocaldays\.com\/"/g)?.length, 2, "Tra Que Garden should appear in the quick picks and full comparison");
+  assert.match(cooking, /Best Cooking \+ Farming/i);
+  assert.match(cooking, /Direct local partner · Tra Que Garden/i);
+  assert.doesNotMatch(cooking, /Organic Farm Cooking Experience/i, "the overlapping farm option should remain unpublished");
 });
 
 test("commercial pages use one lightweight disclosure without exposing internal business strategy", async () => {

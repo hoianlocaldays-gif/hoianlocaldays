@@ -5,13 +5,13 @@ import { join } from "node:path";
 
 const root = process.cwd();
 const imageFiles = [
-  "cooking/classic-market-cooking.webp", "cooking/cocolocal-farm.webp", "cooking/organic-farm-cooking.webp", "cooking/lantern-cooking-combo.webp", "cooking/personal-market-cooking.webp", "cooking/food-lovers-cooking.webp", "cooking/small-local-cooking.webp",
+  "cooking/classic-market-cooking.webp", "cooking/cocolocal-farm.webp", "cooking/tra-que-garden.jpg", "cooking/organic-farm-cooking.webp", "cooking/lantern-cooking-combo.webp", "cooking/personal-market-cooking.webp", "cooking/food-lovers-cooking.webp", "cooking/small-local-cooking.webp",
   "basket-boat/classic-basketboat.webp", "basket-boat/popular-coconut-basketboat.webp", "basket-boat/family-basketboat.webp", "basket-boat/quieter-basketboat.webp", "basket-boat/short-basketboat.webp",
   "my-son/myson-overall-group.webp", "my-son/myson-early-morning.webp", "my-son/myson-private.webp", "my-son/myson-bike.webp", "my-son/myson-adventure.webp",
 ];
 
 test("confirmed provider images are local, optimized and copied to static export", async () => {
-  assert.equal(imageFiles.length, 17);
+  assert.equal(imageFiles.length, 18);
   for (const relative of imageFiles) {
     const source = await stat(join(root, "public/images/experiences", relative));
     const exported = await stat(join(root, "out/images/experiences", relative));
@@ -34,8 +34,8 @@ test("image provenance distinguishes verified provider files from owner-selected
   const cooking = await readFile(join(root, "data/cooking-classes.ts"), "utf8");
   const allData = await Promise.all(["data/cooking-classes.ts", "data/basket-boat.ts", "data/my-son.ts"].map((file) => readFile(join(root, file), "utf8")));
   assert.equal(allData.join("\n").match(/sourceType: "verified-provider"/g)?.length, 14);
-  assert.equal(cooking.match(/sourceType: "owner-selected"/g)?.length, 3);
-  assert.equal(cooking.match(/sourcePlatform: "owner-supplied"/g)?.length, 3);
+  assert.equal(cooking.match(/sourceType: "owner-selected"/g)?.length, 4);
+  assert.equal(cooking.match(/sourcePlatform: "owner-supplied"/g)?.length, 4);
   assert.equal(cooking.match(/qualityStatus: "replace-when-better-source-available"/g)?.length, 2);
   assert.doesNotMatch(cooking, /sourceType: "provider"/);
 

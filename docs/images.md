@@ -1,11 +1,12 @@
 # HAL experience image provenance
 
-Audit date: 2026-08-27. `Yes` means the image was verified in the provider-owned hero/gallery area on the exact linked product page. `Owner-selected` means the owner selected the image separately and the product ID records its intended experience association, not proof that the file came from that provider gallery. All final files were downloaded locally, manually reviewed, cropped without stretching, and exported as 1200 × 800 WebP.
+Audit started: 2026-08-27; latest addition: 2026-10-11. `Yes` means the image was verified in the provider-owned hero/gallery area on the exact linked product page. `Owner-selected` means the owner selected the image separately and the product ID records its intended experience association, not proof that the file came from that provider gallery. All final files are stored locally, manually reviewed and cropped without stretching at 1200 × 800; most use WebP, while the approved Tra Que Garden photograph uses an optimized JPEG.
 
 | Experience ID | Local image | Source | Product | Product page | Confirmed | Downloaded | Note |
 |---|---|---|---|---|---|---|---|
 | classic-market-cooking | `/images/experiences/cooking/classic-market-cooking.webp` | Viator | 141961P1 | https://www.viator.com/tours/Hoi-An/Local-market-basket-boat-fishing-and-cooking-experience/d5229-141961P1 | Yes | 2026-08-27 | Provider hero; class group and cooking station visible. |
 | cocolocal-farm | `/images/experiences/cooking/cocolocal-farm.webp` | Owner-supplied | 1061073 (intended association) | https://pin.it/4HIwKxEf3 | Owner-selected | 2026-08-27 | Final flame-cooking image selected by the owner. It replaces a rejected image with visible unrelated Phu Lanh branding; the rejected file is not used. Quality status: good. |
+| tra-que-garden | `/images/experiences/cooking/tra-que-garden.jpg` | Owner-supplied | tra-que-garden-direct | https://traquegarden.hoianlocaldays.com/ | Owner-selected | 2026-10-11 | Authentic approved Tra Que Garden photograph. Cropped mechanically to 3:2 and compressed without generative editing. Guests, ingredient preparation and the garden setting are visible. Quality status: good. |
 | organic-farm-cooking | `/images/experiences/cooking/organic-farm-cooking.webp` | Owner-supplied | 568322 (intended association) | https://pin.it/4HIwKxEf3 | Owner-selected | 2026-08-27 | Garden trellis and participants communicate the farm setting. Source master is approximately 390 × 390. Quality status: replace when better source is available. |
 | lantern-cooking-combo | `/images/experiences/cooking/lantern-cooking-combo.webp` | Owner-supplied | 540267 (intended association) | https://pin.it/4HIwKxEf3 | Owner-selected | 2026-08-27 | Close-up craft activity differentiates this from cooking-only cards. Source master is approximately 390 × 390. Quality status: replace when better source is available. |
 | personal-market-cooking | `/images/experiences/cooking/personal-market-cooking.webp` | Viator | 221841P24 | https://www.viator.com/tours/Hoi-An/Cooking-Class-Hoi-An-Local-Market-Basket-Boat-Fishing-and-Cooking-Experience/d5229-221841P24 | Yes | 2026-08-27 | Provider hero; host-led cooking demonstration visible. |
@@ -22,7 +23,7 @@ Audit date: 2026-08-27. `Yes` means the image was verified in the provider-owned
 | myson-bike | `/images/experiences/my-son/myson-bike.webp` | Viator | 20353P5 | https://www.viator.com/tours/Hoi-An/Half-Day-My-Son-Bike-Tour-from-Hoi-An/d5229-20353P5 | Yes | 2026-08-27 | Provider hero; cycling and countryside clearly communicate the active format. |
 | myson-adventure | `/images/experiences/my-son/myson-adventure.webp` | GetYourGuide | 519118 | https://www.getyourguide.com/hoi-an-l831/my-son-sanctuary-and-mountain-trekking-pilgrimage-t519118/ | Yes | 2026-08-27 | Provider hero collage; trekking and waterfall components visible. |
 
-No traveler-review image was knowingly used. Fourteen images were confirmed directly from provider pages. The final three are explicitly modeled as owner-selected and are not represented as verified GetYourGuide gallery images.
+No traveler-review image was knowingly used. Fourteen images were confirmed directly from provider pages. Four are explicitly modeled as owner-selected; the original three are not represented as verified GetYourGuide gallery images, while the Tra Que Garden file is an authentic image supplied and approved by the owner.
 
 ## Food guide temporary editorial illustrations
 

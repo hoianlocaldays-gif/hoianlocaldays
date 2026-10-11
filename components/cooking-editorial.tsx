@@ -4,7 +4,7 @@ import { AffiliateCTA } from "./affiliate-cta";
 import type { CookingExperience, CookingProvider } from "@/data/cooking-classes";
 
 const defaultPage = "cooking-classes-hoi-an";
-const providerName = { viator: "Viator", getyourguide: "GetYourGuide" } as const;
+const providerName = { viator: "Viator", getyourguide: "GetYourGuide", direct: "Tra Que Garden" } as const;
 
 export function ExperienceImage({ experience, priority = false }: { experience: Pick<CookingExperience, "image">; priority?: boolean }) {
   if (!experience.image) return null;
@@ -27,7 +27,8 @@ export function ProviderButtons({ experience, position, page = defaultPage }: { 
   const providers = Object.values(experience.providers).filter((provider): provider is CookingProvider => Boolean(provider?.enabled));
   if (providers.length === 1) {
     const provider = providers[0];
-    return <div className="provider-action"><AffiliateCTA experienceId={experience.id} provider={provider.provider} providerProductId={provider.productId} campaign={provider.campaign} page={page} position={position} href={provider.url} /><small>via {providerName[provider.provider]}</small></div>;
+    const isDirect = provider.provider === "direct";
+    return <div className="provider-action"><AffiliateCTA experienceId={experience.id} provider={provider.provider} providerProductId={provider.productId} campaign={provider.campaign} page={page} position={position} href={provider.url} label={isDirect ? "Book direct" : undefined} /><small>{isDirect ? "Direct local partner · Tra Que Garden" : `via ${providerName[provider.provider]}`}</small></div>;
   }
   return <div className="provider-action provider-action-multiple"><strong>Check Availability</strong><div>{providers.map((provider) => <AffiliateCTA key={provider.provider} experienceId={experience.id} provider={provider.provider} providerProductId={provider.productId} campaign={provider.campaign} page={page} position={position} href={provider.url} label={providerName[provider.provider]} />)}</div></div>;
 }

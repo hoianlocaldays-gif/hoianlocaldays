@@ -24,9 +24,15 @@ const getYourGuideCampaigns = new Map([
   ["519118", "hal-myson-adventure-gyg"],
 ]);
 const urls = sources.flatMap((source) => [...source.matchAll(/url: "(https:\/\/[^\"]+)"/g)].map((match) => match[1]));
+const affiliateUrls = urls.filter((href) => {
+  const hostname = new URL(href).hostname;
+  return hostname === "www.viator.com" || hostname === "www.getyourguide.com";
+});
+const directUrls = urls.filter((href) => new URL(href).hostname === "traquegarden.hoianlocaldays.com");
 
-if (urls.length !== 18) throw new Error(`Expected 18 supplied affiliate URLs, found ${urls.length}.`);
-for (const href of urls) {
+if (affiliateUrls.length !== 18) throw new Error(`Expected 18 supplied affiliate URLs, found ${affiliateUrls.length}.`);
+if (directUrls.length !== 1 || directUrls[0] !== "https://traquegarden.hoianlocaldays.com/") throw new Error("Expected one exact Tra Que Garden direct-booking URL.");
+for (const href of affiliateUrls) {
   const url = new URL(href);
   if (url.hostname === "www.viator.com") {
     const productId = [...viatorCampaigns.keys()].find((id) => url.pathname.includes(id));
@@ -45,4 +51,4 @@ for (const href of urls) {
   throw new Error(`Unauthorized affiliate hostname: ${url.hostname}`);
 }
 
-console.log("Verified 10 Viator and 8 GetYourGuide affiliate URLs across Cooking Classes, Basket Boats and My Son.");
+console.log("Verified 10 Viator and 8 GetYourGuide affiliate URLs, plus the Tra Que Garden direct-booking URL.");

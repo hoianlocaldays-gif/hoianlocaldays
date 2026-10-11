@@ -24,7 +24,7 @@ export function CookingClassPage() {
       <div className="hub-heading"><p className="eyebrow">Understand the choice</p><h2>Choose the Experience Before the Provider</h2><p>The biggest difference is not the booking platform. It is how much of the half-day is devoted to cooking versus markets, basket boats and countryside activities.</p><p><Link className="context-link" href="/what-to-expect-hoi-an-cooking-class">First understand what actually happens in a Hoi An cooking class →</Link></p></div>
       <div className="format-grid">
         <article><h3>All-in-One Experience</h3><p>Choose this when you want a market, basket boat and cooking in one easy first-time introduction.</p><small>Check the inclusions before booking a separate basket boat activity.</small></article>
-        <article><h3>Cooking-Focused or Farm-Based</h3><p>Choose this when ingredients, preparation and time in the kitchen matter more than fitting in every signature activity.</p><small>A better fit than an all-in-one tour for travelers primarily interested in food.</small></article>
+        <article><h3>Cooking-Focused or Farm-Based</h3><p>Choose this when ingredients, preparation and time in the kitchen matter more than fitting in every signature activity.</p><small>For cooking plus hands-on garden context, start with our direct local partner at Tra Que Garden.</small></article>
         <article><h3>Private or Small-Group</h3><p>Choose this when interaction, flexibility or a calmer pace matters more than the widest activity list.</p><small>Do not pay for privacy if a sociable group format already suits your trip.</small></article>
       </div>
     </section>
@@ -33,7 +33,7 @@ export function CookingClassPage() {
       <QuickPicks experiences={cookingQuickPicks} />
     </section>
     <section className="section cooking-compare" id="compare-all">
-      <div className="section-heading inverse"><p className="eyebrow">Editorial shortlist</p><h2>Compare All 7 Cooking Experiences</h2><p>Choose the experience first, then use an available booking provider.</p></div>
+      <div className="section-heading inverse"><p className="eyebrow">Editorial shortlist</p><h2>Compare All 7 Cooking Experiences</h2><p>Choose the experience first, then use an available booking provider. Tra Que Garden is identified clearly as a direct local partner.</p></div>
       <div className="editorial-comparison-list">{cookingExperiences.map((experience, index) => <div id={experience.id} key={experience.id}><CookingComparisonCard experience={experience} position={`comparison_${index + 1}`} /></div>)}</div>
     </section>
     <section className="section how-we-choose" id="how-we-choose"><div><p className="eyebrow">Our method</p><h2>How We Choose Our Recommendations</h2></div><div className="method-copy"><p>Hoi An Local Days compares experiences based on the overall quality of the experience, how distinctive it is, who it suits best, local character, cooking depth, group style and ease of booking.</p><p>Price and booking relationships do not determine our editorial ranking.</p></div></section>
