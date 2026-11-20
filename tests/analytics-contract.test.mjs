@@ -24,6 +24,7 @@ test("affiliate clicks keep the complete V1 contract", async () => {
 test("required funnel CTA IDs are present on every approved source page", async () => {
   const files = await Promise.all([
     read("app/page.tsx"),
+    read("components/services-home-page.tsx"),
     read("components/things-to-do-hub.tsx"),
     read("components/three-days-itinerary-page.tsx"),
     read("components/hoi-an-with-kids-page.tsx"),

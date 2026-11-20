@@ -7,6 +7,7 @@ const output = new URL("../out/", import.meta.url);
 
 const launchRoutes = [
   "/",
+  "/transfer",
   "/things-to-do-in-hoi-an",
   "/cooking-classes-hoi-an",
   "/basket-boat-hoi-an",
@@ -141,6 +142,23 @@ test("rendered affiliate links preserve the V1 tracking contract", async () => {
   assert.match(cooking, /Best Cooking \+ Farming/i);
   assert.match(cooking, /Direct local partner · Tra Que Garden/i);
   assert.doesNotMatch(cooking, /Organic Farm Cooking Experience/i, "the overlapping farm option should remain unpublished");
+});
+
+test("services homepage and transfer flow preserve the approved booking contract", async () => {
+  const [home, transfer] = await Promise.all([
+    readFile(routeFile("/"), "utf8"),
+    readFile(routeFile("/transfer"), "utf8"),
+  ]);
+  assert.equal((home.match(/data-gyg-widget="activities"/g) ?? []).length, 3, "homepage must render three GetYourGuide widgets");
+  assert.match(home, /data-gyg-partner-id="QJ5SJBN"/);
+  assert.match(home, /traquegarden\.hoianlocaldays\.com/);
+  assert.match(home, /No prepayment required · Pay on arrival/i);
+  assert.match(home, /84904885502/);
+  assert.match(home, /href="\/transfer/i);
+  assert.match(transfer, /Send request via WhatsApp/i);
+  assert.match(transfer, /84904885502/);
+  assert.match(transfer, /No prepayment required/i);
+  for (const price of ["350,000", "1,000,000", "800,000", "2,200,000"]) assert.match(transfer, new RegExp(price));
 });
 
 test("commercial pages use one lightweight disclosure without exposing internal business strategy", async () => {

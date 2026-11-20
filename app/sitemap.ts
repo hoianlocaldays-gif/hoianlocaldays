@@ -6,6 +6,7 @@ export const dynamic = "force-static";
 
 const launchRoutes = [
   "",
+  "/transfer",
   "/things-to-do-in-hoi-an",
   "/cooking-classes-hoi-an",
   "/basket-boat-hoi-an",
