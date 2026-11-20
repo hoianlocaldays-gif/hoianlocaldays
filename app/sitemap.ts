@@ -21,6 +21,8 @@ const launchRoutes = [
   "/how-many-days-in-hoi-an",
   "/hoi-an-old-town-guide",
   "/basket-boat-hoi-an-with-kids",
+  "/teh-dar-show-hoi-an",
+  "/coffee-making-class-hoi-an",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",
   "/privacy-policy",

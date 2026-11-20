@@ -17,6 +17,8 @@ import { CookingClassExpectationsPage } from "@/components/cooking-class-expecta
 import { HowManyDaysPage } from "@/components/how-many-days-page";
 import { HoiAnOldTownGuidePage } from "@/components/hoi-an-old-town-guide-page";
 import { BasketBoatWithKidsPage } from "@/components/basket-boat-with-kids-page";
+import { TehDarGuidePage } from "@/components/teh-dar-guide-page";
+import { CoffeeMakingClassGuidePage } from "@/components/coffee-making-class-guide-page";
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
@@ -43,6 +45,8 @@ export function generateStaticParams() {
     { slug: "how-many-days-in-hoi-an" },
     { slug: "hoi-an-old-town-guide" },
     { slug: "basket-boat-hoi-an-with-kids" },
+    { slug: "teh-dar-show-hoi-an" },
+    { slug: "coffee-making-class-hoi-an" },
   ];
 }
 
@@ -74,8 +78,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
   if (slug === "my-son-tours-from-hoi-an") {
-    const title = "My Son Sanctuary from Hoi An: Best Ways to Visit";
-    const description = "Plan a trip to My Son Sanctuary from Hoi An. Compare morning, afternoon, group, private and independent visit styles to find what suits your trip.";
+    const title = "My Son Sanctuary from Hoi An | Guided Trip";
+    const description = "Plan a guided My Son Sanctuary trip from Hoi An, with practical advice on traveler fit, heat, timing, inclusions and current booking availability.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
   if (slug === "cam-thanh-coconut-village") {
@@ -128,6 +132,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Plan a Hoi An basket boat ride with children: age policies, life jackets, supervision, spinning, lively versus quieter routes, heat and parent questions.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
+  if (slug === "teh-dar-show-hoi-an") {
+    const title = "Teh Dar Show Hoi An: What to Expect & Tickets";
+    const description = "Plan an evening at the Teh Dar bamboo circus in Hoi An, with practical guidance on the performance, venue, duration, traveler fit and tickets.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
+  if (slug === "coffee-making-class-hoi-an") {
+    const title = "Hoi An Coffee Making Class: What to Expect";
+    const description = "Choose a Hoi An coffee making class with practical guidance on phin brewing, Vietnamese coffee styles, caffeine, dietary needs and booking details.";
+    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
+  }
   if (page) return { title: `${page.title} | Hoi An Local Days`, description: page.description, alternates: { canonical: `/${slug}` }, robots: unfinishedSlugs.has(slug) ? { index: false, follow: false } : undefined, openGraph: { title: page.title, description: page.description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title: page.title, description: page.description, images: [socialImage.url] } };
   if (legalPage) {
     const title = `${legalPage.title} | Hoi An Local Days`;
@@ -155,6 +169,8 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   if (slug === "how-many-days-in-hoi-an") return <HowManyDaysPage />;
   if (slug === "hoi-an-old-town-guide") return <HoiAnOldTownGuidePage />;
   if (slug === "basket-boat-hoi-an-with-kids") return <BasketBoatWithKidsPage />;
+  if (slug === "teh-dar-show-hoi-an") return <TehDarGuidePage />;
+  if (slug === "coffee-making-class-hoi-an") return <CoffeeMakingClassGuidePage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();
   return <main className="legal-page section"><p className="eyebrow">Hoi An Local Days</p><h1>{legalPage.title}</h1>{legalPage.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</main>;

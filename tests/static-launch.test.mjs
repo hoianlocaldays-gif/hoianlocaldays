@@ -22,6 +22,8 @@ const launchRoutes = [
   "/how-many-days-in-hoi-an",
   "/hoi-an-old-town-guide",
   "/basket-boat-hoi-an-with-kids",
+  "/teh-dar-show-hoi-an",
+  "/coffee-making-class-hoi-an",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",
   "/privacy-policy",
@@ -120,6 +122,7 @@ test("rendered affiliate links preserve the V1 tracking contract", async () => {
       const href = match[1].replaceAll("&amp;", "&");
       if (!href.includes("viator.com") && !href.includes("getyourguide.com")) continue;
       const url = new URL(href);
+      if (url.hostname === "widget.getyourguide.com") continue;
       if (href.includes("viator.com")) {
         viator += 1;
         assert.equal(url.searchParams.get("pid"), "P00316970");
@@ -167,6 +170,45 @@ test("services homepage and transfer flow preserve the approved booking contract
   assert.match(transferSource, /Pickup location/i);
   assert.match(transferSource, /Destination/i);
   assert.match(transferSource, /Price on request/i);
+});
+
+test("Teh Dar guide is indexable and embeds the approved GetYourGuide widget", async () => {
+  const [page, sitemap] = await Promise.all([
+    readFile(routeFile("/teh-dar-show-hoi-an"), "utf8"),
+    readFile(new URL("sitemap.xml", output), "utf8"),
+  ]);
+  assert.match(page, /<h1[^>]*>Teh Dar Show in Hoi An: What to Expect<\/h1>/i);
+  assert.equal((page.match(/<h1/g) ?? []).length, 1);
+  assert.match(page, /data-gyg-widget="activities"/);
+  assert.match(page, /data-gyg-partner-id="QJ5SJBN"/);
+  assert.match(page, /data-gyg-q="Hoi An: Teh Dar"/);
+  assert.match(page, /rel="sponsored noopener noreferrer"/);
+  assert.match(page, /canonical[^>]+teh-dar-show-hoi-an/i);
+  assert.match(sitemap, /https:\/\/hoianlocaldays\.com\/teh-dar-show-hoi-an/);
+});
+
+test("My Son page focuses on product 224382 and removes the old comparison", async () => {
+  const page = await readFile(routeFile("/my-son-tours-from-hoi-an"), "utf8");
+  assert.match(page, /data-gyg-tour-ids="224382"/);
+  assert.match(page, /et=224382/);
+  assert.match(page, /Check My Son Sanctuary Availability/i);
+  assert.doesNotMatch(page, /Compare Our 5 My Son Picks|HAL editorial shortlist|myson-early-morning|myson-bike|myson-adventure/i);
+  assert.equal((page.match(/<h1/g) ?? []).length, 1);
+});
+
+test("coffee-making guide is indexable and embeds product 1090764", async () => {
+  const [page, sitemap] = await Promise.all([
+    readFile(routeFile("/coffee-making-class-hoi-an"), "utf8"),
+    readFile(new URL("sitemap.xml", output), "utf8"),
+  ]);
+  assert.match(page, /<h1[^>]*>Hoi An Coffee Making Class: What to Expect<\/h1>/i);
+  assert.equal((page.match(/<h1/g) ?? []).length, 1);
+  assert.match(page, /data-gyg-widget="activities"/);
+  assert.match(page, /data-gyg-partner-id="QJ5SJBN"/);
+  assert.match(page, /data-gyg-tour-ids="1090764"/);
+  assert.match(page, /et=1090764/);
+  assert.match(page, /canonical[^>]+coffee-making-class-hoi-an/i);
+  assert.match(sitemap, /https:\/\/hoianlocaldays\.com\/coffee-making-class-hoi-an/);
 });
 
 test("the build is configured as a runtime-free static export", async () => {
