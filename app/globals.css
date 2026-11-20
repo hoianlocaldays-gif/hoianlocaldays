@@ -364,6 +364,11 @@
 @media(max-width:760px){.my-son-info-hero{padding-top:3rem;padding-bottom:3rem}.my-son-info-hero h1{font-size:clamp(2.65rem,11.5vw,3.75rem)}.my-son-info-hero .quick-nav{grid-column:1}.my-son-info-intro,.my-son-info-remains,.my-son-info-experience,.my-son-info-bring,.my-son-info-guide,.my-son-info-independent,.my-son-info-worth,.my-son-info-compare,.my-son-info-itinerary,.my-son-info-next,.my-son-info-sources,.my-son-info-grid,.my-son-info-time-grid,.my-son-info-facts,.my-son-info-choice{grid-template-columns:1fr;gap:1.2rem}.my-son-info-next .primary-button{width:100%;text-align:center}}
 
 /* Cooking class expectations guide */
+/* Six private-car choices */
+.services-car-grid{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1000px){.services-car-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.services-car-grid{grid-template-columns:1fr}}
+
 /* Tra Que Garden focused cooking landing */
 .tra-que-landing{--tra-muted:rgba(29,45,41,.7)}
 .tra-que-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.82fr);gap:4rem;align-items:center;padding-top:5rem;padding-bottom:5rem}

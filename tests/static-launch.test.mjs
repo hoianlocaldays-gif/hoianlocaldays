@@ -147,9 +147,10 @@ test("rendered affiliate links preserve the V1 tracking contract", async () => {
 });
 
 test("services homepage and transfer flow preserve the approved booking contract", async () => {
-  const [home, transfer] = await Promise.all([
+  const [home, transfer, transferSource] = await Promise.all([
     readFile(routeFile("/"), "utf8"),
     readFile(routeFile("/transfer"), "utf8"),
+    readFile(new URL("../components/private-car-page.tsx", import.meta.url), "utf8"),
   ]);
   assert.equal((home.match(/data-gyg-widget="activities"/g) ?? []).length, 3, "homepage must render three GetYourGuide widgets");
   assert.match(home, /data-gyg-partner-id="QJ5SJBN"/);
@@ -160,7 +161,12 @@ test("services homepage and transfer flow preserve the approved booking contract
   assert.match(transfer, /Send request via WhatsApp/i);
   assert.match(transfer, /84904885502/);
   assert.match(transfer, /No prepayment required/i);
-  for (const price of ["350,000", "1,000,000", "800,000", "2,200,000"]) assert.match(transfer, new RegExp(price));
+  for (const price of ["100,000", "150,000", "250,000", "350,000", "1,000,000", "800,000", "2,200,000"]) assert.match(transfer, new RegExp(price));
+  assert.match(home, /Custom private trip/i);
+  assert.match(transfer, /Custom trip · tell us your route/i);
+  assert.match(transferSource, /Pickup location/i);
+  assert.match(transferSource, /Destination/i);
+  assert.match(transferSource, /Price on request/i);
 });
 
 test("the build is configured as a runtime-free static export", async () => {

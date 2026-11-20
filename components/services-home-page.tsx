@@ -3,10 +3,12 @@ import Link from "next/link";
 import { TrackedLink } from "@/components/tracked-link";
 
 const cars = [
+  { route: "hoian", mode: "One way", title: "Around Hoi An", copy: "A private transfer between hotels, Old Town, the beach or nearby Hoi An areas.", price: "100,000 VND" },
   { route: "airport", mode: "One way", title: "Airport transfers", copy: "Da Nang Airport to Hoi An, or Hoi An to the airport.", price: "350,000 VND" },
   { route: "bana", mode: "Return from Hoi An", title: "Ba Na Hills", copy: "A private return journey for your day at Ba Na Hills.", price: "1,000,000 VND" },
   { route: "myson", mode: "Return from Hoi An", title: "My Son Sanctuary", copy: "Travel to My Son with your own car and driver.", price: "800,000 VND" },
   { route: "hue", mode: "Return from Hoi An", title: "Hai Van Pass & Hue", copy: "A return journey via Hai Van Pass, with stops agreed ahead.", price: "2,200,000 VND" },
+  { route: "custom", mode: "Your route", title: "Custom private trip", copy: "Tell us where you want to go, your stops and timing. We will confirm a suitable vehicle and price.", price: "On request" },
 ];
 
 const partnerIdeas = [
@@ -36,7 +38,7 @@ export function ServicesHomePage() {
 
     <div className="services-wrap services-strip">
       <p><strong>Handpicked local experiences</strong>A few good ways to enjoy Hoi An.</p>
-      <p><strong>Private cars, clear prices</strong>Airport transfers and return journeys.</p>
+      <p><strong>Private cars, clear prices</strong>Hoi An transfers, airport trips and custom routes.</p>
       <p><strong>A local point of contact</strong>Help with the details before your day.</p>
     </div>
 
