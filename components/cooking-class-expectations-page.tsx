@@ -81,6 +81,6 @@ export function CookingClassExpectationsPage() {
       <div><p>Once you know whether you want cooking-only, market context or a broader half-day combination, use our separate comparison page to evaluate current experience options. Prices and availability belong there rather than in this evergreen guide.</p><TrackedLink className="primary-button" href="/cooking-classes-hoi-an" sourcePage={sourcePage} destinationPage="/cooking-classes-hoi-an" section="planning_next_step" ctaId="expectations_compare_cooking">Compare Hoi An Cooking Classes</TrackedLink></div>
     </section>
 
-    <section className="cooking-expect-sources section"><div><p className="eyebrow">Editorial basis</p><h2>How This Guide Was Built</h2></div><div><p>This guide uses HAL&apos;s current owner/operator observations about class flow, market interpretation, teaching quality, group scale, dietary preparation and child supervision. Broad judgments are presented as guidance rather than universal provider standards.</p><p>Read more about our <Link href="/editorial-methodology">editorial methodology</Link>.</p></div></section>
+    <section className="cooking-expect-sources section"><div><p className="eyebrow">Editorial basis</p><h2>How This Guide Was Built</h2></div><div><p>This guide uses HAL&apos;s current owner/operator observations about class flow, market interpretation, teaching quality, group scale, dietary preparation and child supervision. Broad judgments are presented as guidance rather than universal provider standards.</p></div></section>
   </main>;
 }

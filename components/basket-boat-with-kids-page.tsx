@@ -101,7 +101,7 @@ export function BasketBoatWithKidsPage() {
 
     <section className="family-boat-final section">
       <div><p className="eyebrow">Next decision</p><h2>Compare Basket Boat Options</h2></div>
-      <div><p>Once you know whether your family needs a lively, quieter, short or combined format, compare the actual options and inclusions. Verify child policies and equipment again with the selected provider.</p><Link className="primary-button" href="/basket-boat-hoi-an">Compare Hoi An Basket Boat Options</Link><Link className="family-boat-method" href="/editorial-methodology">How HAL builds recommendations</Link></div>
+      <div><p>Once you know whether your family needs a lively, quieter, short or combined format, compare the actual options and inclusions. Verify child policies and equipment again with the selected provider.</p><Link className="primary-button" href="/basket-boat-hoi-an">Compare Hoi An Basket Boat Options</Link></div>
     </section>
   </main>;
 }

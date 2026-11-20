@@ -17,7 +17,7 @@ export function getPageType(pathname: string): PageType {
   if (pathname === "/things-to-do-in-hoi-an") return "discovery";
   if (["/3-days-in-hoi-an", "/hoi-an-with-kids"].includes(pathname)) return "planning";
   if (["/transfer", "/cooking-classes-hoi-an", "/basket-boat-hoi-an", "/my-son-tours-from-hoi-an"].includes(pathname)) return "commercial";
-  if (["/editorial-methodology", "/affiliate-disclosure", "/privacy-policy", "/terms"].includes(pathname)) return "trust";
+  if (["/privacy-policy", "/terms"].includes(pathname)) return "trust";
   return "discovery";
 }
 

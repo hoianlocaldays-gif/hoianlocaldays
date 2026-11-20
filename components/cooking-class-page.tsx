@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AffiliateDisclosure } from "./affiliate-disclosure";
 import { CookingComparisonCard, QuickPicks, RelatedGuides } from "./cooking-editorial";
 import { cookingExperiences, cookingQuickPicks } from "@/data/cooking-classes";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
@@ -16,7 +15,6 @@ export function CookingClassPage() {
       <p className="eyebrow">Hoi An Local Days editorial comparison</p>
       <h1>Best Cooking Classes in Hoi An</h1>
       <p className="cooking-lead">Seven carefully selected cooking experiences for different types of travelers — from family-friendly classes to farm-to-table cooking and all-in-one Hoi An experiences.</p>
-      <AffiliateDisclosure />
       <EditorSignal />
       <nav className="quick-nav" aria-label="On this page"><a href="#choose-a-format">Choose a format</a><a href="#quick-picks">Quick picks</a><a href="#compare-all">Compare all 7</a></nav>
     </section>

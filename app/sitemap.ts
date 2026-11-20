@@ -23,8 +23,6 @@ const launchRoutes = [
   "/basket-boat-hoi-an-with-kids",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",
-  "/editorial-methodology",
-  "/affiliate-disclosure",
   "/privacy-policy",
   "/terms",
 ];

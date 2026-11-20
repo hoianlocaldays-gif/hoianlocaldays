@@ -107,7 +107,7 @@ export function HoiAnOldTownGuidePage() {
 
     <section className="old-town-final section">
       <div><p className="eyebrow">Where it fits</p><h2>Make Old Town Your Orientation Point</h2></div>
-      <div><p>For a first visit, Old Town deserves a meaningful daylight block and, when possible, a return in the evening. On a multi-day trip, it does not need to occupy every morning and afternoon. Use it as the historical centre of a wider Hoi An experience.</p><nav aria-label="Continue planning Hoi An"><Link href="/things-to-do-in-hoi-an">Explore Things to Do</Link><Link href="/3-days-in-hoi-an">See the 3-Day Itinerary</Link><Link href="/editorial-methodology">How HAL Builds Guides</Link></nav></div>
+      <div><p>For a first visit, Old Town deserves a meaningful daylight block and, when possible, a return in the evening. On a multi-day trip, it does not need to occupy every morning and afternoon. Use it as the historical centre of a wider Hoi An experience.</p><nav aria-label="Continue planning Hoi An"><Link href="/things-to-do-in-hoi-an">Explore Things to Do</Link><Link href="/3-days-in-hoi-an">See the 3-Day Itinerary</Link></nav></div>
     </section>
   </main>;
 }

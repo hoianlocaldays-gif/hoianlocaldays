@@ -91,7 +91,7 @@ export function HowManyDaysPage() {
 
     <section className="stay-length-final section">
       <div><p className="eyebrow">HAL recommendation</p><h2>So, How Long Should You Stay?</h2></div>
-      <div><p><strong>Around three days is a strong starting point</strong> for a first visit that includes more than a quick Old Town walk. Choose two days for a focused trip with one deeper experience. Choose four or more when slower pacing, family needs, food, beach time or several excursions are genuine priorities.</p><p>There is no obligation to fill every day. Good Hoi An planning is often about choosing fewer experience blocks and giving each one enough space.</p><nav aria-label="Continue planning"><Link href="/things-to-do-in-hoi-an">Explore Things to Do</Link><Link href="/3-days-in-hoi-an">See the 3-Day Itinerary</Link><Link href="/editorial-methodology">How HAL Makes Recommendations</Link></nav></div>
+      <div><p><strong>Around three days is a strong starting point</strong> for a first visit that includes more than a quick Old Town walk. Choose two days for a focused trip with one deeper experience. Choose four or more when slower pacing, family needs, food, beach time or several excursions are genuine priorities.</p><p>There is no obligation to fill every day. Good Hoi An planning is often about choosing fewer experience blocks and giving each one enough space.</p><nav aria-label="Continue planning"><Link href="/things-to-do-in-hoi-an">Explore Things to Do</Link><Link href="/3-days-in-hoi-an">See the 3-Day Itinerary</Link></nav></div>
     </section>
   </main>;
 }

@@ -90,7 +90,7 @@ export function MySonSanctuaryGuidePage() {
 
     <section className="my-son-info-sources section">
       <div><p className="eyebrow">How this guide was checked</p><h2>Sources and Editorial Caution</h2></div>
-      <div><p>Historical and heritage claims were checked against the <a href="https://whc.unesco.org/en/list/949/" target="_blank" rel="noopener noreferrer">UNESCO World Heritage Centre</a>, its inscription and conservation records, and current official Vietnam/Da Nang tourism guidance.</p><p>Operational details can change. HAL intentionally omits current prices, exact hours and performance schedules from this evergreen guide. Read more about our <Link href="/editorial-methodology">editorial methodology</Link>.</p></div>
+      <div><p>Historical and heritage claims were checked against the <a href="https://whc.unesco.org/en/list/949/" target="_blank" rel="noopener noreferrer">UNESCO World Heritage Centre</a>, its inscription and conservation records, and current official Vietnam/Da Nang tourism guidance.</p><p>Operational details can change. HAL intentionally omits current prices, exact hours and performance schedules from this evergreen guide.</p></div>
     </section>
   </main>;
 }

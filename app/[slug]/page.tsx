@@ -6,7 +6,6 @@ import { ThingsToDoHub } from "@/components/things-to-do-hub";
 import { HoiAnWithKidsPage } from "@/components/hoi-an-with-kids-page";
 import { BasketBoatPage } from "@/components/basket-boat-page";
 import { ThreeDaysItineraryPage } from "@/components/three-days-itinerary-page";
-import { EditorialMethodologyPage } from "@/components/editorial-methodology-page";
 import { MySonPage } from "@/components/my-son-page";
 import { CamThanhGuidePage } from "@/components/cam-thanh-guide-page";
 import { HoiAnFoodGuidePage } from "@/components/hoi-an-food-guide-page";
@@ -21,7 +20,6 @@ import { BasketBoatWithKidsPage } from "@/components/basket-boat-with-kids-page"
 import { getLandingPage, landingPages } from "@/data/pages";
 
 const legal: Record<string, { title: string; body: string[] }> = {
-  "affiliate-disclosure": { title: "Affiliate Disclosure", body: ["Some booking links on Hoi An Local Days may be affiliate links. If you book through one of them, Hoi An Local Days may receive a commission, normally at no extra cost to you.", "Affiliate availability or commission does not determine what we recommend. We choose and describe experiences around traveler fit, useful distinctions and honest trade-offs.", "When it better serves the traveler, we may recommend a simpler option, point out that one activity already includes another or suggest not purchasing an additional activity."] },
   "privacy-policy": { title: "Privacy Policy", body: ["Hoi An Local Days does not require a visitor account or ask for personal details simply to read our travel guides.", "We may use limited website analytics to understand how our guides are used and improve their usefulness. This may include pages visited, links followed and basic technical or device information. We do not use this information for advertising or remarketing.", "Our current site analytics do not intentionally collect names, email addresses, phone numbers, form content, custom user IDs or precise location.", "Booking providers and other external websites apply their own privacy policies when you follow a link away from Hoi An Local Days."] },
   "terms": { title: "Terms", body: ["Hoi An Local Days provides independent travel discovery and decision-support content. It is not the merchant of record for bookings made through external provider links.", "Prices and availability shown as reference information must be confirmed with the relevant provider. Booking, cancellation and refund terms are governed by the provider you choose."] },
 };
@@ -35,7 +33,6 @@ export function generateStaticParams() {
   return [
     ...landingPages.filter((page) => !unfinishedSlugs.has(page.slug) && page.slug !== "hoi-an-itinerary").map((page) => ({ slug: page.slug })),
     ...Object.keys(legal).map((slug) => ({ slug })),
-    { slug: "editorial-methodology" },
     { slug: "cam-thanh-coconut-village" },
     { slug: "hoi-an-food-guide" },
     { slug: "hoi-an-market-guide" },
@@ -131,11 +128,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const description = "Plan a Hoi An basket boat ride with children: age policies, life jackets, supervision, spinning, lively versus quieter routes, heat and parent questions.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
-  if (slug === "editorial-methodology") {
-    const title = "How Hoi An Local Days Chooses What to Recommend";
-    const description = "Learn how Hoi An Local Days evaluates experiences, traveler fit, local context, provider options, verification and affiliate independence.";
-    return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
-  }
   if (page) return { title: `${page.title} | Hoi An Local Days`, description: page.description, alternates: { canonical: `/${slug}` }, robots: unfinishedSlugs.has(slug) ? { index: false, follow: false } : undefined, openGraph: { title: page.title, description: page.description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title: page.title, description: page.description, images: [socialImage.url] } };
   if (legalPage) {
     const title = `${legalPage.title} | Hoi An Local Days`;
@@ -163,7 +155,6 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   if (slug === "how-many-days-in-hoi-an") return <HowManyDaysPage />;
   if (slug === "hoi-an-old-town-guide") return <HoiAnOldTownGuidePage />;
   if (slug === "basket-boat-hoi-an-with-kids") return <BasketBoatWithKidsPage />;
-  if (slug === "editorial-methodology") return <EditorialMethodologyPage />;
   if (page) return <LandingPage page={page} />;
   const legalPage = legal[slug]; if (!legalPage) notFound();
   return <main className="legal-page section"><p className="eyebrow">Hoi An Local Days</p><h1>{legalPage.title}</h1>{legalPage.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</main>;

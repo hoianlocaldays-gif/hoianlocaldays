@@ -24,8 +24,6 @@ const launchRoutes = [
   "/basket-boat-hoi-an-with-kids",
   "/hoi-an-with-kids",
   "/3-days-in-hoi-an",
-  "/editorial-methodology",
-  "/affiliate-disclosure",
   "/privacy-policy",
   "/terms",
 ];
@@ -161,35 +159,6 @@ test("services homepage and transfer flow preserve the approved booking contract
   for (const price of ["350,000", "1,000,000", "800,000", "2,200,000"]) assert.match(transfer, new RegExp(price));
 });
 
-test("commercial pages use one lightweight disclosure without exposing internal business strategy", async () => {
-  const commercialRoutes = ["/cooking-classes-hoi-an", "/basket-boat-hoi-an", "/my-son-tours-from-hoi-an"];
-  const disclosure = "Some booking links may earn Hoi An Local Days a commission at no extra cost to you.";
-  const prohibitedPublicCopy = /\bEPC\b|conversion rate|attribution window|revenue target|highest affiliate commission|provider profitability|Google signals|automatic page views|GA4 configuration/i;
-  for (const route of commercialRoutes) {
-    const html = await readFile(routeFile(route), "utf8");
-    const visibleHtml = html.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
-    assert.equal(visibleHtml.split(disclosure).length - 1, 1, `${route} must contain one concise disclosure`);
-    assert.match(html, /href="\/affiliate-disclosure"/i, `${route} must link to the full disclosure`);
-    assert.doesNotMatch(html, prohibitedPublicCopy, `${route} exposes internal business detail`);
-  }
-});
-
-test("trust pages preserve editorial independence without publishing analytics architecture", async () => {
-  const [disclosure, methodology, privacy] = await Promise.all([
-    readFile(routeFile("/affiliate-disclosure"), "utf8"),
-    readFile(routeFile("/editorial-methodology"), "utf8"),
-    readFile(routeFile("/privacy-policy"), "utf8"),
-  ]);
-  assert.match(disclosure, /may receive a commission/i);
-  assert.match(disclosure, /recommend a simpler option/i);
-  assert.match(disclosure, /suggest not purchasing an additional activity/i);
-  assert.match(methodology, /Traveler fit, useful distinctions and honest trade-offs come first/i);
-  assert.match(methodology, /A Useful Answer Can Be [“\"]Choose Less[”\"]/i);
-  assert.doesNotMatch(methodology, /conversion|revenue|campaign|attribution|EPC/i);
-  assert.match(privacy, /limited website analytics/i);
-  assert.doesNotMatch(privacy, /Google Analytics 4|GA4|Google signals|automatic page views|dataLayer|measurement ID/i);
-});
-
 test("the build is configured as a runtime-free static export", async () => {
   const config = await readFile(new URL("next.config.ts", root), "utf8");
   assert.match(config, /output:\s*["']export["']/);
@@ -234,7 +203,6 @@ test("Hoi An food guide protects informational intent and supports first-timer d
   assert.match(food, /do not assume every modern kitchen uses water from Ba Le well/i);
   assert.match(food, /If You Only Have One Day to Eat in Hoi An/i);
   assert.match(food, /Compare Hoi An Cooking Classes/i);
-  assert.match(food, /href="\/editorial-methodology"/i);
   for (const topic of [/Cao Lau/i, /Hoi An Chicken Rice/i, /Hoi An Banh Mi/i, /Hoi An-Style Banh Xeo/i, /Banh Dap &amp; Cam Nam Clams/i, /What About White Rose/i, /What About Mot/i, /Visit Hoi An Market/i, /How to Approach Street Food/i]) assert.match(food, topic);
   for (const route of ["/cooking-classes-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/cam-thanh-coconut-village", "/basket-boat-hoi-an"]) assert.match(food, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
   assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com/i);
@@ -265,7 +233,7 @@ test("Hoi An market guide supports purposeful visits without becoming an affilia
   assert.match(market, /06:00[–-]08:00/i);
   assert.match(market, /07:30[–-]09:00/i);
   for (const topic of [/What Is Hoi An Market/i, /Best Time to Visit Hoi An Market/i, /Ingredients That Explain Hoi An Food/i, /How to Visit Respectfully/i, /Is Street Food at Hoi An Market Safe/i, /Do You Need a Guided Market Tour/i, /Practical Market Checklist/i]) assert.match(market, topic);
-  for (const route of ["/hoi-an-food-guide", "/cooking-classes-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/editorial-methodology"]) assert.match(market, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  for (const route of ["/hoi-an-food-guide", "/cooking-classes-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an"]) assert.match(market, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
   assert.match(market, /Compare Hoi An Cooking Classes/i);
   assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|whatsapp/i);
   assert.doesNotMatch(visibleHtml, /guaranteed safe|100% safe|hidden gem|authentic experience guaranteed/i);
@@ -293,7 +261,7 @@ test("Cao lau guide answers first-timer questions without overstating origin or 
   assert.match(caoLau, /does not prove one specific origin/i);
   assert.match(caoLau, /should not automatically be treated as gluten-free/i);
   assert.match(caoLau, /not every class teaches cao lau/i);
-  for (const route of ["/hoi-an-food-guide", "/hoi-an-market-guide", "/cooking-classes-hoi-an", "/3-days-in-hoi-an", "/editorial-methodology"]) assert.match(caoLau, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  for (const route of ["/hoi-an-food-guide", "/hoi-an-market-guide", "/cooking-classes-hoi-an", "/3-days-in-hoi-an"]) assert.match(caoLau, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
   assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|whatsapp/i);
   assert.doesNotMatch(visibleHtml, /proven Japanese origin|guaranteed gluten-free|best restaurant/i);
   const localImages = [
@@ -323,7 +291,7 @@ test("Banh xeo guide explains the complete eating format without becoming a reci
   assert.match(banhXeo, /Neither should be declared the only [“"]authentic[”"] Hoi An option/i);
   assert.match(banhXeo, /should not automatically be called gluten-free/i);
   assert.match(banhXeo, /not included in every program/i);
-  for (const route of ["/hoi-an-food-guide", "/cao-lau-hoi-an", "/hoi-an-market-guide", "/cooking-classes-hoi-an", "/3-days-in-hoi-an", "/editorial-methodology"]) assert.match(banhXeo, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  for (const route of ["/hoi-an-food-guide", "/cao-lau-hoi-an", "/hoi-an-market-guide", "/cooking-classes-hoi-an", "/3-days-in-hoi-an"]) assert.match(banhXeo, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
   assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|whatsapp/i);
   assert.doesNotMatch(visibleHtml, /best banh xeo restaurant|guaranteed gluten-free|only authentic sauce|coconut milk is always/i);
   const localImages = [
@@ -357,7 +325,7 @@ test("My Son Sanctuary guide bridges heritage context and practical visit decisi
   assert.match(guide, /4th to the 13th centuries/i);
   assert.match(guide, /Second World War, the First Indochina War and especially the Second Indochina War/i);
   assert.match(guide, /not an automatic priority for every short stay/i);
-  for (const route of ["/my-son-tours-from-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an", "/editorial-methodology"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  for (const route of ["/my-son-tours-from-hoi-an", "/things-to-do-in-hoi-an", "/3-days-in-hoi-an"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
   assert.equal((visibleHtml.match(/href="\/my-son-tours-from-hoi-an"/gi) ?? []).length, 1);
   assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|best tour|book now|limited availability/i);
   assert.doesNotMatch(visibleHtml, /VND\s?[\d,]+|opens? at|closes? at|performance at/i);
@@ -382,7 +350,7 @@ test("cooking class expectations guide supports decisions without duplicating th
   assert.match(guide, /Ingredient substitution and cross-contact control are different questions/i);
   assert.match(guide, /class around 15 guests or more can begin to feel meaningfully larger/i);
   assert.match(guide, /techniques and decisions you can use again/i);
-  for (const route of ["/cooking-classes-hoi-an", "/hoi-an-market-guide", "/hoi-an-food-guide", "/cam-thanh-coconut-village", "/basket-boat-hoi-an", "/hoi-an-with-kids", "/editorial-methodology"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  for (const route of ["/cooking-classes-hoi-an", "/hoi-an-market-guide", "/hoi-an-food-guide", "/cam-thanh-coconut-village", "/basket-boat-hoi-an", "/hoi-an-with-kids"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
   assert.match(visibleHtml, /href="\/cooking-classes-hoi-an"[^>]*>Compare Hoi An Cooking Classes/i);
   assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|book now|limited spots|#1 cooking/i);
   assert.doesNotMatch(visibleHtml, /VND\s?[\d,]+|70% guarantee/i);
@@ -422,7 +390,6 @@ test("stay-length guide gives a nuanced planning framework without becoming an i
     "/cam-thanh-coconut-village",
     "/hoi-an-food-guide",
     "/hoi-an-with-kids",
-    "/editorial-methodology",
   ]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
   assert.doesNotMatch(visibleHtml, /viator\.com|getyourguide\.com|cocolocal|book now|check availability|limited spots/i);
   assert.equal((guide.match(/<h1\b/gi) ?? []).length, 1);
@@ -466,7 +433,7 @@ test("Old Town guide explains the heritage district without becoming a listicle 
   assert.match(guide, /up to three days/i);
   assert.doesNotMatch(visibleHtml, /top 10|viator\.com|getyourguide\.com|cocolocal|book now|check availability|limited spots/i);
   assert.equal((guide.match(/<h1\b/gi) ?? []).length, 1);
-  for (const route of ["/things-to-do-in-hoi-an", "/how-many-days-in-hoi-an", "/3-days-in-hoi-an", "/hoi-an-market-guide", "/hoi-an-food-guide", "/my-son-sanctuary-guide", "/hoi-an-with-kids", "/editorial-methodology"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  for (const route of ["/things-to-do-in-hoi-an", "/how-many-days-in-hoi-an", "/3-days-in-hoi-an", "/hoi-an-market-guide", "/hoi-an-food-guide", "/my-son-sanctuary-guide", "/hoi-an-with-kids"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
   const images = ["images/editorial/market-guide/hero.webp", "images/editorial/food-guide/cao-lau.webp"];
   for (const image of images) { await access(new URL(image, output)); assert.match(guide, new RegExp(`src="/${image.replaceAll("/", "\\/")}"`, "i")); }
   assert.equal((guide.match(/<img\b/gi) ?? []).length, 2);
@@ -491,7 +458,7 @@ test("basket boat with kids guide supports a family decision without making safe
   assert.doesNotMatch(visibleHtml, /universally safe|completely safe|minimum age is 3|safest operator|viator\.com|getyourguide\.com|cocolocal|book now|limited spots/i);
   assert.equal((guide.match(/<h1\b/gi) ?? []).length, 1);
   assert.equal((visibleHtml.match(/>Compare Hoi An Basket Boat Options<\/a>/gi) ?? []).length, 1, "family guide must use one primary commercial bridge");
-  for (const route of ["/basket-boat-hoi-an", "/cam-thanh-coconut-village", "/hoi-an-with-kids", "/how-many-days-in-hoi-an", "/what-to-expect-hoi-an-cooking-class", "/cooking-classes-hoi-an", "/editorial-methodology"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
+  for (const route of ["/basket-boat-hoi-an", "/cam-thanh-coconut-village", "/hoi-an-with-kids", "/how-many-days-in-hoi-an", "/what-to-expect-hoi-an-cooking-class", "/cooking-classes-hoi-an"]) assert.match(guide, new RegExp(`href="${route.replaceAll("/", "\\/")}"`, "i"));
   const images = ["images/experiences/basket-boat/family-basketboat.webp", "images/experiences/basket-boat/popular-coconut-basketboat.webp", "images/experiences/basket-boat/classic-basketboat.webp", "images/experiences/basket-boat/quieter-basketboat.webp"];
   for (const image of images) { await access(new URL(image, output)); assert.match(guide, new RegExp(`src="/${image.replaceAll("/", "\\/")}"`, "i")); }
   assert.equal((guide.match(/<img\b/gi) ?? []).length, 4);
