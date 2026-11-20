@@ -103,6 +103,8 @@ test("robots and Cloudflare Pages static controls are exported", async () => {
   assert.match(robots, /Allow:\s*\//i);
   assert.match(robots, /Sitemap:\s*https:\/\/hoianlocaldays\.com\/sitemap\.xml/i);
   assert.match(redirects, /^\/hoi-an-itinerary\s+\/3-days-in-hoi-an\s+308\s*$/m);
+  assert.match(redirects, /^\/editorial-methodology\s+\/\s+301\s*$/m);
+  assert.match(redirects, /^\/affiliate-disclosure\s+\/\s+301\s*$/m);
   assert.match(headers, /^\/sitemap\.xml\s*\n\s+Content-Type:\s*application\/xml;\s*charset=utf-8\s*$/mi);
   assert.match(headers, /X-Content-Type-Options:\s*nosniff/i);
   assert.match(headers, /Content-Security-Policy:\s*frame-ancestors 'none'/i);
