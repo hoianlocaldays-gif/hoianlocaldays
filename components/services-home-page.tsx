@@ -54,7 +54,7 @@ export function ServicesHomePage() {
               <article><p className="services-eyebrow">Cooking · 2 hours</p><h4>Cooking Only</h4><p>Join at the garden for the same dishes, cooking guidance and shared meal.</p><strong>600,000 VND</strong><small>per adult · no pickup</small><a className="services-button services-button-light" href="https://traquegarden.hoianlocaldays.com/?utm_source=hoi_an_local_days&utm_medium=referral&utm_campaign=hal_services#booking" target="_blank" rel="noopener noreferrer">View dates & reserve</a></article>
             </div>
             <p className="services-note"><strong>No prepayment required · Pay on arrival.</strong> Your reservation is made on the Tra Que Garden website. Check current times, pickup details and dietary arrangements there before booking.</p>
-            <TrackedLink className="services-text-link" href="/cooking-classes-hoi-an" sourcePage="homepage" destinationPage="/cooking-classes-hoi-an" section="featured_cooking" ctaId="home_cooking">Compare more Hoi An cooking classes</TrackedLink>
+            <TrackedLink className="services-text-link" href="/cooking-classes-hoi-an" sourcePage="homepage" destinationPage="/cooking-classes-hoi-an" section="featured_cooking" ctaId="home_cooking">Explore the Tra Que Garden experience</TrackedLink>
           </div>
         </div>
       </div>

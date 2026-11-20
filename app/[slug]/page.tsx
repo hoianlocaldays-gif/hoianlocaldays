@@ -49,8 +49,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params; const page = getLandingPage(slug); const legalPage = legal[slug];
   if (slug === "cooking-classes-hoi-an") {
-    const title = "Best Cooking Classes in Hoi An (2026) | Hoi An Local Days";
-    const description = "Compare locally selected cooking classes in Hoi An, including options for families, food lovers, couples and small groups.";
+    const title = "Tra Que Garden Cooking Class in Hoi An | Local Experience";
+    const description = "Join a family-run cooking and farming experience at Tra Que Garden in Hoi An, with small groups, four Vietnamese preparations and no prepayment.";
     return { title: { absolute: title }, description, alternates: { canonical: `/${slug}` }, openGraph: { title, description, url: `/${slug}`, images: [socialImage], type: "article" }, twitter: { card: "summary_large_image", title, description, images: [socialImage.url] } };
   }
   if (slug === "things-to-do-in-hoi-an") {

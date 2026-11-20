@@ -364,6 +364,29 @@
 @media(max-width:760px){.my-son-info-hero{padding-top:3rem;padding-bottom:3rem}.my-son-info-hero h1{font-size:clamp(2.65rem,11.5vw,3.75rem)}.my-son-info-hero .quick-nav{grid-column:1}.my-son-info-intro,.my-son-info-remains,.my-son-info-experience,.my-son-info-bring,.my-son-info-guide,.my-son-info-independent,.my-son-info-worth,.my-son-info-compare,.my-son-info-itinerary,.my-son-info-next,.my-son-info-sources,.my-son-info-grid,.my-son-info-time-grid,.my-son-info-facts,.my-son-info-choice{grid-template-columns:1fr;gap:1.2rem}.my-son-info-next .primary-button{width:100%;text-align:center}}
 
 /* Cooking class expectations guide */
+/* Tra Que Garden focused cooking landing */
+.tra-que-landing{--tra-muted:rgba(29,45,41,.7)}
+.tra-que-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.82fr);gap:4rem;align-items:center;padding-top:5rem;padding-bottom:5rem}
+.tra-que-hero h1{max-width:820px;font-size:clamp(3.7rem,6vw,6.4rem)}
+.tra-que-hero .cooking-lead{max-width:720px;margin:1.5rem 0;color:var(--tra-muted);font-size:1.15rem;line-height:1.7}
+.tra-que-hero .hero-actions{margin:1.5rem 0 1rem}.tra-que-payment{font-size:.82rem;color:var(--tra-muted)}
+.tra-que-hero figure{margin:0}.tra-que-hero img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:48% 48% 2px 2px}
+.tra-que-hero figcaption{margin-top:.65rem;color:var(--tra-muted);font-size:.72rem}
+.tra-que-intro,.tra-que-practical,.tra-que-final{display:grid;grid-template-columns:.72fr 1.28fr;gap:4rem}
+.tra-que-intro{background:var(--yellow)}.tra-que-intro p,.tra-que-final p{margin-top:0;max-width:760px;line-height:1.72}
+.tra-que-highlights{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}.tra-que-highlights span{padding:.7rem .85rem;background:rgba(255,255,255,.55);font-size:.72rem;font-weight:800}
+.tra-que-packages{background:var(--white)}.tra-que-package-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:1100px;margin:auto}
+.tra-que-package-grid article{display:flex;flex-direction:column;padding:2rem;border:1px solid var(--line);background:var(--paper)}.tra-que-package-grid article.is-featured{border-top:5px solid var(--gold)}
+.tra-que-package-grid small{color:var(--clay);font-weight:850;text-transform:uppercase;letter-spacing:.09em}.tra-que-package-grid h3{margin:.8rem 0;font:500 clamp(2rem,3vw,3rem)/1.05 var(--serif)}
+.tra-que-package-grid p{color:var(--tra-muted);line-height:1.65}.tra-que-package-grid ul{margin:.4rem 0 1.4rem;padding-left:1.1rem;color:var(--tra-muted);line-height:1.8}.tra-que-package-grid strong{display:block;margin-top:auto;font:500 1.35rem var(--serif)}.tra-que-package-grid a{margin-top:1.2rem}
+.tra-que-menu{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;background:var(--green);color:#fff}.tra-que-menu .eyebrow{color:var(--yellow)}.tra-que-menu p{color:rgba(255,255,255,.72);line-height:1.7}.tra-que-menu ol{margin:0;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.2)}
+.tra-que-menu li{display:grid;grid-template-columns:50px 1fr;gap:1rem;padding:1.15rem 0;border-bottom:1px solid rgba(255,255,255,.2)}.tra-que-menu li span{color:var(--yellow);font-size:.7rem}.tra-que-menu li strong{font:500 1.35rem var(--serif)}
+.tra-que-practical{background:#e9e3d4}.tra-que-practical-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.tra-que-practical-grid article{padding:1.25rem;background:var(--white)}.tra-que-practical-grid h3{margin:0 0 .6rem;font:500 1.35rem var(--serif)}.tra-que-practical-grid p{margin:0;color:var(--tra-muted);font-size:.78rem;line-height:1.6}
+.tra-que-final{background:var(--yellow)}.tra-que-final .primary-button{margin:.5rem 0 1rem}.tra-que-final div:last-child p:last-child{font-size:.8rem}
+.tra-que-related{display:flex;gap:.7rem;flex-wrap:wrap;padding-top:2rem;padding-bottom:2rem}.tra-que-related a{padding:.8rem 1rem;border:1px solid var(--line);font-size:.75rem;font-weight:800}
+@media(max-width:900px){.tra-que-hero,.tra-que-intro,.tra-que-menu,.tra-que-practical,.tra-que-final{grid-template-columns:1fr}.tra-que-hero figure{max-width:620px}.tra-que-hero img{aspect-ratio:3/2;border-radius:2px}.tra-que-intro,.tra-que-menu,.tra-que-practical,.tra-que-final{gap:1.5rem}}
+@media(max-width:650px){.tra-que-hero{padding-top:3rem;padding-bottom:3rem;gap:2rem}.tra-que-hero h1{font-size:clamp(3rem,14vw,4.3rem)}.tra-que-hero .hero-actions,.tra-que-package-grid,.tra-que-practical-grid{display:grid;grid-template-columns:1fr}.tra-que-hero .hero-actions a,.tra-que-package-grid a{width:100%}.tra-que-package-grid article{padding:1.35rem}.tra-que-menu li{grid-template-columns:36px 1fr}.tra-que-related{display:grid}}
+
 .cooking-expect-page{--expect-muted:rgba(29,45,41,.72)}
 .cooking-expect-page h2{font-size:clamp(2.25rem,4.2vw,4rem)}
 .cooking-expect-page p,.cooking-expect-page li{line-height:1.72}

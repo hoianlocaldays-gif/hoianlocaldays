@@ -1,40 +1,31 @@
 import Link from "next/link";
-import { CookingComparisonCard, QuickPicks, RelatedGuides } from "./cooking-editorial";
-import { cookingExperiences, cookingQuickPicks } from "@/data/cooking-classes";
+import { featuredCookingExperience } from "@/data/cooking-landing";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { EditorSignal } from "./editor-signal";
 
 export function CookingClassPage() {
+  const experience = featuredCookingExperience;
   const breadcrumb = breadcrumbJsonLd([{ name: "Home", url: "https://hoianlocaldays.com" }, { name: "Cooking Classes in Hoi An", url: "https://hoianlocaldays.com/cooking-classes-hoi-an" }]);
-  const itemList = { "@context": "https://schema.org", "@type": "ItemList", name: "Selected cooking experiences in Hoi An", numberOfItems: cookingExperiences.length, itemListElement: cookingExperiences.map((experience, index) => ({ "@type": "ListItem", position: index + 1, name: experience.name, url: `https://hoianlocaldays.com/cooking-classes-hoi-an#${experience.id}` })) };
 
-  return <main className="cooking-page editorial-commerce-page">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumb, itemList]) }} />
+  return <main className="cooking-page tra-que-landing">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
     <div className="breadcrumb"><Link href="/">Home</Link><span>›</span><span>Cooking Classes</span></div>
-    <section className="cooking-hero section">
-      <p className="eyebrow">Hoi An Local Days editorial comparison</p>
-      <h1>Best Cooking Classes in Hoi An</h1>
-      <p className="cooking-lead">Seven carefully selected cooking experiences for different types of travelers — from family-friendly classes to farm-to-table cooking and all-in-one Hoi An experiences.</p>
-      <EditorSignal />
-      <nav className="quick-nav" aria-label="On this page"><a href="#choose-a-format">Choose a format</a><a href="#quick-picks">Quick picks</a><a href="#compare-all">Compare all 7</a></nav>
+    <section className="tra-que-hero section">
+      <div><p className="eyebrow">A local cooking experience in Hoi An</p><h1>Cook, garden and share a meal at Tra Que.</h1><p className="cooking-lead">A family-run Vietnamese cooking class in Tra Que Vegetable Village, with a small group, fresh ingredients and time to enjoy what you make.</p><div className="hero-actions"><a className="primary-button" href={experience.bookingUrl} target="_blank" rel="noopener noreferrer">View dates &amp; reserve</a><a className="secondary-button" href="#experience">See the experience</a></div><p className="tra-que-payment"><strong>No prepayment required.</strong> Reserve online and pay on arrival.</p><EditorSignal /></div>
+      <figure><img src={experience.image.src} alt={experience.image.alt} width={experience.image.width} height={experience.image.height} fetchPriority="high"/><figcaption>{experience.name} · {experience.location}</figcaption></figure>
     </section>
-    <section className="format-section section" id="choose-a-format">
-      <div className="hub-heading"><p className="eyebrow">Understand the choice</p><h2>Choose the Experience Before the Provider</h2><p>The biggest difference is not the booking platform. It is how much of the half-day is devoted to cooking versus markets, basket boats and countryside activities.</p><p><Link className="context-link" href="/what-to-expect-hoi-an-cooking-class">First understand what actually happens in a Hoi An cooking class →</Link></p></div>
-      <div className="format-grid">
-        <article><h3>All-in-One Experience</h3><p>Choose this when you want a market, basket boat and cooking in one easy first-time introduction.</p><small>Check the inclusions before booking a separate basket boat activity.</small></article>
-        <article><h3>Cooking-Focused or Farm-Based</h3><p>Choose this when ingredients, preparation and time in the kitchen matter more than fitting in every signature activity.</p><small>For cooking plus hands-on garden context, start with our direct local partner at Tra Que Garden.</small></article>
-        <article><h3>Private or Small-Group</h3><p>Choose this when interaction, flexibility or a calmer pace matters more than the widest activity list.</p><small>Do not pay for privacy if a sociable group format already suits your trip.</small></article>
-      </div>
+    <section className="tra-que-intro section" id="experience">
+      <div><p className="eyebrow">Why this experience</p><h2>One garden. One welcoming kitchen.</h2></div><div><p>Tra Que Garden keeps the day focused on the village, its vegetables and practical Vietnamese cooking. It does not add a market visit or basket-boat ride simply to make the itinerary longer.</p><p>Choose the full experience when you want farming and a massage before cooking. Choose cooking only when you prefer to spend your time at the table and stove.</p><div className="tra-que-highlights">{experience.highlights.map((item) => <span key={item}>{item}</span>)}</div></div>
     </section>
-    <section className="section cooking-section" id="quick-picks">
-      <div className="section-heading"><p className="eyebrow">Quick picks</p><h2>Short on Time? Start Here</h2><p>Three distinct starting points for a classic first visit, a family day or a cooking-focused farm experience.</p></div>
-      <QuickPicks experiences={cookingQuickPicks} />
+    <section className="tra-que-packages section" id="options">
+      <div className="section-heading"><div><p className="eyebrow">Choose your format</p><h2>Two ways to join.</h2></div><p>Both options include hands-on cooking, ingredients, the meal and recipes. The full experience adds time in the garden and a massage.</p></div>
+      <div className="tra-que-package-grid">{experience.packages.map((item, index) => <article key={item.id} className={index === 0 ? "is-featured" : undefined}><small>{item.duration}</small><h3>{item.name}</h3><p>{item.description}</p><ul>{item.includes.map((include) => <li key={include}>{include}</li>)}</ul><strong>{item.price}</strong><a className={index === 0 ? "primary-button" : "secondary-button"} href={experience.bookingUrl} target="_blank" rel="noopener noreferrer">View dates &amp; reserve</a></article>)}</div>
     </section>
-    <section className="section cooking-compare" id="compare-all">
-      <div className="section-heading inverse"><p className="eyebrow">Editorial shortlist</p><h2>Compare All 7 Cooking Experiences</h2><p>Choose the experience first, then use an available booking provider. Tra Que Garden is identified clearly as a direct local partner.</p></div>
-      <div className="editorial-comparison-list">{cookingExperiences.map((experience, index) => <div id={experience.id} key={experience.id}><CookingComparisonCard experience={experience} position={`comparison_${index + 1}`} /></div>)}</div>
+    <section className="tra-que-menu section">
+      <div><p className="eyebrow">What you will make</p><h2>Four preparations, then a shared meal.</h2><p>The host guides each step in English. Dietary requirements should be shared before the class so the team can confirm what is possible.</p></div><ol>{experience.dishes.map((dish, index) => <li key={dish}><span>{String(index + 1).padStart(2, "0")}</span><strong>{dish}</strong></li>)}</ol>
     </section>
-    <section className="section how-we-choose" id="how-we-choose"><div><p className="eyebrow">Our method</p><h2>How We Choose Our Recommendations</h2></div><div className="method-copy"><p>Hoi An Local Days compares experiences based on the overall quality of the experience, how distinctive it is, who it suits best, local character, cooking depth, group style and ease of booking.</p><p>Price and booking relationships do not determine our editorial ranking.</p></div></section>
-    <RelatedGuides />
+    <section className="tra-que-practical section"><div><p className="eyebrow">Good to know</p><h2>Simple details before you go.</h2></div><div className="tra-que-practical-grid"><article><h3>Meeting point</h3><p>Tra Que Garden Restaurant &amp; Vietnamese Cooking Class in Tra Que Vegetable Village.</p></article><article><h3>Group size</h3><p>Minimum two participants and a maximum of ten guests per class.</p></article><article><h3>Transport</h3><p>Transport assistance can be arranged on request for an additional fee, subject to availability.</p></article><article><h3>What is not included</h3><p>No market visit, bicycle tour or basket-boat ride is included in this experience.</p></article></div></section>
+    <section className="tra-que-final section"><div><p className="eyebrow">Ready to join?</p><h2>Reserve directly with Tra Que Garden.</h2></div><div><p>Check the current sessions and send your booking details on the Tra Que Garden website. The team confirms availability before the reservation is final.</p><a className="primary-button" href={experience.bookingUrl} target="_blank" rel="noopener noreferrer">View dates &amp; reserve</a><p><strong>No payment now · Pay on arrival.</strong></p></div></section>
+    <nav className="tra-que-related section" aria-label="Continue planning"><Link href="/what-to-expect-hoi-an-cooking-class">What to expect from a cooking class</Link><Link href="/hoi-an-food-guide">Hoi An food guide</Link><Link href="/things-to-do-in-hoi-an">More things to do in Hoi An</Link></nav>
   </main>;
 }

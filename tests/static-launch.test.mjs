@@ -134,14 +134,16 @@ test("rendered affiliate links preserve the V1 tracking contract", async () => {
       }
     }
   }
-  assert.ok(viator >= 10, `expected rendered Viator links, found ${viator}`);
-  assert.ok(getYourGuide >= 8, `expected rendered GetYourGuide links, found ${getYourGuide}`);
+  assert.ok(viator > 0, `expected rendered Viator links, found ${viator}`);
+  assert.ok(getYourGuide > 0, `expected rendered GetYourGuide links, found ${getYourGuide}`);
 
   const cooking = await readFile(routeFile("/cooking-classes-hoi-an"), "utf8");
-  assert.equal(cooking.match(/href="https:\/\/traquegarden\.hoianlocaldays\.com\/"/g)?.length, 2, "Tra Que Garden should appear in the quick picks and full comparison");
-  assert.match(cooking, /Best Cooking \+ Farming/i);
-  assert.match(cooking, /Direct local partner · Tra Que Garden/i);
-  assert.doesNotMatch(cooking, /Organic Farm Cooking Experience/i, "the overlapping farm option should remain unpublished");
+  assert.match(cooking, /Cook, garden and share a meal at Tra Que/i);
+  assert.match(cooking, /Full Experience/i);
+  assert.match(cooking, /Cooking Only/i);
+  assert.match(cooking, /No prepayment required/i);
+  assert.match(cooking, /traquegarden\.hoianlocaldays\.com/i);
+  assert.doesNotMatch(cooking, /Compare All|Quick picks|Classic Market, Basket Boat|Cocolocal Farm|Organic Farm Cooking/i, "the page must remain focused on Tra Que Garden");
 });
 
 test("services homepage and transfer flow preserve the approved booking contract", async () => {
