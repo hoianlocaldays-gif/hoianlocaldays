@@ -187,10 +187,10 @@ test("Teh Dar guide is indexable and embeds the approved GetYourGuide widget", a
   assert.match(sitemap, /https:\/\/hoianlocaldays\.com\/teh-dar-show-hoi-an/);
 });
 
-test("My Son page focuses on product 224382 and removes the old comparison", async () => {
+test("My Son page focuses on product 514776 and removes the old comparison", async () => {
   const page = await readFile(routeFile("/my-son-tours-from-hoi-an"), "utf8");
-  assert.match(page, /data-gyg-tour-ids="224382"/);
-  assert.match(page, /et=224382/);
+  assert.match(page, /data-gyg-tour-ids="514776"/);
+  assert.match(page, /et=514776/);
   assert.match(page, /Check My Son Sanctuary Availability/i);
   assert.doesNotMatch(page, /Compare Our 5 My Son Picks|HAL editorial shortlist|myson-early-morning|myson-bike|myson-adventure/i);
   assert.equal((page.match(/<h1/g) ?? []).length, 1);
