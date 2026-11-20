@@ -33,7 +33,6 @@ export function ServicesHomePage() {
         </div>
         <small>Local experiences · Private cars · A local point of contact</small>
       </div>
-      <a className="services-photo-credit" href="https://unsplash.com/photos/boats-on-a-river-with-yellow-buildings-and-trees-WSlwOvcZKf0" target="_blank" rel="noopener noreferrer">Photo: Hai Nguyen / Unsplash</a>
     </section>
 
     <div className="services-wrap services-strip">
