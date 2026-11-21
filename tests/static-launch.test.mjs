@@ -157,6 +157,8 @@ test("services homepage and transfer flow preserve the approved booking contract
   ]);
   assert.equal((home.match(/data-gyg-widget="activities"/g) ?? []).length, 3, "homepage must render three GetYourGuide widgets");
   assert.match(home, /data-gyg-partner-id="QJ5SJBN"/);
+  assert.match(home, /data-gyg-tour-ids="1209925"/);
+  assert.match(home, /duck-stop-eco-farm-experience-with-duck-feeding-t1209925/);
   assert.match(home, /traquegarden\.hoianlocaldays\.com/);
   assert.match(home, /No prepayment required · Pay on arrival/i);
   assert.match(home, /84904885502/);
