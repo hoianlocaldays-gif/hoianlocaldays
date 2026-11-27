@@ -419,6 +419,13 @@ test("cooking class expectations guide supports decisions without duplicating th
   }
 });
 
+test("Hoi An with kids recommends Tra Que Garden instead of Cocolocal Farm", async () => {
+  const page = await readFile(routeFile("/hoi-an-with-kids"), "utf8");
+  assert.match(page, /Our family pick:\s*<!-- -->Tra Que Garden Cooking &amp; Farming Experience/i);
+  assert.match(page, /href="\/cooking-classes-hoi-an"/i);
+  assert.doesNotMatch(page, /Our family pick:\s*<!-- -->Cocolocal Farm/i);
+});
+
 test("stay-length guide gives a nuanced planning framework without becoming an itinerary", async () => {
   const guide = await readFile(routeFile("/how-many-days-in-hoi-an"), "utf8");
   const visibleHtml = guide.replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");

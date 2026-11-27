@@ -4,7 +4,7 @@ import { cookingExperiences } from "@/data/cooking-classes";
 import { ageGuidance, familyCategories, familyChallenges, familyDayIdeas, familyQuickPicks, familyStayLengths } from "@/data/hoi-an-with-kids";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 
-const familyCookingPick = cookingExperiences.find((experience) => experience.id === "cocolocal-farm");
+const familyCookingPick = cookingExperiences.find((experience) => experience.id === "tra-que-garden");
 const kidsCtaIds: Record<string, string> = {
   "/cooking-classes-hoi-an": "kids_cooking",
   "/basket-boat-hoi-an": "kids_basket_boat",
